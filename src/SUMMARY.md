@@ -7,5 +7,7 @@
 	- [Git](outils_communs/git.md)
 	- [Eclipse (à remplacer par CLion ?)](outils_communs/eclipse.md)
 	- [Kicad](outils_communs/kicad.md)
+- [Petits tutos](petits_tutos/index.md)
+    - [Raspberry Pi](petits_tutos/raspberry_pi.md)
 
 
