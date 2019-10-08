@@ -14,7 +14,7 @@ Comme Windows n'aime pas partager, il faudra d'aboard faire quelques réglages s
 * **Reconfigurer le disque en AHCI si besoin :** Sur certains PC récents, les disques utilisent un mode qui n'est pas encore supporté par Linux.
   - Rédémarre ton PC et entre dans les réglages du BIOS (en martelant au démarrage une touche dépendant du PC, en général F2 ou F10). Cherche la mention d'un **SATA mode**, et vérifie qu'il est réglé sur **AHCI**.
     - S'il est bien sur ce mode, passe directement au partitionnement de ton disque.
-    - S'il est réglé sur **RAID**, ne le change **pas**, rédémarre ton ordinateur (sur Windows) et suis [ce tuto](http://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/) pour reconfigurer le disque en AHCI.
+    - S'il est réglé sur **RAID** ou un autre truc bizarre (comme _RPS with optane_), ne le change **pas**, rédémarre ton ordinateur (sur Windows) et suis [ce tuto](http://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/) ou [celui-ci](https://www.seeyar.fr/activer-mode-ahci-apres-linstallation-de-windows10-mode-ide/) pour reconfigurer le disque en AHCI.
     - S'il est sur autre chose, renseigne toi !
 * **Partitionner le disque dur :** afin d'éviter tout problème de partionnement à cause de la fragmentation Windows, il vaut mieux utiliser directement les outils de Windows :
   - appuyer sur `Windows + R`
