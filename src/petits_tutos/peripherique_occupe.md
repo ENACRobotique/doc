@@ -7,7 +7,7 @@ On va faire en sorte qu'il blacklist tout les péiphériques __tty*__.
 D'abord on exécute la commande `sudo systemctl status ModemManager`.  
 Voilà un exemple de sortie :
 
-```
+```plain
 ● ModemManager.service - Modem Manager
    Loaded: loaded (/lib/systemd/system/ModemManager.service; enabled; vendor preset: enabled)
    Active: active (running) since Fri 2019-11-15 15:42:25 CET; 13min ago
@@ -18,18 +18,21 @@ Voilà un exemple de sortie :
 
 ```
 
-Ensuite on va éditer le fichier indiqué à la ligne _Loaded_ : `sudo vi /lib/systemd/system/ModemManager.service`.
+Ensuite on va éditer le fichier indiqué à la ligne _Loaded_ :
+
+```sudo vi /lib/systemd/system/ModemManager.service```
 
 A la section _[Service]_ du fichier, rajouter une ligne :  
 
-```
+```plain
 [Service]
 ...
 Environment="MM_FILTER_RULE_TTY_ACM_INTERFACE=0"
 ```
 
 Enfin il faut recharger la configuration de _systemctl_ et redémarrer le ModemManager:  
-```
+
+```plain
 sudo systemctl daemon-reload
 sudo systemctl restart ModemManager
 ```
