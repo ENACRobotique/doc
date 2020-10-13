@@ -1,0 +1,488 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Doc ENAC Robotique</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="outils_communs/index.html"><strong aria-hidden="true">2.</strong> Outils Communs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="outils_communs/dual_boot.html"><strong aria-hidden="true">2.1.</strong> Dual Boot</a></li><li class="chapter-item expanded "><a href="outils_communs/outils_courants.html"><strong aria-hidden="true">2.2.</strong> Outils courants</a></li><li class="chapter-item expanded "><a href="outils_communs/git.html"><strong aria-hidden="true">2.3.</strong> Git</a></li><li class="chapter-item expanded "><a href="outils_communs/eclipse.html"><strong aria-hidden="true">2.4.</strong> Eclipse (à remplacer par CLion ?)</a></li><li class="chapter-item expanded "><a href="outils_communs/kicad.html"><strong aria-hidden="true">2.5.</strong> Kicad</a></li></ol></li><li class="chapter-item expanded "><a href="petits_tutos/index.html"><strong aria-hidden="true">3.</strong> Petits tutos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="petits_tutos/raspberry_pi.html"><strong aria-hidden="true">3.1.</strong> Raspberry Pi</a></li><li class="chapter-item expanded "><a href="petits_tutos/peripherique_occupe.html"><strong aria-hidden="true">3.2.</strong> Périphérique occupé au branchement d'un µC</a></li></ol></li><li class="chapter-item expanded "><a href="elec/index.html"><strong aria-hidden="true">4.</strong> Tutos elec</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="elec/led.html"><strong aria-hidden="true">4.1.</strong> la Led</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Doc ENAC Robotique</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><img src="images/enac_robotique_logo.png" alt="" title="Bienvenu à l'ENAC Robotique !" /></p>
+<h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+<p>Ce site contient la documentation du club robot de l'ENAC. Il est en cours de construction, donc très incomplet pour l'instant. N'hésites pas <a href="https://github.com/ENACRobotique/doc">contribuer</a> !</p>
+<h1><a class="header" href="#outils-communs" id="outils-communs">Outils Communs</a></h1>
+<p>Au club on utilise linux pour la plupart des trucs (tout sauf la méca). Il est conseillé de l'installer : <a href="outils_communs/dual_boot.html">Installer un dual boot</a></p>
+<p>On utilise git pour la gestion de version du code. C'est un outil magique pour travailler à plusiaurs sur un projet ! <a href="outils_communs/git.html">Commencer avec Git</a></p>
+<p>On utilise actuellement Eclipse pour le code. On va peut être le remplacer par CLion. <a href="outils_communs/eclipse.html">Eclipse</a></p>
+<p>Enfin, on utilise kicad pour les cartes électroniques. <a href="outils_communs/kicad.html">Kicad</a></p>
+<p>Voilà ! (on parlera de SolidWorks un de ces jours).</p>
+<h1><a class="header" href="#installer-dual-boot-linux" id="installer-dual-boot-linux">Installer Dual Boot Linux</a></h1>
+<p>Développer sous windows peut parfois être un peu compliqué, et comme d'une manière générale linux c'est mieux, on va apprendre comment l'installer sur ton ordi.</p>
+<p>On va installer un dual boot, c'est à dire que Windows et Linux vont cohabiter sur ton disque dur, et il faudra choisir au démarrage lequel tu voudras lancer. Tu aura donc les performances maximales, mais ne pourra pas etre sur les deux système simultanément.</p>
+<h2><a class="header" href="#préliminaires-sous-windows" id="préliminaires-sous-windows">Préliminaires sous windows</a></h2>
+<p>Comme Windows n'aime pas partager, il faudra d'aboard faire quelques réglages sous Windows pour permettre l'installation de Linux à côté de celui-ci. Il est aussi plus sage de sauvegarder toutes tes données importantes sur un support hors de ton PC (clé USB, disuqe dur, ...). Je n'ai jamais eu aucune pertes de données, <em>mais</em> <em>comme</em> on joue avec les partitions de son disque dur, on n'est jamais à l'abri d'une erreur ou d'une panne de courant au mauvais moment.</p>
+<ul>
+<li><strong>Désactiver la mise en veille prolongée :</strong> par défaut, Windows ne s'éteint pas quand on le lui dit mais rentre en veille prolongée, et ça empèche de démarrer sous un autre OS.
+<ul>
+<li>ouvrir un terminal avec les droits administrateur (clic droit sur le logo windows, shell)</li>
+<li>entrer la commande <code>powercfg.exe /hibernate off</code></li>
+</ul>
+</li>
+<li><strong>Reconfigurer le disque en AHCI si besoin :</strong> Sur certains PC récents, les disques utilisent un mode qui n'est pas encore supporté par Linux.
+<ul>
+<li>Rédémarre ton PC et entre dans les réglages du BIOS (en martelant au démarrage une touche dépendant du PC, en général F2 ou F10). Cherche la mention d'un <strong>SATA mode</strong>, et vérifie qu'il est réglé sur <strong>AHCI</strong>.
+<ul>
+<li>S'il est bien sur ce mode, passe directement au partitionnement de ton disque.</li>
+<li>S'il est réglé sur <strong>RAID</strong> ou un autre truc bizarre (comme <em>RPS with optane</em>), ne le change <strong>pas</strong>, rédémarre ton ordinateur (sur Windows) et suis <a href="http://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/">ce tuto</a> ou <a href="https://www.seeyar.fr/activer-mode-ahci-apres-linstallation-de-windows10-mode-ide/">celui-ci</a> pour reconfigurer le disque en AHCI.</li>
+<li>S'il est sur autre chose, renseigne toi !</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Partitionner le disque dur :</strong> afin d'éviter tout problème de partionnement à cause de la fragmentation Windows, il vaut mieux utiliser directement les outils de Windows :
+<ul>
+<li>appuyer sur <code>Windows + R</code></li>
+<li>saisir <code>diskmgmt.msc</code></li>
+<li>clic droit sur le volume à partitionner (<em>Disque 0</em> par exemple) et sélectionner <code>Réduire le volume</code>. Si tu as plusieurs disques, par exemple un SSD et un HDD, il vaut mieux utiliser le SSD si tu peux pour des raisons de performances, mais ça marchera aussi très bien sur le HDD !</li>
+<li>choisir la taille de la partition désirée (Ubuntu demande 15Go minimum et recommande 25Go ; si tu as de la place tu peux libérer un espace de 60Go ou plus !)</li>
+</ul>
+</li>
+</ul>
+<p>Ton disque dur a maintenant un espace inutilisé, il est temps de l'utiliser !</p>
+<h2><a class="header" href="#installer-linux" id="installer-linux">Installer Linux</a></h2>
+<p>Il existe beaucoup de distributions Linux, et nous allons ici voir comment installer Ubuntu, qui reste simple et adapté à nos besoins. Tu auras besoin d'une clé USB (attention, la clé sera formatée).</p>
+<h3><a class="header" href="#préparez-une-clé-bootable" id="préparez-une-clé-bootable">Préparez une clé bootable</a></h3>
+<ul>
+<li>Télécharge l'ISO de la dernière LTS : <a href="https://ubuntu.com/download/desktop">https://ubuntu.com/download/desktop</a></li>
+<li>Flash l'ISO ainsi téléchargée sur ta clé. Si tu ne sais pas faire, je te conseille d'utiliser <a href="https://www.balena.io/etcher/">Etcher</a> qui permet de faire ça en 4 clicks :
+<ul>
+<li>&quot;Select Image&quot; t'invite a choisir l'ISO que tu as déjà téléchargé.</li>
+<li>&quot;Select Drive&quot; te demande de choisir le disque à flasher. Sois bien sûr de choisir la clef USB, et pas autre chose !</li>
+<li>&quot;Flash!&quot; lance l'opération et raconte ce qu'il fait à ta clef au fur et à mesure.</li>
+</ul>
+</li>
+<li>Une fois la clé flashée, redémarre ton ordinateur et entre das les réglagles du BIOS.
+<ul>
+<li>Désactive le <code>UEFI Secure Boot</code> qui t'empècherai de démarrer sur ta clé.</li>
+<li>Désactive le <code>Fast Start-Up</code> qui cette option existe.</li>
+<li><em>Optionnel</em> : Change l'odre de priorité pour booter sur la clé USB avant le disque dur.</li>
+<li>Sauvegarde de modifications et quitte le BIOS. Ton ordi va redémarrer.</li>
+</ul>
+</li>
+<li>Si tu as changé l'ordre de priorité du boot, l'ordinateur devrait redémarrer sur Linux. Sinon, démarre manuellement sur la clé en pressant la touche appropriée (souvent F12 ou F2).</li>
+<li>Sélectionne &quot;try Ubuntu&quot;</li>
+</ul>
+<p>Ubuntu devrait alors démarrer, et tu peux le tester. Passons maintenant à l'installation !</p>
+<h3><a class="header" href="#installation-dubuntu" id="installation-dubuntu">Installation d'Ubuntu</a></h3>
+<p>On va d'abord créer ls partions nécessaires à Ubuntu. Il est possible de faire tout ça directement de puis l'installeur, mais je préfère le faire avant, l'interface étant plus claire !</p>
+<ul>
+<li>démarre le programme <code>gparted</code></li>
+<li>sélectionne le disque ou tu as libérer de l'espace pour Linux</li>
+<li><em>Optionnel mais recommandé :</em> Crée un partition de type <code>swap</code> d'une taille égale à la taille de ta RAM.</li>
+<li>Crée une partition de type <code>ext4</code>. Si tu as réservé plus de 40Go pour linux, fais la d'environ 25 ou 30 Go, et crée une autre partition <code>ext4</code> sur la place restante. Cela permettra de changer facilement de version d'Ubuntu sans perdre de réglages ni de données.</li>
+<li>Applique les modifications (ça peut prendre du temps), et quitte gparted.</li>
+</ul>
+<p>Tout est prêt, allons-y !</p>
+<ul>
+<li>démarre l'installeur (il doit être sur le bureau).</li>
+<li>Lorsqu'on te demande où installer le système Linux, choisis <em>Autre chose</em> (ou <em>Something else</em>).</li>
+<li>Sélectionne la partion <em>swap</em> que tu as crées et configure la en <code>type: swap</code> (ça devrait être déjà fait)</li>
+<li>Sélectionne la première (ou seule) partition <em>ext4</em> que tu as créee, et configure la en <code>type: ext4</code> et <code>mount point: /</code> en la formatant.</li>
+<li>Si tu as as crée une deuxième partition <em>ext4</em>, configure la en <code>type: ext4</code> et <code>mount point: /home</code>.</li>
+<li>Laisse l'emplacement du démarrage à sa valeur par défaut, qui devrait être le disque ou tu as Windows.</li>
+<li>Continue avec la suite de l'installation, qui devrait être assez simple, et prendre un certain temps (~20 min). Tu peut utiliser ton ordinateur pendant ce temps.</li>
+<li>Quand l'installation sera terminée, Ubuntu te proposera de rédémarrer sur ton nouveau système. Accepte, et retire la clé de l'ordinateur lorsque l'ordinateur est éteint.</li>
+</ul>
+<p>Au démarrage du PC, tu devrais maintenant atterrir sur une interface te permettant de choisir entre Ubuntu ou Windows. Teste les deux options pour vérifier que tout marche bien.</p>
+<p>Passes au chapitre suivant pour installer les outils courants du club.</p>
+<h1><a class="header" href="#outils-courants" id="outils-courants">Outils courants</a></h1>
+<p>Tu vas souvent utiliser les mêmes outils, donc autant les installer tout de suite ! Commence par un <code>sudo apt update</code> pour mettre à jour la liste des paquets.</p>
+<p>quelques outils en vrac :</p>
+<p><code>sudo apt install vim git minicom python3-pip</code></p>
+<ul>
+<li>vim : améliore vi pour y mettre de la couleur et permet d'utiliser les touches habituelles.</li>
+<li>git : gestion de version du code.</li>
+<li>minicom : permet de lire et écrire sur un port série</li>
+<li>python3-pip : gestionnaire de paquet de python3</li>
+</ul>
+<p>Quelques modules python bien utiles :</p>
+<p><code>sudo pip3 install pyserial ivy-python numpy bitstring</code></p>
+<h1><a class="header" href="#git" id="git">Git</a></h1>
+<p>Git est un gestionnaire de version qu'on utilise pour gérer le code. Il permet entre autres de facilement collaborer à plusieurs sur un même code, ou encore de revenir à une version antérieur d'un fichier.</p>
+<ul>
+<li>se créer un compte sur <a href="https://github.com">Github</a></li>
+<li>donner son nom d'utilisateur à un responsable du club afin qu'il vous ajoute à l'organisation <a href="https://github.com/ENACRobotique">ENACRobotique</a></li>
+<li>installer git : <code>sudo apt install git</code></li>
+<li>configurer son email et son nom :
+<ul>
+<li><code>git config --global user.name &quot;Michel&quot;</code></li>
+<li><code>git config --global user.email &quot;michel.du@pont.fr&quot;</code></li>
+</ul>
+</li>
+</ul>
+<p>Afin de faciliter l'utilisation de github, il est conseillé de créer une paire de clés SSH et de d'ajouter la clé publique à votre compte github. Cela permettra de pusher vos modif sans taper votre login/mot de passe à chaque fois :</p>
+<ul>
+<li>créer un paire de clés :
+<ul>
+<li>ouvrir un terminal et lancer <code>ssh-keygen</code></li>
+<li>Garder le chemin par défaut</li>
+<li>Ne pas mettre de passphrase pour n'avoir rien à taper lors d'un push.</li>
+<li>Vous pouvez visualiser la clé avec <code>cat ~/.ssh/id_rsa.pub</code></li>
+</ul>
+</li>
+<li>Ajouter la clé à votre compte github :
+<ul>
+<li>connectez vous à <a href="https://github.com">Github</a>, et allez dans vos Settings à l'onglet <a href="https://github.com/settings/keys">SSH and GPG keys</a></li>
+<li>Cliquez sur <a href="https://github.com/settings/ssh/new">New SSH key</a></li>
+<li>Entrez un titre pour vous rappeler à quel ordinateur cette clé est liée</li>
+<li>copiez collez la totalité de votre clé publique (ce qui sort de <code>cat ~/.ssh/id_rsa.pub</code>)</li>
+<li>Add SSH key</li>
+<li>Confimez votre mot de passe</li>
+</ul>
+</li>
+</ul>
+<p>Vous pourrez maintenant cloner les dépôt github en utilisant SSH plutôt que HTTPS en cliquant sur <em>Use SSH</em> dans la petite fenêtre pour obtenir l'adresse du dépôt.
+L'adresse du dépôt devrait ressembler à ça : <em>git@github.com:ENACRobotique/doc.git</em></p>
+<p><img src="outils_communs/../images/git_ssh.png" alt="" title="Clone avec SSH" /></p>
+<h1><a class="header" href="#eclipse-à-remplacer-par-clion-" id="eclipse-à-remplacer-par-clion-">Eclipse (à remplacer par CLion ?)</a></h1>
+<h1><a class="header" href="#kicad" id="kicad">Kicad</a></h1>
+<p>Kicad est le logiciel nous permettant de créer des cartes électroniques.</p>
+<p>Installez le en suivant la procédure décrite ici : </p>
+<p>À ce jour, la voici :</p>
+<ul>
+<li><code>sudo add-apt-repository --yes ppa:js-reynaud/kicad-5.1</code></li>
+<li><code>sudo apt update</code></li>
+<li><code>sudo apt install kicad</code></li>
+</ul>
+<p>Plus de détails ici (vous pouvez vérifier si  : <a href="http://kicad-pcb.org/download/ubuntu/">http://kicad-pcb.org/download/ubuntu/</a></p>
+<h1><a class="header" href="#petits-tutos" id="petits-tutos">Petits Tutos</a></h1>
+<p>Il y aura dans cette section des petits tutos sur des sujet divers et variés, qui ne méritent pas un chapitre entier.</p>
+<p>Commençons par apprendre comment <a href="petits_tutos/raspberry_pi.html">mettre en oeuvre une raspberry pi !</a></p>
+<p>Problème lors du branchement d'une carte pendant quelques secondes : <code>/dev/tty_xxx: Périphérique ou ressource occupé</code>. <a href="petits_tutos/peripherique_occupe.html">Résolvez le problème !</a></p>
+<h1><a class="header" href="#raspberry-pi" id="raspberry-pi">Raspberry Pi</a></h1>
+<p>La Raspberry Pi est un petit ordinateur monocarte que l'on va embarquer dans certains de nos robots.</p>
+<h2><a class="header" href="#graver-limage" id="graver-limage">Graver l'image</a></h2>
+<p>Pour commencer, il faut télécharger <a href="petits_tutos/(https://www.raspberrypi.org/downloads/raspbian/)">une version récente de Raspbian</a>, la distribution officielle pour la Raspberry Pi. Sachant qu'on va l'utiliser sans jamains brancher d'écran, il vaut mieux prendre la version Lite, bien plus légère.</p>
+<p>Il va falloir graver cette image sur une carte SD. Pour cela, utilisez <a href="https://www.balena.io/etcher/">Etcher</a>, qui est très simple d'utilisation et marche très bien.</p>
+<p>Une fois l'image gravée, ne vous précipitez pas. Nous allons modifier quelques fichiers de la carte SD afin de faciliter la configuration.</p>
+<h2><a class="header" href="#pré-configuration" id="pré-configuration">Pré-configuration</a></h2>
+<p><strong>WiFi</strong> : On va faire en sorte que la raspi se connecte directement au réseau WiFi du club.</p>
+<p>Éditez le fichier <code>&lt;carte SD Raspi&gt;/etc/wpa_supplicant/wpa_supplicant.conf</code> (les droits d'admin seront sans doute nécessaires), et ajoutez le texte suivant (en remplaçant <em>lemotdepasse</em> par le mot de passe, bien entendu) :</p>
+<pre><code class="language-plain-text">network={
+    ssid=&quot;robot&quot;
+    psk=&quot;lemotdepasse&quot;
+}
+</code></pre>
+<p><strong>SSH</strong> : Pour activer le SSH sans brancher un écran et un clavier, créer un fichier <code>ssh</code> dans la partition <em>boot</em> (celle formatée en FAT). Les identifiants par défauts sont :</p>
+<p>utilisateur: pi<br />
+hostname: raspberrypi<br />
+password : raspberry</p>
+<p>Il est mainteant temps de démarrer la Raspberry Pi !</p>
+<h2><a class="header" href="#configuration-la-suite" id="configuration-la-suite">Configuration, la suite</a></h2>
+<p>On va donc démarrer la Raspberry Pi en l'alimantant soit par l'USB (solution la plus simple), soit par les broches GND et 5V (seulement si vous savez ce que vous faites !).
+Elle devrait automatiquement se connecter au réseau WiFi. Vous pouvez tenter un <code>ping raspberrypi</code>, ou chercher son adresse sur l'interface du routeur.<br />
+Quand vous avez trouver, s'y connecter en SSH : <code>ssh pi@raspberrypi</code>, ou <code>ssh pi@192.168.XXX.xxx</code>.</p>
+<p><code>sudo raspi-config</code> : changer le hostname, rebooter. (autre choses ?)</p>
+<p><strong>UART</strong> : On va certainement utiliser l'UART de la raspi. Sur la Raspberry Pi 3 (et peut être aussi d'autres modèles), il faut modifier la configuration pour pouvoir l'utiliser (<a href="https://www.framboise314.fr/le-port-serie-du-raspberry-pi-3-pas-simple/">source</a>).</p>
+<p>Ajouter cette ligne au ficher <code>/boot/config.txt</code> : <code>dtoverlay=pi3-disable-bt</code>.</p>
+<p>Dans le fichier <code>/boot/cmdline.txt</code>, supprimer <code>console=serial0,115200</code>.</p>
+<p>Quand la raspberrypi sera démarrée, vous prendrez soin de vérifier que <code>serial0 -&gt; ttyAMA0</code> et <code>serial1 -&gt; ttyS0</code> en faisant un <code>ls -l /dev/serial*</code>.</p>
+<p>Il est peut-être nécessaire d'aller activer l'UART dans <code>sudo raspi-config</code>. À vérifier.</p>
+<p>Pour tester que ça marche : connecter RX et TX ensemble par un câble de breadboard, ouvez minicom <code>minicom -D /dev/ttyAMA0</code>, et taper des trucs. Si les caractères s'affichent c'est que ça marche. Si vous débranchez le fil ça ne devrait pas marcher. Pour quitter mninicom : <code>CTRL+A, q, ENTER</code></p>
+<p><strong>Quelques packets à installer</strong> :</p>
+<ul>
+<li><code>git</code> : gestion de version,</li>
+<li><code>python3-pip</code> : gestionnaire de modules python3,</li>
+<li><code>minicom</code> : moniteur port série,</li>
+<li><code>vim</code> : coloration syntaxique et clavier pour humain, pour l'éditeur de texte <em>vi</em>. Pour <a href="http://www.commitstrip.com/fr/2017/05/29/trapped/">sortir</a> : échap, puis <code>:q</code>, ou <code>:q!</code> si ça veut pas.</li>
+</ul>
+<p><code>sudo apt install git python3-pip minicom vim</code></p>
+<p>Quelques modules python que l'on va souvent utiliser :</p>
+<ul>
+<li><code>pyserial</code> : pour uiliser un port série,</li>
+<li><code>ivy-python</code> : pour communiquer avec <a href="http://www.eei.cena.fr/products/ivy/">Ivy</a>,</li>
+<li><code>bitstring</code> : pour convertir des nombres en bytes et inversement.</li>
+</ul>
+<h1><a class="header" href="#se-débarasser-du-périphérique-occupé-lors-du-branchement-dun-device" id="se-débarasser-du-périphérique-occupé-lors-du-branchement-dun-device">Se débarasser du &quot;périphérique occupé&quot; lors du branchement d'un device</a></h1>
+<p>Le responsable de ce bazar, c'est ModemManager, un service qui permet de contrôler les périphériques mobile 2G/3G/4G. <a href="https://www.freedesktop.org/wiki/Software/ModemManager/">Plus d'infos</a>.</p>
+<p>On va faire en sorte qu'il blacklist tout les péiphériques <strong>tty*</strong>.</p>
+<p>D'abord on exécute la commande <code>sudo systemctl status ModemManager</code>.<br />
+Voilà un exemple de sortie :</p>
+<pre><code class="language-plain">● ModemManager.service - Modem Manager
+   Loaded: loaded (/lib/systemd/system/ModemManager.service; enabled; vendor preset: enabled)
+   Active: active (running) since Fri 2019-11-15 15:42:25 CET; 13min ago
+ Main PID: 6815 (ModemManager)
+    Tasks: 3 (limit: 4915)
+   CGroup: /system.slice/ModemManager.service
+           └─6815 /usr/sbin/ModemManager --filter-policy=strict
+
+</code></pre>
+<p>Ensuite on va éditer le fichier indiqué à la ligne <em>Loaded</em> :</p>
+<p><code>sudo vi /lib/systemd/system/ModemManager.service</code></p>
+<p>A la section <em>[Service]</em> du fichier, rajouter une ligne :</p>
+<pre><code class="language-plain">[Service]
+...
+Environment=&quot;MM_FILTER_RULE_TTY_ACM_INTERFACE=0&quot;
+</code></pre>
+<p>Enfin il faut recharger la configuration de <em>systemctl</em> et redémarrer le ModemManager:</p>
+<pre><code class="language-plain">sudo systemctl daemon-reload
+sudo systemctl restart ModemManager
+</code></pre>
+<p>Source : <a href="https://askubuntu.com/a/1119498">https://askubuntu.com/a/1119498</a></p>
+<h1><a class="header" href="#tutos-elec" id="tutos-elec">Tutos elec</a></h1>
+<p>L'elec de base c'est pas sorcier, mais on peut pas l'inventer ! Alors voilà quelques petits tutos en rapport avec l'elec, notamment des schémas pour les circuits les plus courants.</p>
+<p>Commencez donc par <a href="elec/led.html">allumer une LED</a> !</p>
+<h1><a class="header" href="#la-led" id="la-led">la LED</a></h1>
+<blockquote>
+<p><strong>TL;DR;</strong> Prends entre 300 et 400 ohm.</p>
+</blockquote>
+<p>La led, c'est la base. Il faut toujours avoir une LED sous la main. Alors commençons direct :</p>
+<p><img src="elec/../images/led_base.png" alt="" title="la base" /></p>
+<ul>
+<li>Le premier &quot;composant&quot; (la flèche vers le haut) représente une source de tension continue (on ne travaille qu'en continu).</li>
+<li>Le 2ème est une résistance</li>
+<li>le 3ème une LED</li>
+<li>le dernier, la masse (point où potentiel vaut 0V)</li>
+</ul>
+<p>Comme au collège, on suppose que le potentiel est constant le long d'un fil.</p>
+<p>La LED est un semi-conducteur qui ne laisse passer le courant que dans un sens, de l'anode (le haut dans ce schéma) vers la cathode (le bas).</p>
+<p>Elle a une tension de seuil en deçà de laquelle elle ne s'allume pas. <strong>La résistance est absolument nécessaire afin de ne pas griller la LED, où le système qui l'alimente !</strong></p>
+<h2><a class="header" href="#calculer-la-résistance" id="calculer-la-résistance">Calculer la résistance</a></h2>
+<p>Pour calculer la résistance, nous devons connaître la tension d'alimentation (ici 5V, nous l'apellerons <strong>Vcc</strong>), la chute de tension aux bornes de la LED <strong>Vd</strong>, et le courant que nous voulons faire passer dans la led <strong>i</strong>.</p>
+<p>Admettons pour l'exemple que la chute de tension au borne de la LED soit <code>Vd=1.6V</code>, et nous voulons faire passer un courant de <code>i=10mA</code>.</p>
+<ul>
+<li>on calcule d'abord la tension au borne de la résistance (loi des mailles): <code>Vr=Vcc-Vd</code> (donc ici: Vr=3.4V)</li>
+<li>on calcule ensuite la résistance avec la loi d'ohm (U=RI): <code>R=Vr/i</code> (donc ici: R=3.4/0.01, R=340 ohms)</li>
+</ul>
+<h2><a class="header" href="#déterminer-les-paramètres" id="déterminer-les-paramètres">déterminer les paramètres</a></h2>
+<p>C'est bien tout ça, mais comment on trouve <strong>Vd</strong> et <strong>i</strong> ? La réponse se trouve dans un document appelé la <strong>datasheet</strong>.</p>
+<p>Ce document existe pour tout les composants électronique, et il faut le consulter avant d'utiliser un composant.</p>
+<p>Pour des composants &quot;standards&quot;, il n'y aura pas besoin de tout lire, on pourra se concentrer sur quelques infos précises.</p>
+<p>Voilà une datasheet pour une LED : <a href="https://www.vishay.com/docs/83171/tlur640.pdf">https://www.vishay.com/docs/83171/tlur640.pdf</a>.</p>
+<p>Quelques indices pour lire une datasheet :</p>
+<ul>
+<li>En haut à doite, il y a généralement le nom des composants décrits par la datasheet.</li>
+<li>Ensuite, il y a un desciption synthétique du composant. C'est rapide et facile à lire, et il y a beaucoup d'infos intéressantes, donc c'est à lire !</li>
+<li>Il y a généralement une section &quot;Absolute maximum ratings&quot;. Si vous dépassez les valeurs données ici, vous allez à coup sûr griller le composant. Il ne faut <strong>jamais</strong> atteindre ces valeurs. Cette partie sert à savoir rapidement si le composant peut convenir pour notre cas ou pas.</li>
+<li>Le reste de la datasheet contient toutes les infos nécessaire, c'est là qu'il faudra chercher.</li>
+</ul>
+<p>Par exemple ici, dans les Absolute maximum ratings, le premier paramètre est &quot;Reverse voltage =&gt; 6V&quot;. Ça veut dire que si vous branchez la LED à l'envers sur une alimentation de 6V ou plus, la LED va griller très rapidement.
+Plus intéressant pour nous, <em>DC forward current 20mA</em>. On sait donc qu'il faudra fixer le courant à <strong>moins</strong> de 20mA.</p>
+<p>Pour une LED, on va chercher le courant qu'on va faire passer. C'est pas toujours très clair à trouver, mais ici, un gros indice est le fait que beacoup de &quot;test condition&quot; prennent <code>If = 10mA</code>. C'est bien inférieur à 20mA, donc on va choisir ça.</p>
+<p>Ensuite, il faut touver le <em>forward voltage</em> correspondant à ce courant. On peut le lire, assez difficilement grâce à la figure 4: &quot;<em>Forward current vs. Forward Voltage</em>&quot;. Pour If=10mA, on trouve environ <strong>Vf=1.8V</strong>.</p>
+<p>On peut donc refaire notre calcul de résistance: <code>R=(5-1.8)/0.01</code> donc <code>R=320 ohm</code></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
