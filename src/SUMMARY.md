@@ -10,5 +10,7 @@
 - [Petits tutos](petits_tutos/index.md)
     - [Raspberry Pi](petits_tutos/raspberry_pi.md)
     - [Périphérique occupé au branchement d'un µC](petits_tutos/peripherique_occupe.md)
+- [Tutos elec](elec/index.md)
+    - [la Led](elec/led.md)
 
 
