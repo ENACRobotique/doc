@@ -12,6 +12,7 @@
 - [Conception base roulante](base_roulante/index.md)
 - [Exemples de robot](robots/index.md)
 	- [2022](robots/2022.md)
+	- [Systéme de tir](robots/shoot.md)
 - [Tutos code](code/index.md)
 	- [aruco]()
 	- [LIDAR]()
