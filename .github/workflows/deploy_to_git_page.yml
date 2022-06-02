@@ -1,0 +1,38 @@
+name: Build and Deploy
+on: [push]
+permissions: 
+  contents: write
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Rust-cache 
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+
+      - uses: Swatinem/rust-cache@v1
+      
+      - name: Install 🏗️
+        id: cache-mdbook
+        run: |
+          (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
+          (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook)
+          cargo install-update -a
+          
+          
+          
+      - name: Build 🔧
+        run: |
+          mdbook build ./ && mdbook test ./
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: book # The folder the action should deploy.
+          
