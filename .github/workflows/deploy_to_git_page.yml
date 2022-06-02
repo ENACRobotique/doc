@@ -9,20 +9,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Rust-cache 
-        uses: actions-rs/toolchain@v1
+      - name: cargo-cache
+        uses: baptiste0928/cargo-install@v1
         with:
-          profile: minimal
-          toolchain: stable
-
-      - uses: Swatinem/rust-cache@v1
-      
-      - name: Install 🏗️
-        id: cache-mdbook
-        run: |
-          (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
-          (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook)
-          cargo install-update -a
+          crate: mdbook
+          version: "0.4.18"  #version updated in may 2022
           
           
           
