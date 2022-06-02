@@ -10,6 +10,8 @@
 	- [Eclipse (à remplacer par CLion ?)](outils_communs/eclipse.md)
 	- [Kicad](outils_communs/kicad.md)
 - [Conception base roulante](base_roulante/index.md)
+	- [Asservissement](base_roulante/asserv.md)
+	- [Mécanique](base_roulante/materiaux.md)
 - [Exemples de robot](robots/index.md)
 	- [2022](robots/2022.md)
 	- [Systéme de tir](robots/shoot.md)
