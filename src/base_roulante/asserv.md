@@ -12,13 +12,14 @@ La bible sur les **principes généraux** : [PM-robotix](https://www.pm-robotix.
 Pour réaliser un asserv en vitesse, il faut :
 1. Fournir des consignes vitesse au robot, par exemple en envoyant du PWM grâce aux drivers moteurs types MD10C/D13S ([Exemple du code de 2022](https://github.com/ENACRobotique/2022_Robot_A/blob/main/src/motor.cpp#L82))
 2. Lire les données des [encodeurs rotatifs](https://www.generationrobots.com/blog/wp-content/uploads/2014/01/Encodeur-FR.png), pour savoir la vitesse des moteurs [Exemple en 2022, lecture software](https://github.com/ENACRobotique/2022_Robot_A/blob/main/src/odom.cpp). ([plus d'info sur les encodeurs](https://www.generationrobots.com/blog/fr/encodeurs-robotique-mobile/))
-**TODO** Différence lecture hardware/software des encodeurs
 3. Prévoir une "interface" avec l'ordinateur (en serial par exemple), c'est à dire pouvoir sur le port serial envoyer les coefficients du PID et recevoir les données de l'encodeur, pour pouvoir tracer des graphes/enrengistrer les données sur l'ordinateur 
 4. Régler l'asservissement grâce à des courbes, en envoyant des consignes depuis le PC et en voyant le résultat
 5. Méthode de réglage :  [une idée de méthode de l'UTC](https://assos.utc.fr/utcoupe/wiki/doku.php?id=informatique:asservissement)
 
 ## Pour aller plus loin pour améliorer l'asserv 
 Pour l'instant, on s'arretait là, mais il peut-être intéressant de tester un asserv en position directement (qui envoie des consignes vers le systéme qui asservit en vitesse), ou d'implémenter les solutions vues en dessous.
+
+**TODO** Différence lecture hardware/software des encodeurs
 
 Réglage plus fin du **PID** :
 [PM-robotix](https://www.pm-robotix.eu/2022/01/19/ameliorer-vos-regulateurs-pid/)
