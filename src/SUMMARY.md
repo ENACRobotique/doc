@@ -1,8 +1,10 @@
 # Summary
 
 - [Accueil](accueil.md)
-- [Nouveaux](guide_arrivant.md)
 - [introductions](introductions/tutoriel.md)
+	- [Intro Python](introductions/introPython.md)
+	- [Intro C](introductions/introC.md)
+	- [Intro Création robot](introductions/introRobot.md)
 - [Outils Communs](outils_communs/index.md)
 	- [Dual Boot](outils_communs/dual_boot.md)
 	- [Outils courants](outils_communs/outils_courants.md)
@@ -27,7 +29,9 @@
 	- [informatique]()
 		- [Raspberry Pi](petits_tutos/raspberry_pi.md)
 		- [Périphérique occupé au branchement d'un µC](petits_tutos/peripherique_occupe.md)
+		- [simulateur et IHM du robot (2022-2023)](petits_tutos/simulator.md)
 	- [Tutos elec](elec/index.md)
 		- [la Led](elec/led.md)
+		- [les différents microcontrolleurs](petits_tutos/microcontrollers.md)
 
 

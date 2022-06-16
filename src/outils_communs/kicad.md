@@ -12,3 +12,5 @@ Installez le en suivant la procédure décrite ici :
 Plus de détails ici (vous pouvez vérifier si  : [http://kicad-pcb.org/download/ubuntu/](http://kicad-pcb.org/download/ubuntu/)
 
 
+## TODO : faire un tutoriel d'une carte electronique basique
+

@@ -3,8 +3,9 @@
 Le principe de l'asservissement est de permettre à un moteur d'atteindre un objectif donné par "l'utilisateur" (par exemple, atteindre telle position ou tenir telle vitesse, avec un certain degré de précision et de "rapidité" )
 
 ## La théorie 
-    La bible sur les **principes généraux** : [PM-robotix](https://www.pm-robotix.eu/2022/02/02/asservissement-et-pilotage-de-robot-autonome/)
-    [RCVA](http://www.rcva.fr/wp-content/uploads/2016/12/devoir_de_vacances.pdf)
+La bible sur les **principes généraux** : [PM-robotix](https://www.pm-robotix.eu/2022/02/02/asservissement-et-pilotage-de-robot-autonome/)
+
+[RCVA](http://www.rcva.fr/wp-content/uploads/2016/12/devoir_de_vacances.pdf)
 
 ## L'implémentation
 
@@ -14,7 +15,7 @@ Pour réaliser un asserv en vitesse, il faut :
 **TODO** Différence lecture hardware/software des encodeurs
 3. Prévoir une "interface" avec l'ordinateur (en serial par exemple), c'est à dire pouvoir sur le port serial envoyer les coefficients du PID et recevoir les données de l'encodeur, pour pouvoir tracer des graphes/enrengistrer les données sur l'ordinateur 
 4. Régler l'asservissement grâce à des courbes, en envoyant des consignes depuis le PC et en voyant le résultat
-5. Méthode de réglage : 
+5. Méthode de réglage :  [une idée de méthode de l'UTC](https://assos.utc.fr/utcoupe/wiki/doku.php?id=informatique:asservissement)
 
 ## Pour aller plus loin pour améliorer l'asserv 
 Pour l'instant, on s'arretait là, mais il peut-être intéressant de tester un asserv en position directement (qui envoie des consignes vers le systéme qui asservit en vitesse), ou d'implémenter les solutions vues en dessous.
