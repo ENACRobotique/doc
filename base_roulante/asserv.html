@@ -151,7 +151,7 @@
 <p>Pour réaliser un asserv en vitesse, il faut :</p>
 <ol>
 <li>Fournir des consignes vitesse au robot, par exemple en envoyant du PWM grâce aux drivers moteurs types MD10C/D13S (<a href="https://github.com/ENACRobotique/2022_Robot_A/blob/main/src/motor.cpp#L82">Exemple du code de 2022</a>)</li>
-<li>Lire les données des encodeurs, pour savoir la vitesse des moteurs <a href="https://github.com/ENACRobotique/2022_Robot_A/blob/main/src/odom.cpp">Exemple en 2022, lecture software</a>
+<li>Lire les données des <a href="https://www.generationrobots.com/blog/wp-content/uploads/2014/01/Encodeur-FR.png">encodeurs rotatifs</a>, pour savoir la vitesse des moteurs <a href="https://github.com/ENACRobotique/2022_Robot_A/blob/main/src/odom.cpp">Exemple en 2022, lecture software</a>. (<a href="https://www.generationrobots.com/blog/fr/encodeurs-robotique-mobile/">plus d'info sur les encodeurs</a>)
 <strong>TODO</strong> Différence lecture hardware/software des encodeurs</li>
 <li>Prévoir une &quot;interface&quot; avec l'ordinateur (en serial par exemple), c'est à dire pouvoir sur le port serial envoyer les coefficients du PID et recevoir les données de l'encodeur, pour pouvoir tracer des graphes/enrengistrer les données sur l'ordinateur </li>
 <li>Régler l'asservissement grâce à des courbes, en envoyant des consignes depuis le PC et en voyant le résultat</li>
