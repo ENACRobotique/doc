@@ -14,11 +14,11 @@ Pour revoir tous les fichiers, consulter le
 
 ## Introductions à suivre
 
-1. [Intro robot](introRobot.md) 
-1. [Organisation du club](orgaClub.md)
-1. [Allumer une LED de la carte tuto](introCarte.md)
-1. [Introduction à la modélisation Solidworks](solidworks.md)
-1. [Intro Git](../outils_communs/git.md)
+1. [Intro robot](introRobot.md)  *(1h)*
+1. [Organisation du club](orgaClub.md) *(30 min)*
+1. [Allumer une LED de la carte tuto](introCarte.md) *(2h)*
+1. [Introduction à la modélisation Solidworks et à l'impression 3D](solidworks.md) *(2h)*
+1. [Intro Git](../outils_communs/git.md) *(1h30)*
 
 ## Tutoriels en ligne recommandés selon vos pôles de prédilection
 
