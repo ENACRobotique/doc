@@ -22,14 +22,14 @@ Pour revoir tous les fichiers, consulter le
 Tous les tutos vu au dessus peuvent être abordés (au moins une première fois) en présentiel, selon le temps des personnes disponibles :
 
 | Formations                                                       | Méca | Elec | Info - C | Info - Python | **Connaissances requises**
-|-------------------------------------------------------------------|------|------|----------|---------------|---------------|
-| Qu'est-ce qu'un robot ? + visite salle (~1h30)                   |   X   |   X   |    X    |       X        | |
-| Utilisation de solidworks (~2h)                                   |   X   |      |        |               | |
-| Introduction à l'établi menuiserie (~1h30)                        |   X   |    |        |               | |
-| Utilisation imprimante 3D (~1h)                                |   X  |      |          |               | Solidworks/modélisation 3D|
-| Formation git  (~1h)    (faisable en ligne)                    |      |   X   |     X     |      X       | |
-| Formation Kicad  (~2h)  (faisable en ligne)                      |      |   X   |         |             | |
-| Communication inter-programmes avec eCAL (~0.5h) (faisable en ligne) |      |   X   |         |             | Python |
+|-------------------------------------------------------------------|------|------|----------|-----|---------------|
+| Qu'est-ce qu'un robot ? + visite salle (~1h30)                   |   X   |   X   |    X    |  X | |
+| Utilisation de solidworks (~2h)                                   |   X   |      |        |   | |
+| Introduction à l'établi menuiserie (~1h30)                        |   X   |    |        |  | |
+| Utilisation imprimante 3D (~1h)                                |   X  |      |          |    | Solidworks/modélisation 3D|
+| Formation git  (~1h)    (faisable en ligne)                    |      |   X   |     X     |   X | |
+| Formation Kicad  (~2h)  (faisable en ligne)                      |      |   X   |         |       | |
+| Communication inter-programmes avec eCAL (~0.5h) (faisable en ligne) |      |   X   |       |        | Python |
 ## Une liste de tutoriels sur tous les sujets :
 
 https://github.com/VRAC-team/la-maxi-liste-ressources-eurobot
