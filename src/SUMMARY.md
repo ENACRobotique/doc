@@ -12,10 +12,10 @@
 	- [Kicad](outils_communs/kicad.md)
 	- [Solidworks](outils_communs/solidw.md)
 - [Retour D'expérience](rex/index.md)
-	- Conception robots
+	- [Conception robots]()
 		- [Asservissement](rex/asserv.md)
 		- [Mécanique](rex/materiaux.md)
-	- Organisation du club/Pendant la coupe (logistique,...)
+	- [Organisation du club/Pendant la coupe (logistique,...)]()
 		- [2022](rex/2022.md)
 		- [Systéme de tir](rex/shoot.md)
 - [Petits tutos](petits_tutos/index.md)
