@@ -8,5 +8,9 @@ Si vous êtes **nouveau**, jetez un coup d'oeil à **[l'introduction](introducti
 
 Lorsque vous avez besoin d'aide spécifique sur l'utilisation d'un logiciel, consultez les [Outils Communs](outils-communs/index.md)
 
-On conseille au cours de l'année de lire 
+On conseille au cours de l'année de lire les **[Retour d'Experience (REX)]() que ce soit sur la conception des robots en début d'année puis sur la coupe pour ne pas répéter les erreurs.
+
+Ensuite, si vous avez besoin de tutos spécifiques sur certains sujets ou des clés pour se lancer, il faut consulter les [petits tutos](petits_tutos/index.md)
+
+Pour les programmeurs, consulter Tuto Code pour comprendre le principe.
 
