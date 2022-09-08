@@ -10,7 +10,7 @@ Enfin, il faut établir la gestion du projet, c'est à dire savoir qui fait quoi
 Des exemples de timeline pour l'année sont sur le guide du nouvel arrivant, [ici](https://drive.google.com/drive/u/1/folders/0B3TOHzAm3I1Sfk96R0xRZGctR3BGa242aGExelpXU2VCcnJmbjg1OVlMRVNyV0xJeTM5SVU?resourcekey=0-rhd8NIuvxKy_Zvdg25Wu4w).
 
 Ainsi, en ordre d'idée, il faudrait idéalement que le robot roule déjà dès fin décembre, et qu'il est capable de marquer des points en février.
-Par exemple celui-ci : ![](../images/calendrier_exemple_1.png "Exemple de timeline pour le robot sur une année")
+Par exemple celui-ci : ![](../images/timeline_projet.png "Exemple de timeline pour le robot sur une année")
 
 ## De quoi est constitué un robot ?
 
