@@ -21,4 +21,4 @@ Electronique -> Réalisation des cartes electroniques, et programmation des micr
 Mécanique -> Réalisation modélisation et impression 3D, découpage de planches du chassis du robot, assemblage,..
 
 ### Responsabilités - Organigramme
-
+![](../images/organigramme_2022.png "Organigramme des fonctions au club robot")
