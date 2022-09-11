@@ -1,5 +1,12 @@
 # Organisation du club
 
+## Etre membre du club
+
+Pour faire partie du club, Il faut :
+1. Demander l'accès au google drive du club 
+1. Remplir ses coordonnées sur le google sheet sur le google drive du club de l'année de la coupe [ici pour 2023](https://docs.google.com/spreadsheets/d/1DeRmO0DupiJKzKiPEfP81VNeFPZifXAVMa56bStHbCQ/edit#gid=0)
+(le numéro de carte sert pour l'accès au local, c'est bien d'avoir au moins un moyen de contact que vous regardez souvent).
+1. ... A COMPLETER
 ## Lexique
 -L'expérience : chaque année, on doit réaliser un objet à poser automatique que le robot doit déclencher. (Par exemple un phare en 2020/2021 ou une vitrine d'exposition en 2022).
 -Base roulante : ce qui permet au robot de "rouler" : les roues, le moteur, le chassis, les capteurs de "positionnement", et l'électronique et le code qui va avec
