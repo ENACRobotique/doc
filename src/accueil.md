@@ -4,7 +4,7 @@
 
 Ce site contient la documentation du club robot de l'ENAC. Il est en cours de construction, donc très incomplet pour l'instant. N'hésites pas [contribuer](https://github.com/ENACRobotique/doc) !
 
-Si vous êtes **nouveau**, jetez un coup d'oeil à **[l'introduction](introductions/tutoriel.md)** pour des tutoriels intéressants à suivre !
+Si vous êtes **nouveau**, jetez un coup d'oeil à **[l'introduction](introductions/tutoriel.md)** pour des tutoriels intéressants à suivre, et posez vos questions sur le [Discord](https://discord.com/invite/7sPZFxb) !
 
 Lorsque vous avez besoin d'aide spécifique sur l'utilisation d'un logiciel, consultez les [Outils Communs](outils-communs/index.md)
 
