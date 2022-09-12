@@ -5,18 +5,17 @@
 Pour faire partie du club, Il faut :
 1. Etre sur le **[Discord](https://discord.com/invite/7sPZFxb)**
 1. Demander **l'accès au Google Drive** du club (sur le discord, vous pouvez mentionnez le président/Trésorier)
-1. Remplir ses **coordonnées** sur le google sheet sur le google drive du club de l'année de la coupe [ici pour 2023](https://docs.google.com/spreadsheets/d/1DeRmO0DupiJKzKiPEfP81VNeFPZifXAVMa56bStHbCQ/edit#gid=0)
+1. Remplir ses **coordonnées** sur le google sheet du Drive de l'année [ici pour 2023](https://docs.google.com/spreadsheets/d/1DeRmO0DupiJKzKiPEfP81VNeFPZifXAVMa56bStHbCQ/edit#gid=0).
 (le numéro de carte sert pour l'accès au local).
 1. Ensuite, il est impératif de **participer** à la réunion hebdomadaire du **jeudi soir** à 17h30 (ou de consulter le Compte-rendu si vous ne pouvez pas venir certaines fois).
 1. Enfin, il ne faut **pas hésiter à demander** de l'aide à tout moment, que ce soit **pour se lancer**/se faire former, ou savoir quoi faire. [Si vous préférez être autonome, n'hésitez pas à suivre le déroulé de l'introduction](tutoriel.md)
 1. Selon ce qui est adopté cette année, on utilisera un systéme de **Gestion de Projet** (Postit, Trello, ...) pour avoir les tâches en cours(Par exemple réaliser le cahier des charges, modéliser la base roulante, ...), et ainsi savoir qui travaille sur quoi.
 
 ### Création de comptes
-Pour accéder aux outils, vous pouvez également créer les comptes au fur et à mesure de vos besoins.
+Pour accéder aux outils, vous pouvez également créer les comptes au fur et à mesure de vos besoins, et demander les accès sur Discord.
 + **Whatsapp** Si vous avez besoin de communication rapide avec les autres membres (avant/pendant/après un event par exemple)
-+ **Github** Pour partager le code, les cartes électroniques,...
++ [**Github** Pour partager le code, les cartes électroniques,...](https://github.com/ENACRobotique)
 + **Dropbox** Pour travailler sur les modèles 3D Solidworks
-+ !!!!!!!!!!!!!!!!!!!!!!!!! TRELLO
 + **Pour l'accès à d'autres comptes** et des contacts "ENAC", Vous pouvez vous rendre sur le Google Drive -> Docs -> Informations sur le club -> *Notes sur l'organisation du club*
 
 Tout d'abord, consultez la checklist pour créer les comptes et accéder à nos outils en ligne (demander les accès au président si vous ne les avez pas ). 
