@@ -37,7 +37,7 @@ Enfin, on peut définir comment fonctionnera le code dans les grandes lignes (qu
 
 ### Base roulante
 
-La base roulante est tout ce qui permet au robot de "rouler" sur la table. Cela inclut les moteurs, les roues, les capteurs pour se localiser, l'électronique pour le déplacement et la localisation *(à l'ENAC généralement c'est regroupé avec tout le reste)*, et les batteries. 
+La base roulante est tout ce qui permet au robot de "rouler" sur la table. Cela inclut les moteurs, les roues, les capteurs pour se localiser, l'électronique pour le déplacement et la localisation *(à l'ENAC généralement une carte électronique assure tout le robot)*, et les batteries. 
 C'est la partie essentielle du robot, à réaliser en premier. Sans base roulante fiable, on ne peut rien faire.
 
 #### Les robots différentiels 
@@ -65,7 +65,8 @@ Des moteurs électriques, assez basique, ~12-18V, 10W grand maximum. Vérifier l
 
 On retrouve principalement :
 + Des roues en caoutchouc  (classique)
-+ Des roues déjà faites plus exotiques (par exemple des roues de rollers) -> Peuvent endommager la table + Faire les roues soit même en polyuréthane, avec l'intérieur de la roue en impression 3D. L'avantage est que l'on peut dimensionner la roue comme on a besoin, ça accroche mieux que la caoutchouc à la table, et ça ne fait (quasiment) pas de dégats sur la table en cas de dérapage. Parcontre il faut le mouler. **Exemple de roues en 2022 sur le dropbox** 
++ Des roues déjà faites plus exotiques (par exemple des roues de rollers) -> Peuvent endommager la table
++ Faire les roues soit même en polyuréthane, avec l'intérieur de la roue en impression 3D. L'avantage est que l'on peut dimensionner la roue comme on a besoin, ça accroche mieux que la caoutchouc à la table, et ça ne fait (quasiment) pas de dégats sur la table en cas de dérapage. Parcontre il faut le mouler. **Exemple de roues en 2022 sur le dropbox** 
 ["Tutoriel pour réaliser les roues"](https://www.youtube.com/watch?v=U-_xxI6qvlg)
 ### Base mécanique
 
