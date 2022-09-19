@@ -1,6 +1,7 @@
 # Introduction au C au club robot
 
 Selon votre niveau, il faut tout d'abord à apprendre à utiliser **le C en général (I)**, et lorsque c'est bon, vous pourrez passer au **C en embarqué (II)**
+[Lien direct vers le tuto de la Carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit)
 La partie I est réalisable de chez vous, la II peut être plus embêtante.
 ## Installation
 
@@ -33,5 +34,10 @@ Les parties moins importantes mais à lire sont la 4,10,13 et 14.
 ## II - Le C pour l'embarqué
 
 Pour l'instant non porté sur le site :
-    https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit
-    https://github.com/Fabien-B/tutosBoardRoboticClub/
+    [Carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit)
+    [github associé à la carte tuto](https://github.com/Fabien-B/tutosBoardRoboticClub/)
+
+## TODO III - Problématiques robots embarqué
+
+Asservissement 
+[PM robotix](https://www.pm-robotix.eu/2022/02/02/asservissement-et-pilotage-de-robot-autonome/)

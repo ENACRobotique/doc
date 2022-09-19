@@ -5,7 +5,7 @@
 	- [Intro Création robot](introductions/introRobot.md)
 	- [Intro au club](introductions/orgaClub.md)	
 	- [Intro Python](introductions/introPython.md)
-	- [Intro C](introductions/introC.md)
+	- [Intro C - Carte Tuto](introductions/introC.md)
 	- [Intro solidworks](introductions/solidworks.md)
 - [Outils Communs](outils_communs/index.md)
 	- [Dual Boot](outils_communs/dual_boot.md)
