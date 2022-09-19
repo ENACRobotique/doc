@@ -97,6 +97,11 @@ On retrouve principalement 4 formes possibles :
 
 
 ### Capteurs
++ Pression
++ Tension batteries
++ Distances, TOF (Time Of Flight)
++ Couleur
++ Température (pas d'utilité ?)
 
 #### Localisation
 
