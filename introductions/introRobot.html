@@ -238,17 +238,18 @@ Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se
 <li>en métal</li>
 </ul>
 <h3 id="capteurs"><a class="header" href="#capteurs">Capteurs</a></h3>
-<p>Pour mesurer certaines choses, on peut utiliser :
-Capteur | Usages
-------- | ------
-Pression | Pour les systèmes pneumatiques (Ventouses) -&gt; savoir si on a attrapé quelque chose
-Tension  | Pour le niveau de charge des batteries, mesurer la valeur d'une résistance, ...
-Distance TOF (Time Of Flight)/Ultrason | Permet de mesurer une distance entre le capteur et autre chose en face du capteur, en mesurant le temps que met un rayon laser à se réfléchir pour les TOF ou les ondes sonores pour l'ultrason. On peut utiliser cela pour savoir si on a attrapé un objet par exemple, si il est bien présent, pour savoir s'il y a un autre robot, ... Généralement (mais ça dépend des modèles) ils sont assez précis (1-10mm près) qu'à partir d'une distance de 1-2 cm jusqu'à 1m.
-Couleur (ex : TCS34725) |  Pour déterminer une couleur. Ne marche qu'à distance très faible (&lt;1 cm), et il y a une led blanche intégrée pour l'éclairer.
-Caméra  |  Pour faire de la vision par ordinateur -&gt; Déterminer la position d'un objet, déterminer sa couleur, ... Mais c'est super complexe à mettre en oeuvre donc qu'en dernier recours.
-Température  | Pas d'utilité pour la coupe de robot pour l'instant mais ça existe.
-Récepteur infrarouge, radio | utilisable pour la communication sans fil (entre robots)
-Interrupteur | Permet de détecter si le robot ou autre chose est en &quot;contact&quot; physique. Par exemple, on peut en mettre sur le robot à &quot;l'avant&quot; pour savoir s'il est en contact avec le mur et donc si c'est le cas, on sait que la position du robot est contre un mur et on peut &quot;recaler&quot; sa position ainsi.</p>
+<p>Pour mesurer certaines choses, on peut utiliser :</p>
+<div class="table-wrapper"><table><thead><tr><th>Capteur</th><th>Usages</th></tr></thead><tbody>
+<tr><td>Pression</td><td>Pour les systèmes pneumatiques (Ventouses) -&gt; savoir si on a attrapé quelque chose</td></tr>
+<tr><td>Tension</td><td>Pour le niveau de charge des batteries, mesurer la valeur d'une résistance, ...</td></tr>
+<tr><td>Distance TOF (Time Of Flight)/Ultrason</td><td>Permet de mesurer une distance entre le capteur et autre chose en face du capteur, en mesurant le temps que met un rayon laser à se réfléchir pour les TOF ou les ondes sonores pour l'ultrason. On peut utiliser cela pour savoir si on a attrapé un objet par exemple, si il est bien présent, pour savoir s'il y a un autre robot, ... Généralement (mais ça dépend des modèles) ils sont assez précis (1-10mm près) qu'à partir d'une distance de 1-2 cm jusqu'à 1m.</td></tr>
+<tr><td>Couleur (ex : TCS34725)</td><td>Pour déterminer une couleur. Ne marche qu'à distance très faible (&lt;1 cm), et il y a une led blanche intégrée pour l'éclairer.</td></tr>
+<tr><td>Caméra</td><td>Pour faire de la vision par ordinateur -&gt; Déterminer la position d'un objet, déterminer sa couleur, ... Mais c'est super complexe à mettre en oeuvre donc qu'en dernier recours.</td></tr>
+<tr><td>Température</td><td>Pas d'utilité pour la coupe de robot pour l'instant mais ça existe.</td></tr>
+<tr><td>Récepteur infrarouge, radio</td><td>utilisable pour la communication sans fil (entre robots)</td></tr>
+<tr><td>Interrupteur</td><td>Permet de détecter si le robot ou autre chose est en &quot;contact&quot; physique. Par exemple, on peut en mettre sur le robot à &quot;l'avant&quot; pour savoir s'il est en contact avec le mur et donc si c'est le cas, on sait que la position du robot est contre un mur et on peut &quot;recaler&quot; sa position ainsi.</td></tr>
+</tbody></table>
+</div>
 <p><img src="../images/exemple_recalage.png" alt="Exemple recalage" /></p>
 <h4 id="localisation"><a class="header" href="#localisation">Localisation</a></h4>
 <div class="table-wrapper"><table><thead><tr><th>Capteurs localisation</th><th>Exemples</th><th>usages</th></tr></thead><tbody>
