@@ -225,22 +225,57 @@ Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se
 </li>
 </ul>
 <h4 id="techniques-de-construction"><a class="header" href="#techniques-de-construction">Techniques de construction</a></h4>
+<p>Pour construire mécaniquement le &quot;cadre&quot; du robot, une méthode que l'on utilise souvent au club robot est de mettre une planche à la base du robot avec les roues, 4 profilés (=poutres) en métal et une planche qui fait le &quot;toit&quot;. Entre les deux, on peut mettre des planches verticalement ou horizontalement vissés aux profilés.</p>
+<p>Pour les profilés : </p>
 <ul>
 <li>Profilés 20*20, M5, Ecrou en T</li>
 <li>Makerbeam</li>
-<li>Planches (en bois)</li>
+</ul>
+<p>Pour les planches : </p>
+<ul>
+<li><strong>Planches en bois</strong></li>
 <li>Verre acrylique</li>
+<li>en métal</li>
 </ul>
 <h3 id="capteurs"><a class="header" href="#capteurs">Capteurs</a></h3>
-<ul>
-<li>Pression</li>
-<li>Tension batteries</li>
-<li>Distances, TOF (Time Of Flight)</li>
-<li>Couleur</li>
-<li>Température (pas d'utilité ?)</li>
-</ul>
+<p>Pour mesurer certaines choses, on peut utiliser :
+Capteur | Usages
+------- | ------
+Pression | Pour les systèmes pneumatiques (Ventouses) -&gt; savoir si on a attrapé quelque chose
+Tension  | Pour le niveau de charge des batteries, mesurer la valeur d'une résistance, ...
+Distance TOF (Time Of Flight)/Ultrason | Permet de mesurer une distance entre le capteur et autre chose en face du capteur, en mesurant le temps que met un rayon laser à se réfléchir pour les TOF ou les ondes sonores pour l'ultrason. On peut utiliser cela pour savoir si on a attrapé un objet par exemple, si il est bien présent, pour savoir s'il y a un autre robot, ... Généralement (mais ça dépend des modèles) ils sont assez précis (1-10mm près) qu'à partir d'une distance de 1-2 cm jusqu'à 1m.
+Couleur (ex : TCS34725) |  Pour déterminer une couleur. Ne marche qu'à distance très faible (&lt;1 cm), et il y a une led blanche intégrée pour l'éclairer.
+Caméra  |  Pour faire de la vision par ordinateur -&gt; Déterminer la position d'un objet, déterminer sa couleur, ... Mais c'est super complexe à mettre en oeuvre donc qu'en dernier recours.
+Température  | Pas d'utilité pour la coupe de robot pour l'instant mais ça existe.
+Récepteur infrarouge, radio | utilisable pour la communication sans fil (entre robots)
+Interrupteur | Permet de détecter si le robot ou autre chose est en &quot;contact&quot; physique. Par exemple, on peut en mettre sur le robot à &quot;l'avant&quot; pour savoir s'il est en contact avec le mur et donc si c'est le cas, on sait que la position du robot est contre un mur et on peut &quot;recaler&quot; sa position ainsi.</p>
+<p><img src="../images/exemple_recalage.png" alt="Exemple recalage" /></p>
 <h4 id="localisation"><a class="header" href="#localisation">Localisation</a></h4>
+<div class="table-wrapper"><table><thead><tr><th>Capteurs localisation</th><th>Exemples</th><th>usages</th></tr></thead><tbody>
+<tr><td>Encodeur (optique)</td><td>AMT-102V</td><td>Surtout pour les robots différentiels. Ce sont des dispositifs qu'on met autour d'un axe (par exemple une roue) pour mesurer le nombre de &quot;tours de la roue&quot;. En connaissant le diamètre de la roue, on peut connaitre sa distance parcourue.</td></tr>
+<tr><td>Certains sont déjà intégrés aux moteurs, mais le problème est que si les roues &quot;dérapent&quot;, les encodeurs sur le moteur ne sont pas en mesure de le détecter. On retrouve donc dans certains robots des roues &quot;folles&quot;, qui sont juste sur un axe avec une faible résistance pour mesurer les déplacements d'un robot. <img src="../images/encodeur.jpg" alt="" /></td><td></td><td></td></tr>
+<tr><td>Capteur (optique)</td><td>Souris, <a href="https://shop.pimoroni.com/products/paa5100je-optical-tracking-spi-breakout?variant=39315330170963">PAA5100JE</a></td><td>Placé à distance constante du sol, il filme continuellement le sol et via des algorithmes il détermine le &quot;déplacement&quot; horizontal du robot en déterminant les différences entre les images filmés. La précision n'a pas encore été testé au club robot ENAC mais d'après d'autres clubs, c'est prometteur.</td></tr>
+<tr><td>Lidar (2D)</td><td>Lidar LD06</td><td>Le lidar est un capteur laser qui mesure sur un angle important (généralement 360°) les distances périodiquement(~10hz). L'usage principale est de détecter les adversaires ainsi. Un projet testé pour la coupe 2022 était de repérer des points fixes connus sur le terrain, et ainsi de trianguler la position du robot. Sinon on pourrait aussi le mettre proche du sol pour détecter les murets et certains algorithmes sont capable de déterminer les déplacements de cette manière. Pour info, ça existe aussi en 3D mais ça sert à rien pour la coupe et ça coute une blinde. <img src="../images/lidar_2d.png" alt="Lidar" /></td></tr>
+<tr><td>IMU/Centrale inertielle/Accéléromètres</td><td>?</td><td>Pas testé au club robot, une centrale inertielle est un instrument, capable d'intégrer les mouvements d'un mobile pour estimer son orientation, sa vitesse linéaire et sa position. L'estimation de position est relative au point de départ ou au dernier point de recalage.</td></tr>
+<tr><td>Vision par ordinateur</td><td>Camera/Code Aruco</td><td>Les codes Aruco sont les sortes de QR code sur le terrain. Des algorithmes sont capables de déterminer avec une caméra leurs positions dans l'espace et donc si on en met un sur le robot, de déterminer la position du robot par rapport aux codes arucos du terrain. mais c'est complexe à mettre en oeuvre également.</td></tr>
+<tr><td>Triangulisation</td><td>Ultrason, Infrarouge</td><td>Sur les balises fixes, on peut mettre des capteurs/Emetteurs ultrason/Infrarouges et sur le robot, on peut se trianguler.</td></tr>
+</tbody></table>
+</div>
 <h3 id="actionneurs"><a class="header" href="#actionneurs">Actionneurs</a></h3>
+<ul>
+<li>Servomoteur
+<ul>
+<li>Pince</li>
+<li>Bras</li>
+</ul>
+</li>
+<li>Pneumatiques
+<ul>
+<li>Ventouses</li>
+<li>Electrovanne</li>
+</ul>
+</li>
+</ul>
 <h3 id="microcontrolleur"><a class="header" href="#microcontrolleur">Microcontrolleur</a></h3>
 <h3 id="carte-electronique"><a class="header" href="#carte-electronique">Carte electronique</a></h3>
 <h3 id="ordinateur"><a class="header" href="#ordinateur">Ordinateur</a></h3>
