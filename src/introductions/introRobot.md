@@ -104,8 +104,9 @@ Pour les planches :
 ### Capteurs
 
 Pour mesurer certaines choses, on peut utiliser :
-Capteur | Usages
-------- | ------
+
+Capteur | Usages |
+------- | ------ |
 Pression | Pour les systèmes pneumatiques (Ventouses) -> savoir si on a attrapé quelque chose
 Tension  | Pour le niveau de charge des batteries, mesurer la valeur d'une résistance, ...
 Distance TOF (Time Of Flight)/Ultrason | Permet de mesurer une distance entre le capteur et autre chose en face du capteur, en mesurant le temps que met un rayon laser à se réfléchir pour les TOF ou les ondes sonores pour l'ultrason. On peut utiliser cela pour savoir si on a attrapé un objet par exemple, si il est bien présent, pour savoir s'il y a un autre robot, ... Généralement (mais ça dépend des modèles) ils sont assez précis (1-10mm près) qu'à partir d'une distance de 1-2 cm jusqu'à 1m.
