@@ -142,7 +142,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h1 id="code-c-c"><a class="header" href="#code-c-c">Code (C, C++)</a></h1>
+<h2 id="capteurs"><a class="header" href="#capteurs">capteurs</a></h2>
+<h3 id="tcs-34725-"><a class="header" href="#tcs-34725-">TCS 3472(5) :</a></h3>
+<p><img src="../images/TCS3472.png" alt="TCS 34725" />
+La librairie Adafruit TCS34725 a une erreur, le mauvais ID du capteur est utilisé (devrait être 0x4D) dans ADAfruit_TCS34725.cpp -&gt; Adafruit_TCS34725::begin
+-&gt; remplacer  if ((x != 0x44) &amp;&amp; (x != 0x10)) {
+par (x != 0x44) &amp;&amp; (x != 0x4D)</p>
+<p>Risque de perturbation si autre source de lumière (blanche) forte et proche du capteur
+Distance idéal &lt;1cm au pifométre</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

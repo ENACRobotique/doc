@@ -631,12 +631,22 @@ L'adresse du dépôt devrait ressembler à ça : <em>git@github.com:ENACRobotiqu
 <h3 id="bois"><a class="header" href="#bois">Bois</a></h3>
 <p>Pas mal, mais contreplaqué de 5mm trop fin et pas assez résistant ?</p>
 <p>verre acrylique, Impression 3D, métal</p>
-<h2 id="structure-générale"><a class="header" href="#structure-générale">Structure générale</a></h2>
-<h2 id="motorisation"><a class="header" href="#motorisation">Motorisation</a></h2>
+<h2 id="base-roulante-1"><a class="header" href="#base-roulante-1">Base roulante</a></h2>
+<h3 id="motorisation"><a class="header" href="#motorisation">Motorisation</a></h3>
 <p>Holonome (x3 ou x4 ?), différentiel</p>
-<h2 id="encodeurs"><a class="header" href="#encodeurs">Encodeurs</a></h2>
-<h2 id=""><a class="header" href="#"></a></h2>
-<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="lancement-dobjets-exemples-rusty---2018"><a class="header" href="#lancement-dobjets-exemples-rusty---2018">Lancement d'objets (Exemples rusty - 2018)</a></h1>
+<h3 id="encodeurs"><a class="header" href="#encodeurs">Encodeurs</a></h3>
+<h3 id="roues-folles"><a class="header" href="#roues-folles">roues folles</a></h3>
+<p>Impression 3D à éviter</p>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="code-c-c"><a class="header" href="#code-c-c">Code (C, C++)</a></h1>
+<h2 id="capteurs-1"><a class="header" href="#capteurs-1">capteurs</a></h2>
+<h3 id="tcs-34725-"><a class="header" href="#tcs-34725-">TCS 3472(5) :</a></h3>
+<p><img src="rex/../images/TCS3472.png" alt="TCS 34725" />
+La librairie Adafruit TCS34725 a une erreur, le mauvais ID du capteur est utilisé (devrait être 0x4D) dans ADAfruit_TCS34725.cpp -&gt; Adafruit_TCS34725::begin
+-&gt; remplacer  if ((x != 0x44) &amp;&amp; (x != 0x10)) {
+par (x != 0x44) &amp;&amp; (x != 0x4D)</p>
+<p>Risque de perturbation si autre source de lumière (blanche) forte et proche du capteur
+Distance idéal &lt;1cm au pifométre</p>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="lancement-dobjets-exemples-rusty---2018"><a class="header" href="#lancement-dobjets-exemples-rusty---2018">Lancement d'objets (Exemples rusty - 2018)</a></h1>
 <h2 id="inventaire-des-systémes-existants-rusty-ducks-2018"><a class="header" href="#inventaire-des-systémes-existants-rusty-ducks-2018">Inventaire des systémes existants (Rusty ducks 2018)</a></h2>
 <p>On a déjà lancé des balles avec un <strong>moteur</strong> qui <strong>entraîne un galet</strong>, ça marche très bien.</p>
 <p>On n'asservissait pas le moteur, donc on n'était pas super précis, mais des équipes asservissaient le moteur, et ils étaient assez précis.
