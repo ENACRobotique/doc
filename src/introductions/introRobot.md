@@ -90,23 +90,53 @@ On retrouve principalement 4 formes possibles :
 
 #### Techniques de construction
 
+Pour construire mécaniquement le "cadre" du robot, une méthode que l'on utilise souvent au club robot est de mettre une planche à la base du robot avec les roues, 4 profilés (=poutres) en métal et une planche qui fait le "toit". Entre les deux, on peut mettre des planches verticalement ou horizontalement vissés aux profilés.
+
+Pour les profilés : 
 + Profilés 20*20, M5, Ecrou en T
 + Makerbeam
-+ Planches (en bois)
-+ Verre acrylique
 
+Pour les planches : 
++ **Planches en bois**
++ Verre acrylique
++ en métal
 
 ### Capteurs
-+ Pression
-+ Tension batteries
-+ Distances, TOF (Time Of Flight)
-+ Couleur
-+ Température (pas d'utilité ?)
+
+Pour mesurer certaines choses, on peut utiliser :
+Capteur | Usages
+------- | ------
+Pression | Pour les systèmes pneumatiques (Ventouses) -> savoir si on a attrapé quelque chose
+Tension  | Pour le niveau de charge des batteries, mesurer la valeur d'une résistance, ...
+Distance TOF (Time Of Flight)/Ultrason | Permet de mesurer une distance entre le capteur et autre chose en face du capteur, en mesurant le temps que met un rayon laser à se réfléchir pour les TOF ou les ondes sonores pour l'ultrason. On peut utiliser cela pour savoir si on a attrapé un objet par exemple, si il est bien présent, pour savoir s'il y a un autre robot, ... Généralement (mais ça dépend des modèles) ils sont assez précis (1-10mm près) qu'à partir d'une distance de 1-2 cm jusqu'à 1m.
+Couleur (ex : TCS34725) |  Pour déterminer une couleur. Ne marche qu'à distance très faible (<1 cm), et il y a une led blanche intégrée pour l'éclairer.
+Caméra  |  Pour faire de la vision par ordinateur -> Déterminer la position d'un objet, déterminer sa couleur, ... Mais c'est super complexe à mettre en oeuvre donc qu'en dernier recours.
+Température  | Pas d'utilité pour la coupe de robot pour l'instant mais ça existe.
+Récepteur infrarouge, radio | utilisable pour la communication sans fil (entre robots)
+Interrupteur | Permet de détecter si le robot ou autre chose est en "contact" physique. Par exemple, on peut en mettre sur le robot à "l'avant" pour savoir s'il est en contact avec le mur et donc si c'est le cas, on sait que la position du robot est contre un mur et on peut "recaler" sa position ainsi.
+
+![Exemple recalage](../images/exemple_recalage.png)
 
 #### Localisation
+Capteurs localisation | Exemples | usages
+--------------------- | -------- | --------
+Encodeur (optique)  | AMT-102V | Surtout pour les robots différentiels. Ce sont des dispositifs qu'on met autour d'un axe (par exemple une roue) pour mesurer le nombre de "tours de la roue". En connaissant le diamètre de la roue, on peut connaitre sa distance parcourue.
+Certains sont déjà intégrés aux moteurs, mais le problème est que si les roues "dérapent", les encodeurs sur le moteur ne sont pas en mesure de le détecter. On retrouve donc dans certains robots des roues "folles", qui sont juste sur un axe avec une faible résistance pour mesurer les déplacements d'un robot. ![](../images/encodeur.jpg)
+Capteur (optique) | Souris, [PAA5100JE](https://shop.pimoroni.com/products/paa5100je-optical-tracking-spi-breakout?variant=39315330170963) | Placé à distance constante du sol, il filme continuellement le sol et via des algorithmes il détermine le "déplacement" horizontal du robot en déterminant les différences entre les images filmés. La précision n'a pas encore été testé au club robot ENAC mais d'après d'autres clubs, c'est prometteur.
+Lidar (2D) | Lidar LD06 | Le lidar est un capteur laser qui mesure sur un angle important (généralement 360°) les distances périodiquement(~10hz). L'usage principale est de détecter les adversaires ainsi. Un projet testé pour la coupe 2022 était de repérer des points fixes connus sur le terrain, et ainsi de trianguler la position du robot. Sinon on pourrait aussi le mettre proche du sol pour détecter les murets et certains algorithmes sont capable de déterminer les déplacements de cette manière. Pour info, ça existe aussi en 3D mais ça sert à rien pour la coupe et ça coute une blinde. ![Lidar](../images/lidar_2d.png)
+IMU/Centrale inertielle/Accéléromètres | ? | Pas testé au club robot, une centrale inertielle est un instrument, capable d'intégrer les mouvements d'un mobile pour estimer son orientation, sa vitesse linéaire et sa position. L'estimation de position est relative au point de départ ou au dernier point de recalage.
+Vision par ordinateur | Camera/Code Aruco | Les codes Aruco sont les sortes de QR code sur le terrain. Des algorithmes sont capables de déterminer avec une caméra leurs positions dans l'espace et donc si on en met un sur le robot, de déterminer la position du robot par rapport aux codes arucos du terrain. mais c'est complexe à mettre en oeuvre également.
+Triangulisation | Ultrason, Infrarouge | Sur les balises fixes, on peut mettre des capteurs/Emetteurs ultrason/Infrarouges et sur le robot, on peut se trianguler.
 
 
 ### Actionneurs
++ Servomoteur
+    + Pince
+    + Bras
++ Pneumatiques
+    + Ventouses
+    + Electrovanne
+
 
 
 ### Microcontrolleur
