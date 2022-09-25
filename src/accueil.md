@@ -14,3 +14,5 @@ Ensuite, si vous avez besoin de tutos spécifiques sur certains sujets ou des cl
 
 Pour les programmeurs, consulter Tuto Code pour comprendre le principe.
 
+Voici l'ordre de "lecture" du site : 
+![](images/Accueil.png)

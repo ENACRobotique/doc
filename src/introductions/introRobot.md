@@ -131,12 +131,12 @@ Triangulisation | Ultrason, Infrarouge | Sur les balises fixes, on peut mettre d
 
 
 ### Actionneurs
-+ Servomoteur
-    + Pince
-    + Bras
-+ Pneumatiques
-    + Ventouses
-    + Electrovanne
+
+A la base de chaque "mouvement" de robot, on retrouve un moteur (mouvement de rotation). Lorsqu'on a besoin de faire certains types de mouvements, il faut faire des [Transformations](https://www.alloprof.qc.ca/fr/eleves/bv/sciences/les-mecanismes-de-transformation-du-mouvement-s1437)
+
+Pour attraper les objets, on peut réaliser des "bras" avec un servomoteur qui déplace le bras, et au bout on peut retrouver des :
++ Pince
++ Ventouse (pneumatique, électrovanne)
 
 
 
