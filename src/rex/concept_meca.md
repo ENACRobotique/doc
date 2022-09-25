@@ -8,12 +8,14 @@ Pas mal, mais contreplaqué de 5mm trop fin et pas assez résistant ?
 
 verre acrylique, Impression 3D, métal
 
-## Structure générale
+## Base roulante
 
-## Motorisation
+### Motorisation
 
 Holonome (x3 ou x4 ?), différentiel
 
-## Encodeurs
+### Encodeurs
 
-##
+### roues folles
+
+Impression 3D à éviter
