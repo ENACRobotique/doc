@@ -20,13 +20,13 @@ Holonome (x3 ou x4 ?), différentiel
 ### roues folles/codeuses
 
 ![Roue folle 2022](../images/roue_folle_2022.png)
-Composition :
-+ Encodeur AMT-102V
-+ joint torique
-+ Impression 3D
-+ roulement à bille d16 m3
-+ rail de guidage
-+ (Ressort)
++ Composition :
+    + Encodeur AMT-102V
+    + joint torique
+    + Impression 3D
+    + roulement à bille d16 m3
+    + rail de guidage
+    + (Ressort)
 
 + Les designs étaient assez compacts et évitaient de prendre trop de place sur le robot.
 + Impression 3D à éviter car trop fragile, la roue se voile assez vite.
