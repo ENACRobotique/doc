@@ -38,9 +38,13 @@ Désormais, **tout le monde travaille sur un seul même robot**, et comme le fon
 ### Les pôles
 
 Comme de nombreuses équipes, depuis 2022, le club s'organise en "pôle" : 
-Informatique -> Programmation du robot et des outils, de la stratégie, à haut niveau, et des microcontrolleurs, ainsi que comment communique chaque choses entre eux, du réseau,..
-Electronique -> Réalisation des cartes electroniques, et programmation des microcontrolleurs avec le pôle informatique.
-Mécanique -> Réalisation modélisation et impression 3D, découpage de planches du chassis du robot, assemblage,..
++ Informatique -> Programmation du robot et des outils, de la stratégie, à haut niveau, et des microcontrolleurs, ainsi que comment communique chaque choses entre eux, du réseau,..
++ Electronique -> Réalisation des cartes electroniques, et programmation des microcontrolleurs avec le pôle informatique.
++ Mécanique -> Réalisation modélisation et impression 3D, découpage de planches du chassis du robot, assemblage,..
+
+Pour la programmation : 
++ Pour ceux qui ont déjà fait bcp d'informatique avant, on peut se plonger assez tôt sur ce qui a été fait avant et coder soit même.
++ Pour les autres, les premiers mois, il vaut mieux attendre d'avoir fait des cours ENAC avant, et se concentrer sur des choses simples et laisser les autres/les anciens programmer pour ne pas se démotiver et ne pas perdre trop de temps.
 
 ### Responsabilités - Organigramme
 ![](../images/organigramme_2022.png "Organigramme des fonctions au club robot")
