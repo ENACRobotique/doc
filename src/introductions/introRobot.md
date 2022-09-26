@@ -151,8 +151,8 @@ Microcontrolleur | Capacité de calcul/RAM/Espace | Pin disponible | Réseau | p
 ---------- | ------------ | ------- |------------------ | ----
 **STM32 (français)** | Moyen à fort | Moyen à fort (~30-60) | Pas de réseau | Pas cher
 **ESP32 (chinois)** | fort à très "fort" | ~20-30 | Wifi, bluetooth | Pas cher
-**Arduino** | Faible | ~10-20 | Pas de réseau | Très cher (pour les capacités)
-**Teensy** | Moyen à fort | Moyen à fort (~30-60) | Pas de réseau | Cher
+**Arduino** (UK) | Faible | ~10-20 | Pas de réseau | Très cher (pour les capacités)
+**Teensy** (USA) | Moyen à fort | Moyen à fort (~30-60) | Pas de réseau | Cher
 
 Au niveau de la programmation, généralement, plus c'est simple à programmer, moins il y a de "flexibilité" pour faire des choses complexes. Ainsi, les **arduinos** peuvent être assez limités pour les robots. Simple à utiliser, mais dur lorsque le micocontrolleur doit gérer plein de choses.
 
