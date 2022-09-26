@@ -1,8 +1,9 @@
 # Mécanique
 
-## Choix des matériaux
+## Conception générale
+### Choix des matériaux
 
-### Bois
+#### Bois
 
 Pas mal, mais contreplaqué de 5mm trop fin et pas assez résistant ?
 
