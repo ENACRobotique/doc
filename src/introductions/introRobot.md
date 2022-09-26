@@ -84,7 +84,8 @@ On retrouve principalement 4 formes possibles :
     ![](../images/rct_toulon.png "robot RCT toulon")
 -   Hexagonal (is Bestagon)
     + **+** Pour le périmètre
-    + **+** Bon compris entre cylindre et rectangulaire pour le placement des objets à l'intérieur
+    + **+** Bon compris entre cylindre et rectangulaire pour le placement des objets à l'intérieur.
+    ![Robot Enac 2022](../images/robot_enac_2022.png)
 -   Triangulaire
     + **++** pour les robots holonomes à 3 roues
 
@@ -95,6 +96,7 @@ Pour construire mécaniquement le "cadre" du robot, une méthode que l'on utilis
 Pour les profilés : 
 + Profilés 20*20, M5, Ecrou en T
 + Makerbeam
+![makerbeam](../images/maker_beam.jpg)
 
 Pour les planches : 
 + **Planches en bois**
@@ -126,7 +128,7 @@ Capteur optique (Souris, [PAA5100JE](https://shop.pimoroni.com/products/paa5100j
 Lidar (2D)(Lidar LD06) | Le lidar est un capteur laser qui mesure sur un angle important (généralement 360°) les distances périodiquement(~10hz). L'usage principale est de détecter les adversaires ainsi. Un projet testé pour la coupe 2022 était de repérer des points fixes connus sur le terrain, et ainsi de trianguler la position du robot. Sinon on pourrait aussi le mettre proche du sol pour détecter les murets et certains algorithmes sont capable de déterminer les déplacements de cette manière. Pour info, ça existe aussi en 3D mais ça sert à rien pour la coupe et ça coute une blinde. ![Lidar](../images/lidar_2d.png)
 IMU/Centrale inertielle/Accéléromètres | Pas testé au club robot, une centrale inertielle est un instrument, capable d'intégrer les mouvements d'un mobile pour estimer son orientation, sa vitesse linéaire et sa position. L'estimation de position est relative au point de départ ou au dernier point de recalage.
 Vision par ordinateur (Camera/Code Aruco) | Les codes Aruco sont les sortes de QR code sur le terrain. Des algorithmes sont capables de déterminer avec une caméra leurs positions dans l'espace et donc si on en met un sur le robot, de déterminer la position du robot par rapport aux codes arucos du terrain. mais c'est complexe à mettre en oeuvre également.
-Triangulisation | Ultrason, Infrarouge | Sur les balises fixes, on peut mettre des capteurs/Emetteurs ultrason/Infrarouges et sur le robot, on peut se trianguler.
+Triangulisation | Ultrason, Infrarouge Sur les balises fixes, on peut mettre des capteurs/Emetteurs ultrason/Infrarouges et sur le robot, on peut se trianguler.
 
 
 ### Actionneurs
@@ -140,6 +142,9 @@ Pour attraper les objets, on peut réaliser des "bras" avec un servomoteur qui d
 
 
 ### Microcontrolleur
+
+![](../images/comparison_microcontroller_2.png)
+![](../images/comparison_microcontroller_1.png)
 
 
 ### Carte electronique
