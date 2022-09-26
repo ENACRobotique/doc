@@ -138,18 +138,37 @@ A la base de chaque "mouvement" de robot, on retrouve un moteur (mouvement de ro
 Pour attraper les objets, on peut réaliser des "bras" avec un servomoteur qui déplace le bras, et au bout on peut retrouver des :
 + Pince
 + Ventouse (pneumatique, électrovanne)
-
++ Pousser directement avec l'actionneur
 
 
 ### Microcontrolleur
 
 ![](../images/comparison_microcontroller_2.png)
-![](../images/comparison_microcontroller_1.png)
 
+Pin disponible -> Permet de brancher plus de capteurs, actionneurs, et toute sorte de composants électroniques. 
+
+Microcontrolleur | Capacité de calcul/RAM/Espace | Pin disponible | Réseau | prix(hors pénurie)
+---------- | ------------ | ------- |------------------ | ----
+**STM32 (français)** | Moyen à fort | Moyen à fort (~30-60) | Pas de réseau | Pas cher
+**ESP32 (chinois)** | fort à très "fort" | ~20-30 | Wifi, bluetooth | Pas cher
+**Arduino** | Faible | ~10-20 | Pas de réseau | Très cher (pour les capacités)
+**Teensy** | Moyen à fort | Moyen à fort (~30-60) | Pas de réseau | Cher
+
+Au niveau de la programmation, généralement, plus c'est simple à programmer, moins il y a de "flexibilité" pour faire des choses complexes. Ainsi, les **arduinos** peuvent être assez limités pour les robots. Simple à utiliser, mais dur lorsque le micocontrolleur doit gérer plein de choses.
+
+Pourquoi ne pas programmer tout le robot sur le microcontrôleur mais qu'on utilise aussi des ordinateurs ?
+-> On est obligé d'utiliser des languages "bas niveau"(C, C++) et on pourrait perdre plus de temps à développer des choses avec ces languages qu'en utilisant d'autres plus simples (python,...). C'est compliqué de débugger des choses complexes, et la puissance de calcul reste limité.
 
 ### Carte electronique
 
+Pourquoi utiliser des circuits électroniques ?
+Pensez à un clavier. Vous pouvez connecter tous les interrupteurs d'un clavier avec des fils et des diodes et toutes ces jolies choses, mais vous vous retrouvez avec un merdier. Un circuit imprimé est essentiellement un foutoir de fils qui n'est en fait qu'une carte avec un câblage en cuivre d'un millimètre d'épaisseur qui est bien agencé pour permettre des connexions rapides et cohérentes sans fils, et sur lesquels on est sur que tous les composants ont la bonne alimentation/courant électrique, et les bonnes connexions pour des protocoles plus complexes entre les composants et le microcontrolleur.
+
+
 ### Ordinateur
+
+Raspberry pi
+![raspberry pi](../images/raspy.jpg)
 
 ### Les batteries
 
