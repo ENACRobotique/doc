@@ -312,12 +312,27 @@ Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se
 <ul>
 <li>Pince</li>
 <li>Ventouse (pneumatique, électrovanne)</li>
+<li>Pousser directement avec l'actionneur</li>
 </ul>
 <h3 id="microcontrolleur"><a class="header" href="#microcontrolleur">Microcontrolleur</a></h3>
-<p><img src="introductions/../images/comparison_microcontroller_2.png" alt="" />
-<img src="introductions/../images/comparison_microcontroller_1.png" alt="" /></p>
+<p><img src="introductions/../images/comparison_microcontroller_2.png" alt="" /></p>
+<p>Pin disponible -&gt; Permet de brancher plus de capteurs, actionneurs, et toute sorte de composants électroniques. </p>
+<div class="table-wrapper"><table><thead><tr><th>Microcontrolleur</th><th>Capacité de calcul/RAM/Espace</th><th>Pin disponible</th><th>Réseau</th><th>prix(hors pénurie)</th></tr></thead><tbody>
+<tr><td><strong>STM32 (français)</strong></td><td>Moyen à fort</td><td>Moyen à fort (~30-60)</td><td>Pas de réseau</td><td>Pas cher</td></tr>
+<tr><td><strong>ESP32 (chinois)</strong></td><td>fort à très &quot;fort&quot;</td><td>~20-30</td><td>Wifi, bluetooth</td><td>Pas cher</td></tr>
+<tr><td><strong>Arduino</strong></td><td>Faible</td><td>~10-20</td><td>Pas de réseau</td><td>Très cher (pour les capacités)</td></tr>
+<tr><td><strong>Teensy</strong></td><td>Moyen à fort</td><td>Moyen à fort (~30-60)</td><td>Pas de réseau</td><td>Cher</td></tr>
+</tbody></table>
+</div>
+<p>Au niveau de la programmation, généralement, plus c'est simple à programmer, moins il y a de &quot;flexibilité&quot; pour faire des choses complexes. Ainsi, les <strong>arduinos</strong> peuvent être assez limités pour les robots. Simple à utiliser, mais dur lorsque le micocontrolleur doit gérer plein de choses.</p>
+<p>Pourquoi ne pas programmer tout le robot sur le microcontrôleur mais qu'on utilise aussi des ordinateurs ?
+-&gt; On est obligé d'utiliser des languages &quot;bas niveau&quot;(C, C++) et on pourrait perdre plus de temps à développer des choses avec ces languages qu'en utilisant d'autres plus simples (python,...). C'est compliqué de débugger des choses complexes, et la puissance de calcul reste limité.</p>
 <h3 id="carte-electronique"><a class="header" href="#carte-electronique">Carte electronique</a></h3>
+<p>Pourquoi utiliser des circuits électroniques ?
+Pensez à un clavier. Vous pouvez connecter tous les interrupteurs d'un clavier avec des fils et des diodes et toutes ces jolies choses, mais vous vous retrouvez avec un merdier. Un circuit imprimé est essentiellement un foutoir de fils qui n'est en fait qu'une carte avec un câblage en cuivre d'un millimètre d'épaisseur qui est bien agencé pour permettre des connexions rapides et cohérentes sans fils, et sur lesquels on est sur que tous les composants ont la bonne alimentation/courant électrique, et les bonnes connexions pour des protocoles plus complexes entre les composants et le microcontrolleur.</p>
 <h3 id="ordinateur"><a class="header" href="#ordinateur">Ordinateur</a></h3>
+<p>Raspberry pi
+<img src="introductions/../images/raspy.jpg" alt="raspberry pi" /></p>
 <h3 id="les-batteries"><a class="header" href="#les-batteries">Les batteries</a></h3>
 <p>On utilise cette année des batteries de perceuse (Makita, 18V), sinon des Lipo/Life de hobby king de 12/14V sont très bien.
 En terme de consommation électrique, en ordre de grandeur onaà 2/3 A en pic pour les moteurs, et 1/2 A pour le reste.</p>
