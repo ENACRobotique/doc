@@ -28,6 +28,8 @@ Holonome (x3 ou x4 ?), différentiel
     + rail de guidage
     + (Ressort)
 
+![roue folle 2022 _ 2](../images/roue_folle_2022_2.png)
+
 + Les designs étaient assez compacts et évitaient de prendre trop de place sur le robot.
 + Impression 3D à éviter car trop fragile, la roue se voile assez vite.
 + Le rail utilisé étant de mauvaise qualité, on a des mouvements possibles perpendiculairement à l’axe de la roue, ce qui est totalement à éviter, et peut grandement diminuer la précision. Solutions possibles -> meilleur rail de guidage, ou mettre 2 rails
