@@ -17,6 +17,8 @@ Par exemple celui-ci : ![](../images/timeline_projet.png "Exemple de timeline po
 Pour que tout le monde soit d'accord, il est impératif d'avoir un cahier des charges. Il peut être assez court (quelques pages avec photos), mais il doit contenir l'essentiel, c'est à dire identifier à partir du réglement des "fonctions" à réaliser (se déplacer, récupérer X objet, afficher le score,...) afin que tous les membres aient la même idée des objectifs à atteindre. 
 Pour chaque fonction, il faut des critères avec une valeur de performance à atteindre. Il peut bien évidemment être modifié au cours de l'année.
 
+[Exemple de cahier de charges pour le mini robot de formation Juin 2022](https://docs.google.com/document/d/1mrJBK6TYmAEOajHTTRQV775p3FRSDmuo/edit?usp=sharing&ouid=110371115636606943160&rtpof=true&sd=true)
+
 #### Exemple : 
 | Fonction   |      Critère      |  Niveau |
 |----------|:-------------:|------:|
