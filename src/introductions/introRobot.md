@@ -7,10 +7,11 @@ Tout d'abord, il faut décider de quoi faire -> Il faut rédiger une sorte de ca
 Ensuite, il faut réunir la liste du matériel nécessaire, lesquels sont à commander par exemple.
 
 Enfin, il faut établir la gestion du projet, c'est à dire savoir qui fait quoi et à quel moment pour ne pénaliser personne dans son travail, c'est à dire décider d'un **calendrier** de formation, de deadlines,...
-Des exemples de timeline pour l'année sont sur le guide du nouvel arrivant, [ici](https://drive.google.com/drive/u/1/folders/0B3TOHzAm3I1Sfk96R0xRZGctR3BGa242aGExelpXU2VCcnJmbjg1OVlMRVNyV0xJeTM5SVU?resourcekey=0-rhd8NIuvxKy_Zvdg25Wu4w).
 
 Ainsi, en ordre d'idée, il faudrait idéalement que le robot roule déjà dès fin décembre, et qu'il est capable de marquer des points en février.
-Par exemple celui-ci : ![](../images/timeline_projet.png "Exemple de timeline pour le robot sur une année")
+
+Exemple de timeline: 
+![](../images/timeline_projet.png "Exemple de timeline pour le robot sur une année")
 
 ### Le cahier des charges
 
@@ -34,8 +35,6 @@ Enfin, on peut définir comment fonctionnera le code dans les grandes lignes (qu
 
 [Un exemple de "cahier de specs" (2022)](https://docs.google.com/document/d/1sOBxRK2LiSuNzQPDihp1MDDo0q5jfXRSP5_wCl4TWog/edit?usp=sharing) 
 ## De quoi est constitué un robot ?
-
-[Pour des tutos plus approfondis, cliquez ici (VRAC)](https://github.com/VRAC-team/la-maxi-liste-ressources-eurobot#223-moteurs)
 
 ### Base roulante
 
