@@ -141,7 +141,12 @@ Pour attraper les objets, on peut réaliser des "bras" avec un servomoteur qui d
 + Ventouse (pneumatique, électrovanne)
 + Pousser directement avec l'actionneur
 
+### Carte electronique
 
+Pourquoi utiliser des circuits électroniques ?
+Pensez à un clavier. Vous pouvez connecter tous les interrupteurs d'un clavier avec des fils et des diodes et toutes ces jolies choses, mais vous vous retrouvez avec un merdier. Un circuit imprimé est essentiellement un foutoir de fils qui n'est en fait qu'une carte avec un câblage en cuivre d'un millimètre d'épaisseur qui est bien agencé pour permettre des connexions rapides et cohérentes sans fils, et sur lesquels on est sur que tous les composants ont la bonne alimentation/courant électrique, et les bonnes connexions pour des protocoles plus complexes entre les composants et le microcontrolleur.
+
+![](../images/illustration_pcb.png)
 ### Microcontrolleur
 
 ![](../images/comparison_microcontroller_2.png)
@@ -160,10 +165,6 @@ Au niveau de la programmation, généralement, plus c'est simple à programmer, 
 Pourquoi ne pas programmer tout le robot sur le microcontrôleur mais qu'on utilise aussi des ordinateurs ?
 -> On est obligé d'utiliser des languages "bas niveau"(C, C++) et on pourrait perdre plus de temps à développer des choses avec ces languages qu'en utilisant d'autres plus simples (python,...). C'est compliqué de débugger des choses complexes, et la puissance de calcul reste limité.
 
-### Carte electronique
-
-Pourquoi utiliser des circuits électroniques ?
-Pensez à un clavier. Vous pouvez connecter tous les interrupteurs d'un clavier avec des fils et des diodes et toutes ces jolies choses, mais vous vous retrouvez avec un merdier. Un circuit imprimé est essentiellement un foutoir de fils qui n'est en fait qu'une carte avec un câblage en cuivre d'un millimètre d'épaisseur qui est bien agencé pour permettre des connexions rapides et cohérentes sans fils, et sur lesquels on est sur que tous les composants ont la bonne alimentation/courant électrique, et les bonnes connexions pour des protocoles plus complexes entre les composants et le microcontrolleur.
 
 
 ### Ordinateur

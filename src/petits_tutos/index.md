@@ -6,9 +6,9 @@ Il y aura dans cette section des petits tutos sur des sujet divers et variés, q
 
 ### En général
 De nombreuses ressources en ligne existent déjà, parmi lesquels on peut noter :
-+ [**WIki Eurobot**, wiki officiel pour la coupe de france de robotique, encore assez peu complet](https://www.eurobot.org/wiki/fr/home)
-+ [**VRAC, Une compilation de tutoriels** par "section" (moteurs, odométrie, ...) ciblant les spécificités de la coupe de france](https://github.com/VRAC-team/la-maxi-liste-ressources-eurobot)
-+ [**Game Manual, ANGLAIS**, un gros "wiki" pour la compétition de robots FIRST (USA), assez similaire à la coupe de France mais en plus bourrin](https://gm0.org/en/latest/index.html)
++ [**WIki Eurobot**](https://www.eurobot.org/wiki/fr/home) wiki officiel pour la coupe de france de robotique, encore assez peu complet
++ [**VRAC, Une compilation de tutoriels**](https://github.com/VRAC-team/la-maxi-liste-ressources-eurobot) par "section" (moteurs, odométrie, ...) ciblant les spécificités de la coupe de france
++ [**Game Manual, ANGLAIS**,](https://gm0.org/en/latest/index.html) un gros "wiki" pour la compétition de robots FIRST (USA), assez similaire à la coupe de France mais en plus bourrin
     + En particulier, les sections :
     + [Design Skills](https://gm0.org/en/latest/docs/design-skills/index.html), pour la mécanique
     + [Hardware components, Tips and trick](https://gm0.org/en/latest/docs/hardware-components/tips-and-tricks.html) pour la mécanique
