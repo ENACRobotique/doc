@@ -163,7 +163,7 @@ Ensuite, selon votre pôle, approfondir <strong>dans tutoriel</strong> les outil
 <a href="https://drive.google.com/drive/u/1/folders/0B3TOHzAm3I1Sfk96R0xRZGctR3BGa242aGExelpXU2VCcnJmbjg1OVlMRVNyV0xJeTM5SVU?resourcekey=0-rhd8NIuvxKy_Zvdg25Wu4w">Google drive associé</a></p>
 <h2 id="introductions-à-suivre"><a class="header" href="#introductions-à-suivre">Introductions à suivre</a></h2>
 <ol>
-<li><a href="introductions/introRobot.html">Intro robot</a>  <em>(1h)</em></li>
+<li><a href="introductions/introRobot.html">Intro robot</a>  <em>(1h15)</em></li>
 <li><a href="introductions/orgaClub.html">Organisation du club</a> <em>(30 min)</em></li>
 <li><a href="https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit">Allumer une LED de la carte tuto</a> <em>(2h)</em> (Présentiel)</li>
 <li><a href="introductions/solidworks.html">Introduction à la modélisation Solidworks et à l'impression 3D</a> <em>(2h)</em></li>
@@ -313,6 +313,10 @@ Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se
 <li>Ventouse (pneumatique, électrovanne)</li>
 <li>Pousser directement avec l'actionneur</li>
 </ul>
+<h3 id="carte-electronique"><a class="header" href="#carte-electronique">Carte electronique</a></h3>
+<p>Pourquoi utiliser des circuits électroniques ?
+Pensez à un clavier. Vous pouvez connecter tous les interrupteurs d'un clavier avec des fils et des diodes et toutes ces jolies choses, mais vous vous retrouvez avec un merdier. Un circuit imprimé est essentiellement un foutoir de fils qui n'est en fait qu'une carte avec un câblage en cuivre d'un millimètre d'épaisseur qui est bien agencé pour permettre des connexions rapides et cohérentes sans fils, et sur lesquels on est sur que tous les composants ont la bonne alimentation/courant électrique, et les bonnes connexions pour des protocoles plus complexes entre les composants et le microcontrolleur.</p>
+<p><img src="introductions/../images/illustration_pcb.png" alt="" /></p>
 <h3 id="microcontrolleur"><a class="header" href="#microcontrolleur">Microcontrolleur</a></h3>
 <p><img src="introductions/../images/comparison_microcontroller_2.png" alt="" /></p>
 <p>Pin disponible -&gt; Permet de brancher plus de capteurs, actionneurs, et toute sorte de composants électroniques. </p>
@@ -326,9 +330,6 @@ Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se
 <p>Au niveau de la programmation, généralement, plus c'est simple à programmer, moins il y a de &quot;flexibilité&quot; pour faire des choses complexes. Ainsi, les <strong>arduinos</strong> peuvent être assez limités pour les robots. Simple à utiliser, mais dur lorsque le micocontrolleur doit gérer plein de choses.</p>
 <p>Pourquoi ne pas programmer tout le robot sur le microcontrôleur mais qu'on utilise aussi des ordinateurs ?
 -&gt; On est obligé d'utiliser des languages &quot;bas niveau&quot;(C, C++) et on pourrait perdre plus de temps à développer des choses avec ces languages qu'en utilisant d'autres plus simples (python,...). C'est compliqué de débugger des choses complexes, et la puissance de calcul reste limité.</p>
-<h3 id="carte-electronique"><a class="header" href="#carte-electronique">Carte electronique</a></h3>
-<p>Pourquoi utiliser des circuits électroniques ?
-Pensez à un clavier. Vous pouvez connecter tous les interrupteurs d'un clavier avec des fils et des diodes et toutes ces jolies choses, mais vous vous retrouvez avec un merdier. Un circuit imprimé est essentiellement un foutoir de fils qui n'est en fait qu'une carte avec un câblage en cuivre d'un millimètre d'épaisseur qui est bien agencé pour permettre des connexions rapides et cohérentes sans fils, et sur lesquels on est sur que tous les composants ont la bonne alimentation/courant électrique, et les bonnes connexions pour des protocoles plus complexes entre les composants et le microcontrolleur.</p>
 <h3 id="ordinateur"><a class="header" href="#ordinateur">Ordinateur</a></h3>
 <p>Raspberry pi
 <img src="introductions/../images/raspy.jpg" alt="raspberry pi" /></p>
@@ -720,9 +721,9 @@ D'autres équipes utilisaient des petits solénoïdes avec une tige qui sort de 
 <h3 id="en-général"><a class="header" href="#en-général">En général</a></h3>
 <p>De nombreuses ressources en ligne existent déjà, parmi lesquels on peut noter :</p>
 <ul>
-<li><a href="https://www.eurobot.org/wiki/fr/home"><strong>WIki Eurobot</strong>, wiki officiel pour la coupe de france de robotique, encore assez peu complet</a></li>
-<li><a href="https://github.com/VRAC-team/la-maxi-liste-ressources-eurobot"><strong>VRAC, Une compilation de tutoriels</strong> par &quot;section&quot; (moteurs, odométrie, ...) ciblant les spécificités de la coupe de france</a></li>
-<li><a href="https://gm0.org/en/latest/index.html"><strong>Game Manual, ANGLAIS</strong>, un gros &quot;wiki&quot; pour la compétition de robots FIRST (USA), assez similaire à la coupe de France mais en plus bourrin</a>
+<li><a href="https://www.eurobot.org/wiki/fr/home"><strong>WIki Eurobot</strong></a> wiki officiel pour la coupe de france de robotique, encore assez peu complet</li>
+<li><a href="https://github.com/VRAC-team/la-maxi-liste-ressources-eurobot"><strong>VRAC, Une compilation de tutoriels</strong></a> par &quot;section&quot; (moteurs, odométrie, ...) ciblant les spécificités de la coupe de france</li>
+<li><a href="https://gm0.org/en/latest/index.html"><strong>Game Manual, ANGLAIS</strong>,</a> un gros &quot;wiki&quot; pour la compétition de robots FIRST (USA), assez similaire à la coupe de France mais en plus bourrin
 <ul>
 <li>En particulier, les sections :</li>
 <li><a href="https://gm0.org/en/latest/docs/design-skills/index.html">Design Skills</a>, pour la mécanique</li>
