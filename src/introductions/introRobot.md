@@ -172,6 +172,14 @@ Pourquoi ne pas programmer tout le robot sur le microcontrôleur mais qu'on util
 Raspberry pi
 ![raspberry pi](../images/raspy.jpg)
 
+### Exemple d'architecture globale :
+
+Voici un exemple de comment relier tous ces composants :
+![schema robot exemple](../images/schema_robot.png)
+
+Au sommet, on retrouve un embedded computer (-> Raspberry pi), qui commande un "peripheral board" (-> Carte elec à faire durant l'année) et reliés à d'éventuels composants "gourmands" en puissance de calcul(caméra, lidar,...).
+Le peripheral board (qui peut être décomposé en plusieurs cates) lui est connecté à tous les autres composants électroniques.
+
 ### Les batteries
 
 On utilise cette année des batteries de perceuse (Makita, 18V), sinon des Lipo/Life de hobby king de 12/14V sont très bien.
