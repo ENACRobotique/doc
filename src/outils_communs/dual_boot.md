@@ -1,8 +1,10 @@
 # Installer Dual Boot Linux
 
-Développer sous windows peut parfois être un peu compliqué, et comme d'une manière générale linux c'est mieux, on va apprendre comment l'installer sur ton ordi.
+Développer sous windows peut parfois être un peu compliqué, et comme d'une manière générale **linux c'est mieux**, on va apprendre comment l'installer sur ton ordi.
 
 On va installer un dual boot, c'est à dire que Windows et Linux vont cohabiter sur ton disque dur, et il faudra choisir au démarrage lequel tu voudras lancer. Tu aura donc les performances maximales, mais ne pourra pas etre sur les deux système simultanément.
+
+Il y'a de fortes chances que vous appreniez à le faire en cour d'archimat de l'ENAC lors de TP. Vous pourrez donc vous faire la main avant si vous avez peur de tuer votre ordinateur...
 
 ## Préliminaires sous windows
 

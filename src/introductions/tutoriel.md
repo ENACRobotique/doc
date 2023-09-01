@@ -13,8 +13,7 @@ Pour revoir tous les fichiers, consulter le
 
 ## Introductions à suivre
 
-1. [Intro robot](introRobot.md)  *(1h15)*
-1. [Organisation du club](orgaClub.md) *(30 min)*
+1. [Intro robot](introRobot.md)  *(1h15)* Si vous n'avez jamais vu un robot lisez ça !
 1. [Allumer une LED de la carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit) *(2h)* (Présentiel)
 1. [Introduction à la modélisation Solidworks et à l'impression 3D](solidworks.md) *(2h)*
 1. [Comment se lancer dans la conception d'un robot ?](../petits_tutos/index.md) *(15 min)*

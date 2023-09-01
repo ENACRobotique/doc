@@ -12,7 +12,7 @@ On conseille au cours de l'année de lire les **[Retour d'Experience (REX)]() qu
 
 Ensuite, si vous avez besoin de tutos spécifiques sur certains sujets ou des clés pour se lancer, il faut consulter les [petits tutos](petits_tutos/index.md)
 
-Pour les programmeurs, consulter Tuto Code pour comprendre le principe.
+<!-- Pour les programmeurs, consulter Tuto Code pour comprendre le principe. -->
 
-Voici l'ordre de "lecture" du site : 
-![](images/Accueil.png)
+<!-- Voici l'ordre de "lecture" du site :  -->
+<!-- ![](images/Accueil.png) -->

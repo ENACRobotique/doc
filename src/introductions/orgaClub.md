@@ -3,12 +3,11 @@
 ## Etre membre du club
 
 Pour faire partie du club, Il faut :
-1. Etre sur le **[Discord](https://discord.com/invite/7sPZFxb)**
-1. Demander **l'accès au Google Drive** du club 
-    + Sur le discord, vous pouvez mentionnez le président/Trésorier
-1. Remplir ses **coordonnées** sur le google sheet du Drive de l'année [ici pour 2023](https://docs.google.com/spreadsheets/d/1DeRmO0DupiJKzKiPEfP81VNeFPZifXAVMa56bStHbCQ/edit#gid=0).
-    + (le numéro de carte sert pour l'accès au local).
-1. Ensuite, il est impératif de **participer** à la réunion hebdomadaire du **jeudi soir** à 17h30 (ou de consulter le Compte-rendu si vous ne pouvez pas venir certaines fois).
+1. Etre sur le **[Discord](https://discord.com/invite/7sPZFxb)**, c'est le point central de nos communications !
+
+1. Remplir ses **coordonnées** sur le google form [ici pour 2024](https://docs.google.com/forms/d/e/1FAIpQLSdatJGEQBnEPTqi0qsnMXBmfnNNL4iHKDigHQGw1pEdLLsQVQ/viewform?usp=sf_link).
+
+1. Ensuite, il est impératif de **participer** à la réunion hebdomadaire du **jeudi** (ou de consulter le Compte-rendu si vous ne pouvez pas venir certaines fois).
 1. Enfin, il ne faut **pas hésiter à demander** de l'aide à tout moment, que ce soit **pour se lancer**/se faire former, ou savoir quoi faire. 
     + [Si vous préférez être autonome, n'hésitez pas à suivre le déroulé de l'introduction](tutoriel.md).
 1. Selon ce qui est adopté cette année, on utilisera un systéme de **Gestion de Projet** (Postit, Trello, ...) pour avoir les tâches en cours et ainsi savoir qui travaille sur quoi.
@@ -17,12 +16,9 @@ Pour faire partie du club, Il faut :
 ### Création de comptes
 Pour accéder aux outils, vous pouvez également créer les comptes au fur et à mesure de vos besoins, et demander les accès sur Discord.
 + **Whatsapp** Si vous avez besoin de communication rapide avec les autres membres (avant/pendant/après un event par exemple)
-+ [**Github** Pour partager le code, les cartes électroniques,...](https://github.com/ENACRobotique)
-+ **Dropbox** Pour travailler sur les modèles 3D Solidworks
-+ **Pour l'accès à d'autres comptes** et des contacts "ENAC", Vous pouvez vous rendre sur le Google Drive -> Docs -> Informations sur le club -> *Notes sur l'organisation du club*
++ [**Github**](https://github.com/ENACRobotique) pour partager le code, les cartes électroniques,...
++ [**Onshape**](https://www.onshape.com/en/education/sign-up) pour la modélisation CAO
 
-Tout d'abord, consultez la checklist pour créer les comptes et accéder à nos outils en ligne (demander les accès au président si vous ne les avez pas ). 
-[Checklist](https://docs.google.com/document/d/1r0wmCAKTRFZtkVTvN4oKbFwCR_OV0OJ3FN-Y-2EMzqc)
 
 
 
@@ -42,26 +38,39 @@ Comme de nombreuses équipes, depuis 2022, le club s'organise en "pôle" :
 + Electronique -> Réalisation des cartes electroniques, et programmation des microcontrolleurs avec le pôle informatique.
 + Mécanique -> Réalisation modélisation et impression 3D, découpage de planches du chassis du robot, assemblage,..
 
+Attention il ne faut pas croire que ces pôles sont indépendant , ils sont en réalité intrinsèquement liés ! Vous ferez et verrez de tout afin de comprendre la globalité des éléments en jeux,
+
 Pour la programmation : 
-+ Pour ceux qui ont déjà fait bcp d'informatique avant, on peut se plonger assez tôt sur ce qui a été fait avant et coder soit même.
-+ Pour les autres, les premiers mois, il vaut mieux attendre d'avoir fait des cours ENAC avant, et se concentrer sur des choses simples et laisser les autres/les anciens programmer pour ne pas se démotiver et ne pas perdre trop de temps.
++ Pour ceux qui ont déjà fait beaucoup d'informatique avant, on peut se plonger assez tôt sur ce qui a été fait avant et coder soit même.
+
++ Pour les **débutants**, les premiers mois, il vaut mieux attendre d'avoir fait des cours de l'ENAC et se concentrer sur des choses simples et laisser les autres/les anciens programmer pour ne pas se démotiver et ne pas perdre trop de temps. On vous a prévu des projets tutoriels pour vous faire les mains !
 
 ### Responsabilités - Organigramme
 ![](../images/organigramme_2022.png "Organigramme des fonctions au club robot")
+(exemple 2022)
+
+Les responsabilité sont dispatché par rôles et peuvent varier pour chaque année. Un membre peut occuper plusieurs responsabilités. Ces postes n'engagent que notre organisation et sont indépendant des postes BDE. Par ailleurs seul les postes de président, secrétaire et trésorier comptent pour l'engagement citoyens.
+Il est préférable que des habitués du club occupent ces 3 postes afin de gérer le club avec l'expérience de son activité.
 
 
 ## Organisation du google drive:
-+ Docs -> Documents super utiles
-    + Nouvel arrivant -formation
-    + Tutos & où trouver les infos
-    + Infos sur le club
-        + Documents types(pour le président surtout !)
-    + Archives réglement
-    +  Graphismes 
-        + Logo, affiches,...
-    + Trésorerie
-        +  Organisé par année fiscale
+
+
+Vous n'utiliserez pas beaucoupe le drive sauf si vous avez un poste à responsabilité.
+
++ Docs -> Documents super utiles mais pas toujours bien rangés
     + Coupe XXX
         + Photos de l’année, Outils de communication, Dossier techniques, specs, cahier des charges, diagrammes,...
+    + Infos sur le club
+    +  Graphismes 
+        + Logo, affiches,...
+    + Tutos & où trouver les infos ( attention certains ne sont plus au goût du jour !)
+    + Archives réglement
     + ARchives
         + Anciens dossiers coupes
+
+
+Uniquement accessible au Trésorier, Président et Secrétaire:
++ Organisation
+    + Trésorerie
+    + Membres
