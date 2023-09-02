@@ -3,12 +3,11 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Intro solidworks - Doc ENAC Robotique</title>
+        <title>Mécanique - Doc ENAC Robotique</title>
 
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -33,14 +32,15 @@
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -56,7 +56,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -68,12 +68,14 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -81,16 +83,38 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../accueil.html"><strong aria-hidden="true">1.</strong> Accueil</a></li><li class="chapter-item expanded "><a href="../introductions/tutoriel.html"><strong aria-hidden="true">2.</strong> introductions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introductions/introRobot.html"><strong aria-hidden="true">2.1.</strong> Intro Création robot</a></li><li class="chapter-item expanded "><a href="../introductions/orgaClub.html"><strong aria-hidden="true">2.2.</strong> Intro au club</a></li><li class="chapter-item expanded "><a href="../introductions/introPython.html"><strong aria-hidden="true">2.3.</strong> Intro Python</a></li><li class="chapter-item expanded "><a href="../introductions/introC.html"><strong aria-hidden="true">2.4.</strong> Intro C - Carte Tuto</a></li><li class="chapter-item expanded "><a href="../introductions/solidworks.html" class="active"><strong aria-hidden="true">2.5.</strong> Intro solidworks</a></li><li class="chapter-item expanded "><a href="../introductions/lexique.html"><strong aria-hidden="true">2.6.</strong> Lexique</a></li></ol></li><li class="chapter-item expanded "><a href="../outils_communs/index.html"><strong aria-hidden="true">3.</strong> Outils Communs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../outils_communs/dual_boot.html"><strong aria-hidden="true">3.1.</strong> Dual Boot</a></li><li class="chapter-item expanded "><a href="../outils_communs/git.html"><strong aria-hidden="true">3.2.</strong> Git</a></li><li class="chapter-item expanded "><a href="../outils_communs/vscode.html"><strong aria-hidden="true">3.3.</strong> VS Code</a></li><li class="chapter-item expanded "><a href="../outils_communs/kicad.html"><strong aria-hidden="true">3.4.</strong> Kicad</a></li><li class="chapter-item expanded "><a href="../outils_communs/solidw.html"><strong aria-hidden="true">3.5.</strong> Solidworks</a></li></ol></li><li class="chapter-item expanded "><a href="../rex/asserv.html"><strong aria-hidden="true">4.</strong> FAQ/REX : Retour D'expérience</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Conception robots</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../rex/asserv.html"><strong aria-hidden="true">4.1.1.</strong> Asservissement</a></li><li class="chapter-item expanded "><a href="../rex/concept_meca.html"><strong aria-hidden="true">4.1.2.</strong> Mécanique</a></li><li class="chapter-item expanded "><a href="../rex/concept_elec.html"><strong aria-hidden="true">4.1.3.</strong> Conception électronique</a></li><li class="chapter-item expanded "><a href="../rex/code_elec.html"><strong aria-hidden="true">4.1.4.</strong> Programmation carte elec</a></li><li class="chapter-item expanded "><a href="../rex/code_python.html"><strong aria-hidden="true">4.1.5.</strong> Programmation haut niveau</a></li></ol></li><li class="chapter-item expanded "><a href="../rex/coupe.html"><strong aria-hidden="true">4.2.</strong> Organisation du club/Pendant la coupe</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Systèmes spécifiques</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../rex/shoot.html"><strong aria-hidden="true">4.3.1.</strong> Systéme de tir</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../petits_tutos/index.html"><strong aria-hidden="true">5.</strong> Petits tutos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../petits_tutos/informatique.html"><strong aria-hidden="true">5.1.</strong> informatique</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../petits_tutos/raspberry_pi.html"><strong aria-hidden="true">5.1.1.</strong> Raspberry Pi</a></li><li class="chapter-item expanded "><a href="../petits_tutos/simulator.html"><strong aria-hidden="true">5.1.2.</strong> simulateur et IHM du robot (2022-2023)</a></li><li class="chapter-item expanded "><a href="../petits_tutos/peripherique_occupe.html"><strong aria-hidden="true">5.1.3.</strong> Périphérique occupé au branchement d'un µC</a></li></ol></li><li class="chapter-item expanded "><a href="../elec/index.html"><strong aria-hidden="true">5.2.</strong> Tutos elec</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elec/led.html"><strong aria-hidden="true">5.2.1.</strong> la Led</a></li><li class="chapter-item expanded "><a href="../petits_tutos/microcontrollers.html"><strong aria-hidden="true">5.2.2.</strong> les différents microcontrolleurs</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../code/index.html"><strong aria-hidden="true">6.</strong> Tutos code - Architecture globale</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> aruco</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> LIDAR</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Middleware</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.1.</strong> Ros2</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.2.</strong> eCAL</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Configuration raspy 4</div></li><li class="chapter-item expanded "><a href="../code/state_machine.html"><strong aria-hidden="true">6.5.</strong> Compilateur state machine</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../accueil.html"><strong aria-hidden="true">1.</strong> Accueil</a></li><li class="chapter-item expanded "><a href="../introductions/tutoriel.html"><strong aria-hidden="true">2.</strong> introductions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introductions/orgaClub.html"><strong aria-hidden="true">2.1.</strong> Organisation du club</a></li><li class="chapter-item expanded "><a href="../introductions/introRobot.html"><strong aria-hidden="true">2.2.</strong> Intro Création robot</a></li><li class="chapter-item expanded "><a href="../introductions/introPython.html"><strong aria-hidden="true">2.3.</strong> Intro Python</a></li><li class="chapter-item expanded "><a href="../introductions/introC.html"><strong aria-hidden="true">2.4.</strong> Intro C - Carte Tuto</a></li><li class="chapter-item expanded "><a href="../introductions/solidworks.html" class="active"><strong aria-hidden="true">2.5.</strong> Mécanique</a></li><li class="chapter-item expanded "><a href="../introductions/lexique.html"><strong aria-hidden="true">2.6.</strong> Lexique</a></li></ol></li><li class="chapter-item expanded "><a href="../outils_communs/index.html"><strong aria-hidden="true">3.</strong> Outils Communs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../outils_communs/dual_boot.html"><strong aria-hidden="true">3.1.</strong> Dual Boot</a></li><li class="chapter-item expanded "><a href="../outils_communs/git.html"><strong aria-hidden="true">3.2.</strong> Git</a></li><li class="chapter-item expanded "><a href="../outils_communs/vscode.html"><strong aria-hidden="true">3.3.</strong> VS Code</a></li><li class="chapter-item expanded "><a href="../outils_communs/kicad.html"><strong aria-hidden="true">3.4.</strong> Kicad</a></li><li class="chapter-item expanded "><a href="../outils_communs/solidw.html"><strong aria-hidden="true">3.5.</strong> Solidworks</a></li></ol></li><li class="chapter-item expanded "><a href="../rex/asserv.html"><strong aria-hidden="true">4.</strong> FAQ/REX : Retour D'expérience</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Conception robots</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../rex/asserv.html"><strong aria-hidden="true">4.1.1.</strong> Asservissement</a></li><li class="chapter-item expanded "><a href="../rex/concept_meca.html"><strong aria-hidden="true">4.1.2.</strong> Mécanique</a></li><li class="chapter-item expanded "><a href="../rex/concept_elec.html"><strong aria-hidden="true">4.1.3.</strong> Conception électronique</a></li><li class="chapter-item expanded "><a href="../rex/code_elec.html"><strong aria-hidden="true">4.1.4.</strong> Programmation carte elec</a></li><li class="chapter-item expanded "><a href="../rex/code_python.html"><strong aria-hidden="true">4.1.5.</strong> Programmation haut niveau</a></li></ol></li><li class="chapter-item expanded "><a href="../rex/coupe.html"><strong aria-hidden="true">4.2.</strong> Organisation du club/Pendant la coupe</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Systèmes spécifiques</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../rex/shoot.html"><strong aria-hidden="true">4.3.1.</strong> Systéme de tir</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../petits_tutos/index.html"><strong aria-hidden="true">5.</strong> Petits tutos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../petits_tutos/informatique.html"><strong aria-hidden="true">5.1.</strong> informatique</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../petits_tutos/raspberry_pi.html"><strong aria-hidden="true">5.1.1.</strong> Raspberry Pi</a></li><li class="chapter-item expanded "><a href="../petits_tutos/simulator.html"><strong aria-hidden="true">5.1.2.</strong> simulateur et IHM du robot (2022-2023)</a></li><li class="chapter-item expanded "><a href="../petits_tutos/peripherique_occupe.html"><strong aria-hidden="true">5.1.3.</strong> Périphérique occupé au branchement d'un µC</a></li></ol></li><li class="chapter-item expanded "><a href="../elec/index.html"><strong aria-hidden="true">5.2.</strong> Tutos elec</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elec/led.html"><strong aria-hidden="true">5.2.1.</strong> la Led</a></li><li class="chapter-item expanded "><a href="../petits_tutos/microcontrollers.html"><strong aria-hidden="true">5.2.2.</strong> les différents microcontrolleurs</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../code/index.html"><strong aria-hidden="true">6.</strong> Tutos code - Architecture globale</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> aruco</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> LIDAR</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Middleware</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.1.</strong> Ros2</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.2.</strong> eCAL</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Configuration raspy 4</div></li><li class="chapter-item expanded "><a href="../code/state_machine.html"><strong aria-hidden="true">6.5.</strong> Compilateur state machine</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -99,7 +123,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -132,7 +156,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -142,19 +166,44 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="solidworks"><a class="header" href="#solidworks">Solidworks</a></h1>
-<p><a href="http://sdz.tdct.org/sdz/apprenez-a-utiliser-solidworks.html#ApprenezutiliserSolidWorks">Un tutoriel en ligne solidworks</a></p>
-<p>Pour le club, on peut s'arrêter à la section &quot;les Esquisses 3D et les courbes projetés&quot;. Tout ce qui est animation, visualisation et réalisation d'objet &quot;complexe&quot; ne servent à rien pour le club robot (au moins au début) ! En revanche, voir les bases des piéces et des assemblages est primordial.</p>
-<p>En sections que l'on peut également passer : 
-Cotation avancé</p>
-<h2 id="choses-à-voir-"><a class="header" href="#choses-à-voir-">Choses à voir :</a></h2>
-<p>Faire 2 piéces simple en impression 3D et les assembler</p>
-<p>Voir la bibliothéque d’objets du club</p>
-<p>Comment organiser une CAO</p>
-<p>Montrer charnière, congé</p>
-<p>parler des plans, types de vues</p>
-<p>Raccourcis claviers intéressants :
-F2 je crois, pour renommer</p>
+                        <h2 id="la-mécanique-au-club"><a class="header" href="#la-mécanique-au-club">La mécanique au club</a></h2>
+<p>Un robot, il faut lui donner vie ! Et pour se faire quoi de mieux que deux planches et 3 vis. Bon d'accord c'est plus complexe que ça je te le cède. Le club est un petit atelier équipé de nombreux outils qui te permettrons d'assembler toute sortes de montage et mécanisme qui constituent le robot. La plupart de nos outils ne nécéssite pas de formation spécifique. Pense néanmoins toujours à ta sécurité quand tu les utilises, si tu à un doute demande de l'aide c'est très facile de se blesser.</p>
+<p>Nous utilisons aussi le <a href="http://fabric-insa.fr/site/">FabLab de l'Insa</a> qui est très bien équipé. Notamment ils ont une <a href="https://www.autodesk.fr/solutions/cnc-machining-software">CNC</a> et une <a href="https://www.troteclaser.com/fr/apprentissage-et-assistance/faqs/comment-decouper-au-laser">découpeuse laser</a>. L'utilisation des machines se fait facturer à la minute. Il ont aussi un catalogue de noël si vous voulez vous offrir des maquettes à titre <strong>personnel</strong>.</p>
+<h2 id="la-cao"><a class="header" href="#la-cao">La C.A.O</a></h2>
+<p>Avant de fabriquer le robot il faut le designer. On utilise principalement la <strong>conception assistée par ordinateur</strong> (CAO ou CAD en anglais).</p>
+<p>La CAO permet de représenter les objets en deux ou trois dimensions sur un écran.. Elle inclut des fonctions multiples comme le calcul numérique, la  modélisation, etc.</p>
+<p>Les logiciels de CAO doivent être en mesure de réaliser les tâches suivantes : </p>
+<ul>
+<li>la manipulation d'objets 2D ou 3D,</li>
+<li>la représentation graphique,</li>
+<li>le dessin de plan,</li>
+<li>la gestion des grands assemblages. </li>
+<li>la modélisation numérique,</li>
+<li>le calcul numérique, </li>
+</ul>
+<p>Au club nous l'utilisons essentiellement pour le dessin des pièce et l'assemblage mécanique du robot. Nous ne faisons pas de calcul numérique.</p>
+<h2 id="logiciels"><a class="header" href="#logiciels">Logiciels</a></h2>
+<p>Initialement le club utilisait <a href="https://www.solidworks.com/">Solidworks</a> pour la modélisation 3D. Depuis la session 2023 le club cherche à migrer vers <a href="https://www.onshape.com/en/education/sign-up">Onshape</a>. La raison principale est qu'il a l'avantage d'être dans le navigateur ce qui rend son utilisation beaucoup plus accessible. Aucune instalation, pas besoin de windows, pas besoin de pc surpuissant. Pour les habitué de solidworks ne vous inquiétez pas, le logiciel est très similaire dans la création des pièces, il faut juste un petit temps d'adaptation. La ou il diffèr    e c'est dans la gestion des versions et des fichiers mais vous verrez ce n'est rien de compliqué c'est même pratique !</p>
+<p>Vous pouvez tout de suite commencer en suivant cette <a href="https://www.youtube.com/playlist?list=PLxmrkna-ixrIQmsPR3MITi4Ru1bnMH4-l">série de tutoriel sur youtube</a> comprenant les bases de création d'une pièce et d'utilisation du logiciel.</p>
+<h2 id="impression-3d"><a class="header" href="#impression-3d">Impression 3D</a></h2>
+<p>Pour le prototypage on utilise beaucoup l'impression 3D 
+Nous avons à notre disposition une <a href="https://www.flashforge.com/download-center/51">Creator Pro 2</a> que tu apprendra à utiliser bien évidemment! Une fois que tu auras fait ta première pièce il te faudra utiliser le logiciel <a href="https://www.flashforge.com/download-center/63">FlashPrint</a> pour rendre ton modèle 3D lisible pour l'imprimante. <em>( Il n'est pas nécéssaire de l'installer il est sur les postes du club ! )</em> Tu apprendra à tout utiliser lors des sessions de formations.</p>
+<!-- En sections que l'on peut également passer : 
+Cotation avancé
+## Choses à voir : 
+
+Faire 2 piéces simple en impression 3D et les assembler
+
+Voir la bibliothéque d’objets du club
+
+Comment organiser une CAO
+
+Montrer charnière, congé
+
+parler des plans, types de vues
+
+Raccourcis claviers intéressants :
+F2 je crois, pour renommer -->
 
                     </main>
 
@@ -188,21 +237,22 @@ F2 je crois, pour renommer</p>
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

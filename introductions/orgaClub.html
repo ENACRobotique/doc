@@ -3,12 +3,11 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Intro au club - Doc ENAC Robotique</title>
+        <title>Organisation du club - Doc ENAC Robotique</title>
 
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -33,14 +32,15 @@
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -56,7 +56,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -68,12 +68,14 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -81,16 +83,38 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../accueil.html"><strong aria-hidden="true">1.</strong> Accueil</a></li><li class="chapter-item expanded "><a href="../introductions/tutoriel.html"><strong aria-hidden="true">2.</strong> introductions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introductions/introRobot.html"><strong aria-hidden="true">2.1.</strong> Intro Création robot</a></li><li class="chapter-item expanded "><a href="../introductions/orgaClub.html" class="active"><strong aria-hidden="true">2.2.</strong> Intro au club</a></li><li class="chapter-item expanded "><a href="../introductions/introPython.html"><strong aria-hidden="true">2.3.</strong> Intro Python</a></li><li class="chapter-item expanded "><a href="../introductions/introC.html"><strong aria-hidden="true">2.4.</strong> Intro C - Carte Tuto</a></li><li class="chapter-item expanded "><a href="../introductions/solidworks.html"><strong aria-hidden="true">2.5.</strong> Intro solidworks</a></li><li class="chapter-item expanded "><a href="../introductions/lexique.html"><strong aria-hidden="true">2.6.</strong> Lexique</a></li></ol></li><li class="chapter-item expanded "><a href="../outils_communs/index.html"><strong aria-hidden="true">3.</strong> Outils Communs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../outils_communs/dual_boot.html"><strong aria-hidden="true">3.1.</strong> Dual Boot</a></li><li class="chapter-item expanded "><a href="../outils_communs/git.html"><strong aria-hidden="true">3.2.</strong> Git</a></li><li class="chapter-item expanded "><a href="../outils_communs/vscode.html"><strong aria-hidden="true">3.3.</strong> VS Code</a></li><li class="chapter-item expanded "><a href="../outils_communs/kicad.html"><strong aria-hidden="true">3.4.</strong> Kicad</a></li><li class="chapter-item expanded "><a href="../outils_communs/solidw.html"><strong aria-hidden="true">3.5.</strong> Solidworks</a></li></ol></li><li class="chapter-item expanded "><a href="../rex/asserv.html"><strong aria-hidden="true">4.</strong> FAQ/REX : Retour D'expérience</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Conception robots</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../rex/asserv.html"><strong aria-hidden="true">4.1.1.</strong> Asservissement</a></li><li class="chapter-item expanded "><a href="../rex/concept_meca.html"><strong aria-hidden="true">4.1.2.</strong> Mécanique</a></li><li class="chapter-item expanded "><a href="../rex/concept_elec.html"><strong aria-hidden="true">4.1.3.</strong> Conception électronique</a></li><li class="chapter-item expanded "><a href="../rex/code_elec.html"><strong aria-hidden="true">4.1.4.</strong> Programmation carte elec</a></li><li class="chapter-item expanded "><a href="../rex/code_python.html"><strong aria-hidden="true">4.1.5.</strong> Programmation haut niveau</a></li></ol></li><li class="chapter-item expanded "><a href="../rex/coupe.html"><strong aria-hidden="true">4.2.</strong> Organisation du club/Pendant la coupe</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Systèmes spécifiques</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../rex/shoot.html"><strong aria-hidden="true">4.3.1.</strong> Systéme de tir</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../petits_tutos/index.html"><strong aria-hidden="true">5.</strong> Petits tutos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../petits_tutos/informatique.html"><strong aria-hidden="true">5.1.</strong> informatique</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../petits_tutos/raspberry_pi.html"><strong aria-hidden="true">5.1.1.</strong> Raspberry Pi</a></li><li class="chapter-item expanded "><a href="../petits_tutos/simulator.html"><strong aria-hidden="true">5.1.2.</strong> simulateur et IHM du robot (2022-2023)</a></li><li class="chapter-item expanded "><a href="../petits_tutos/peripherique_occupe.html"><strong aria-hidden="true">5.1.3.</strong> Périphérique occupé au branchement d'un µC</a></li></ol></li><li class="chapter-item expanded "><a href="../elec/index.html"><strong aria-hidden="true">5.2.</strong> Tutos elec</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elec/led.html"><strong aria-hidden="true">5.2.1.</strong> la Led</a></li><li class="chapter-item expanded "><a href="../petits_tutos/microcontrollers.html"><strong aria-hidden="true">5.2.2.</strong> les différents microcontrolleurs</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../code/index.html"><strong aria-hidden="true">6.</strong> Tutos code - Architecture globale</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> aruco</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> LIDAR</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Middleware</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.1.</strong> Ros2</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.2.</strong> eCAL</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Configuration raspy 4</div></li><li class="chapter-item expanded "><a href="../code/state_machine.html"><strong aria-hidden="true">6.5.</strong> Compilateur state machine</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../accueil.html"><strong aria-hidden="true">1.</strong> Accueil</a></li><li class="chapter-item expanded "><a href="../introductions/tutoriel.html"><strong aria-hidden="true">2.</strong> introductions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introductions/orgaClub.html" class="active"><strong aria-hidden="true">2.1.</strong> Organisation du club</a></li><li class="chapter-item expanded "><a href="../introductions/introRobot.html"><strong aria-hidden="true">2.2.</strong> Intro Création robot</a></li><li class="chapter-item expanded "><a href="../introductions/introPython.html"><strong aria-hidden="true">2.3.</strong> Intro Python</a></li><li class="chapter-item expanded "><a href="../introductions/introC.html"><strong aria-hidden="true">2.4.</strong> Intro C - Carte Tuto</a></li><li class="chapter-item expanded "><a href="../introductions/solidworks.html"><strong aria-hidden="true">2.5.</strong> Mécanique</a></li><li class="chapter-item expanded "><a href="../introductions/lexique.html"><strong aria-hidden="true">2.6.</strong> Lexique</a></li></ol></li><li class="chapter-item expanded "><a href="../outils_communs/index.html"><strong aria-hidden="true">3.</strong> Outils Communs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../outils_communs/dual_boot.html"><strong aria-hidden="true">3.1.</strong> Dual Boot</a></li><li class="chapter-item expanded "><a href="../outils_communs/git.html"><strong aria-hidden="true">3.2.</strong> Git</a></li><li class="chapter-item expanded "><a href="../outils_communs/vscode.html"><strong aria-hidden="true">3.3.</strong> VS Code</a></li><li class="chapter-item expanded "><a href="../outils_communs/kicad.html"><strong aria-hidden="true">3.4.</strong> Kicad</a></li><li class="chapter-item expanded "><a href="../outils_communs/solidw.html"><strong aria-hidden="true">3.5.</strong> Solidworks</a></li></ol></li><li class="chapter-item expanded "><a href="../rex/asserv.html"><strong aria-hidden="true">4.</strong> FAQ/REX : Retour D'expérience</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Conception robots</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../rex/asserv.html"><strong aria-hidden="true">4.1.1.</strong> Asservissement</a></li><li class="chapter-item expanded "><a href="../rex/concept_meca.html"><strong aria-hidden="true">4.1.2.</strong> Mécanique</a></li><li class="chapter-item expanded "><a href="../rex/concept_elec.html"><strong aria-hidden="true">4.1.3.</strong> Conception électronique</a></li><li class="chapter-item expanded "><a href="../rex/code_elec.html"><strong aria-hidden="true">4.1.4.</strong> Programmation carte elec</a></li><li class="chapter-item expanded "><a href="../rex/code_python.html"><strong aria-hidden="true">4.1.5.</strong> Programmation haut niveau</a></li></ol></li><li class="chapter-item expanded "><a href="../rex/coupe.html"><strong aria-hidden="true">4.2.</strong> Organisation du club/Pendant la coupe</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Systèmes spécifiques</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../rex/shoot.html"><strong aria-hidden="true">4.3.1.</strong> Systéme de tir</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../petits_tutos/index.html"><strong aria-hidden="true">5.</strong> Petits tutos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../petits_tutos/informatique.html"><strong aria-hidden="true">5.1.</strong> informatique</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../petits_tutos/raspberry_pi.html"><strong aria-hidden="true">5.1.1.</strong> Raspberry Pi</a></li><li class="chapter-item expanded "><a href="../petits_tutos/simulator.html"><strong aria-hidden="true">5.1.2.</strong> simulateur et IHM du robot (2022-2023)</a></li><li class="chapter-item expanded "><a href="../petits_tutos/peripherique_occupe.html"><strong aria-hidden="true">5.1.3.</strong> Périphérique occupé au branchement d'un µC</a></li></ol></li><li class="chapter-item expanded "><a href="../elec/index.html"><strong aria-hidden="true">5.2.</strong> Tutos elec</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elec/led.html"><strong aria-hidden="true">5.2.1.</strong> la Led</a></li><li class="chapter-item expanded "><a href="../petits_tutos/microcontrollers.html"><strong aria-hidden="true">5.2.2.</strong> les différents microcontrolleurs</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../code/index.html"><strong aria-hidden="true">6.</strong> Tutos code - Architecture globale</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> aruco</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> LIDAR</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Middleware</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.1.</strong> Ros2</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.2.</strong> eCAL</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Configuration raspy 4</div></li><li class="chapter-item expanded "><a href="../code/state_machine.html"><strong aria-hidden="true">6.5.</strong> Compilateur state machine</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -99,7 +123,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -132,7 +156,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -146,24 +170,23 @@
 <h2 id="etre-membre-du-club"><a class="header" href="#etre-membre-du-club">Etre membre du club</a></h2>
 <p>Pour faire partie du club, Il faut :</p>
 <ol>
-<li>Etre sur le <strong><a href="https://discord.com/invite/7sPZFxb">Discord</a></strong></li>
-<li>Demander <strong>l'accès au Google Drive</strong> du club 
-<ul>
-<li>Sur le discord, vous pouvez mentionnez le président/Trésorier</li>
-</ul>
+<li>
+<p>Etre sur le <strong><a href="https://discord.com/invite/7sPZFxb">Discord</a></strong>, c'est le point central de nos communications !</p>
 </li>
-<li>Remplir ses <strong>coordonnées</strong> sur le google sheet du Drive de l'année <a href="https://docs.google.com/spreadsheets/d/1DeRmO0DupiJKzKiPEfP81VNeFPZifXAVMa56bStHbCQ/edit#gid=0">ici pour 2023</a>.
-<ul>
-<li>(le numéro de carte sert pour l'accès au local).</li>
-</ul>
+<li>
+<p>Remplir ses <strong>coordonnées</strong> sur le google form <a href="https://docs.google.com/forms/d/e/1FAIpQLSdatJGEQBnEPTqi0qsnMXBmfnNNL4iHKDigHQGw1pEdLLsQVQ/viewform?usp=sf_link">ici pour 2024</a>.</p>
 </li>
-<li>Ensuite, il est impératif de <strong>participer</strong> à la réunion hebdomadaire du <strong>jeudi soir</strong> à 17h30 (ou de consulter le Compte-rendu si vous ne pouvez pas venir certaines fois).</li>
-<li>Enfin, il ne faut <strong>pas hésiter à demander</strong> de l'aide à tout moment, que ce soit <strong>pour se lancer</strong>/se faire former, ou savoir quoi faire. 
+<li>
+<p>Ensuite, il est impératif de <strong>participer</strong> à la réunion hebdomadaire du <strong>jeudi</strong> (ou de consulter le Compte-rendu si vous ne pouvez pas venir certaines fois).</p>
+</li>
+<li>
+<p>Enfin, il ne faut <strong>pas hésiter à demander</strong> de l'aide à tout moment, que ce soit <strong>pour se lancer</strong>/se faire former, ou savoir quoi faire. </p>
 <ul>
 <li><a href="tutoriel.html">Si vous préférez être autonome, n'hésitez pas à suivre le déroulé de l'introduction</a>.</li>
 </ul>
 </li>
-<li>Selon ce qui est adopté cette année, on utilisera un systéme de <strong>Gestion de Projet</strong> (Postit, Trello, ...) pour avoir les tâches en cours et ainsi savoir qui travaille sur quoi.
+<li>
+<p>Selon ce qui est adopté cette année, on utilisera un systéme de <strong>Gestion de Projet</strong> (Postit, Trello, ...) pour avoir les tâches en cours et ainsi savoir qui travaille sur quoi.</p>
 <ul>
 <li>Par exemple, réaliser le cahier des charges, modéliser la base roulante, ... </li>
 </ul>
@@ -173,12 +196,9 @@
 <p>Pour accéder aux outils, vous pouvez également créer les comptes au fur et à mesure de vos besoins, et demander les accès sur Discord.</p>
 <ul>
 <li><strong>Whatsapp</strong> Si vous avez besoin de communication rapide avec les autres membres (avant/pendant/après un event par exemple)</li>
-<li><a href="https://github.com/ENACRobotique"><strong>Github</strong> Pour partager le code, les cartes électroniques,...</a></li>
-<li><strong>Dropbox</strong> Pour travailler sur les modèles 3D Solidworks</li>
-<li><strong>Pour l'accès à d'autres comptes</strong> et des contacts &quot;ENAC&quot;, Vous pouvez vous rendre sur le Google Drive -&gt; Docs -&gt; Informations sur le club -&gt; <em>Notes sur l'organisation du club</em></li>
+<li><a href="https://github.com/ENACRobotique"><strong>Github</strong></a> pour partager le code, les cartes électroniques,...</li>
+<li><a href="https://www.onshape.com/en/education/sign-up"><strong>Onshape</strong></a> pour la modélisation CAO</li>
 </ul>
-<p>Tout d'abord, consultez la checklist pour créer les comptes et accéder à nos outils en ligne (demander les accès au président si vous ne les avez pas ). 
-<a href="https://docs.google.com/document/d/1r0wmCAKTRFZtkVTvN4oKbFwCR_OV0OJ3FN-Y-2EMzqc">Checklist</a></p>
 <h2 id="répartition-des-tâches"><a class="header" href="#répartition-des-tâches">Répartition des tâches</a></h2>
 <h3 id="1a2a"><a class="header" href="#1a2a">1A/2A</a></h3>
 <p>Auparavant (de ~2015 à 2020), le club était divisé en 2 groupes, chacun faisant un des 2 robots.
@@ -191,40 +211,39 @@ D'un côté les 1A et les nouveaux, et de l'autre les 2A, afin d'être général
 <li>Electronique -&gt; Réalisation des cartes electroniques, et programmation des microcontrolleurs avec le pôle informatique.</li>
 <li>Mécanique -&gt; Réalisation modélisation et impression 3D, découpage de planches du chassis du robot, assemblage,..</li>
 </ul>
+<p>Attention il ne faut pas croire que ces pôles sont indépendant , ils sont en réalité intrinsèquement liés ! Vous ferez et verrez de tout afin de comprendre la globalité des éléments en jeux,</p>
 <p>Pour la programmation : </p>
 <ul>
-<li>Pour ceux qui ont déjà fait bcp d'informatique avant, on peut se plonger assez tôt sur ce qui a été fait avant et coder soit même.</li>
-<li>Pour les autres, les premiers mois, il vaut mieux attendre d'avoir fait des cours ENAC avant, et se concentrer sur des choses simples et laisser les autres/les anciens programmer pour ne pas se démotiver et ne pas perdre trop de temps.</li>
+<li>
+<p>Pour ceux qui ont déjà fait beaucoup d'informatique avant, on peut se plonger assez tôt sur ce qui a été fait avant et coder soit même.</p>
+</li>
+<li>
+<p>Pour les <strong>débutants</strong>, les premiers mois, il vaut mieux attendre d'avoir fait des cours de l'ENAC et se concentrer sur des choses simples et laisser les autres/les anciens programmer pour ne pas se démotiver et ne pas perdre trop de temps. On vous a prévu des projets tutoriels pour vous faire les mains !</p>
+</li>
 </ul>
 <h3 id="responsabilités---organigramme"><a class="header" href="#responsabilités---organigramme">Responsabilités - Organigramme</a></h3>
-<p><img src="../images/organigramme_2022.png" alt="" title="Organigramme des fonctions au club robot" /></p>
+<p><img src="../images/organigramme_2022.png" alt="" title="Organigramme des fonctions au club robot" />
+(exemple 2022)</p>
+<p>Les responsabilité sont dispatché par rôles et peuvent varier pour chaque année. Un membre peut occuper plusieurs responsabilités. Ces postes n'engagent que notre organisation et sont indépendant des postes BDE. Par ailleurs seul les postes de président, secrétaire et trésorier comptent pour l'engagement citoyens.
+Il est préférable que des habitués du club occupent ces 3 postes afin de gérer le club avec l'expérience de son activité.</p>
 <h2 id="organisation-du-google-drive"><a class="header" href="#organisation-du-google-drive">Organisation du google drive:</a></h2>
+<p>Vous n'utiliserez pas beaucoupe le drive sauf si vous avez un poste à responsabilité.</p>
 <ul>
-<li>Docs -&gt; Documents super utiles
+<li>Docs -&gt; Documents super utiles mais pas toujours bien rangés
 <ul>
-<li>Nouvel arrivant -formation</li>
-<li>Tutos &amp; où trouver les infos</li>
-<li>Infos sur le club
-<ul>
-<li>Documents types(pour le président surtout !)</li>
-</ul>
-</li>
-<li>Archives réglement</li>
-<li>Graphismes 
-<ul>
-<li>Logo, affiches,...</li>
-</ul>
-</li>
-<li>Trésorerie
-<ul>
-<li>Organisé par année fiscale</li>
-</ul>
-</li>
 <li>Coupe XXX
 <ul>
 <li>Photos de l’année, Outils de communication, Dossier techniques, specs, cahier des charges, diagrammes,...</li>
 </ul>
 </li>
+<li>Infos sur le club</li>
+<li>Graphismes 
+<ul>
+<li>Logo, affiches,...</li>
+</ul>
+</li>
+<li>Tutos &amp; où trouver les infos ( attention certains ne sont plus au goût du jour !)</li>
+<li>Archives réglement</li>
 <li>ARchives
 <ul>
 <li>Anciens dossiers coupes</li>
@@ -233,16 +252,25 @@ D'un côté les 1A et les nouveaux, et de l'autre les 2A, afin d'être général
 </ul>
 </li>
 </ul>
+<p>Uniquement accessible au Trésorier, Président et Secrétaire:</p>
+<ul>
+<li>Organisation
+<ul>
+<li>Trésorerie</li>
+<li>Membres</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../introductions/introRobot.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../introductions/tutoriel.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../introductions/introPython.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../introductions/introRobot.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -252,11 +280,11 @@ D'un côté les 1A et les nouveaux, et de l'autre les 2A, afin d'être général
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../introductions/introRobot.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../introductions/tutoriel.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../introductions/introPython.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../introductions/introRobot.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -266,21 +294,22 @@ D'un côté les 1A et les nouveaux, et de l'autre les 2A, afin d'être général
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>
