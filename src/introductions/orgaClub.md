@@ -10,8 +10,8 @@ Pour faire partie du club, Il faut :
 1. Ensuite, il est impératif de **participer** à la réunion hebdomadaire du **jeudi** (ou de consulter le Compte-rendu si vous ne pouvez pas venir certaines fois).
 1. Enfin, il ne faut **pas hésiter à demander** de l'aide à tout moment, que ce soit **pour se lancer**/se faire former, ou savoir quoi faire. 
     + [Si vous préférez être autonome, n'hésitez pas à suivre le déroulé de l'introduction](tutoriel.md).
-1. Selon ce qui est adopté cette année, on utilisera un systéme de **Gestion de Projet** (Postit, Trello, ...) pour avoir les tâches en cours et ainsi savoir qui travaille sur quoi.
-    + Par exemple, réaliser le cahier des charges, modéliser la base roulante, ... 
+<!-- 1. Selon ce qui est adopté cette année, on utilisera un systéme de **Gestion de Projet** (Postit, Trello, ...) pour avoir les tâches en cours et ainsi savoir qui travaille sur quoi.
+    + Par exemple, réaliser le cahier des charges, modéliser la base roulante, ...  -->
 
 ### Création de comptes
 Pour accéder aux outils, vous pouvez également créer les comptes au fur et à mesure de vos besoins, et demander les accès sur Discord.

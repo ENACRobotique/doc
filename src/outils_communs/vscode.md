@@ -10,6 +10,14 @@ Pour installer un ".deb" sur ubuntu par exemple, vous pouvez faire :
 
 Vous pouvez ensuite installer les extentions C/C++ et Python directement depuis VS code. Ça vous facilitera la lecture des différents codes ainsi que l'auto complétion.
 
+![](../images/cpp-extension.png)
+
 ### Outil de compilation pour l'embarqué (II):
 Une extension de VS code qui permet de compiler vers les microcontrolleurs
-[platformio](https://platformio.org/install/ide?install=vscode)
+[platformio](https://platformio.org/install/ide?install=vscode).
+
+Vous apprendrez à l'utiliser directement au club lorsque vous aborderez le C++.
+
+[What is Platformio ?](http://ajaugust.com/platformio-notes.html) 
+
+![](../images/platformio.png)

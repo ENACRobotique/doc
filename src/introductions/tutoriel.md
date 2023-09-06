@@ -14,12 +14,15 @@ Pour revoir tous les fichiers, consulter le
 ## Introductions à suivre
 
 1. [Intro robot](introRobot.md)  *(1h15)* Si vous n'avez jamais vu un robot lisez ça !
-1. [Allumer une LED de la carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit) *(2h)* (Présentiel)
-1. [Introduction à la modélisation Solidworks et à l'impression 3D](solidworks.md) *(2h)*
-1. [Comment se lancer dans la conception d'un robot ?](../petits_tutos/index.md) *(15 min)*
-1. **Pas encore rédigé** [Intro Git](../outils_communs/git.md) *(1h30)*
 
-## Tutoriels maison ENAC recommandés selon vos pôles de prédilection
+1. [Introduction à la modélisation et à l'impression 3D](solidworks.md) *(2h)*
+
+1. [Comment se lancer dans la conception d'un robot ?](../petits_tutos/index.md) *(15 min)*
+
+1.[Intro Git](../outils_communs/git.md) *(1h30)*
+<!-- 1. [Allumer une LED de la carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit) *(2h)* (Présentiel) -->
+
+<!-- ## Tutoriels maison ENAC recommandés selon vos pôles de prédilection
 
 **SECTION à REFAIRE**
 
@@ -35,5 +38,5 @@ Pour revoir tous les fichiers, consulter le
 | -----------------------------------------------------             |  ---   |  --  |     ----     |   ----        |
 | **Formations   (à demander en présentiel)**             | Méca | Elec | Info - C | Info - Python |
 | Introduction à l'établi menuiserie (~1h30)                        |   X   |    |        |  | 
-
+ -->
 
