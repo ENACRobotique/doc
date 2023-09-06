@@ -1,7 +1,7 @@
 # Summary
 
 - [Accueil](accueil.md)
-- [Organisation du club]()
+- [Organisation du club](organisation/orga.md)
 	- [Être membre du club](organisation/membre.md)
 	- [Logistique](organisation/logistique.md)	
 - [Intro Création robot](introductions/introRobot.md)	
