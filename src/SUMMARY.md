@@ -1,10 +1,10 @@
 # Summary
 
 - [Accueil](accueil.md)
-- [introductions](introductions/tutoriel.md)
-	- [Organisation du club](introductions/orgaClub.md)	
-	- [Intro Création robot](introductions/introRobot.md)
-	
+- [Organisation du club]()
+	- [Être membre du club](organisation/membre.md)
+	- [Logistique](organisation/logistique.md)	
+- [Intro Création robot](introductions/introRobot.md)	
 	- [Intro Python](introductions/introPython.md)
 	- [Intro C/C++](introductions/introC.md)
 	- [Mécanique](introductions/solidworks.md)
