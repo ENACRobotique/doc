@@ -716,13 +716,12 @@ L'adresse du dépôt devrait ressembler à ça : <em>git@github.com:ENACRobotiqu
 <p>On connait l'identité trigonométrique : <strong>sin(α-β) = sin(α).cos(β) - cos(α).sin(β)</strong></p>
 <p>On peut donc écrire <strong>Vtr = V.sin(α).cos(β) - V.cos(α).sin(β) + R.ꞷ</strong></p>
 <p>Si on décompose la vitesse <strong>V</strong> selon les axes du robot, on a :</p>
-<p><strong>Vx = V.cos(α)</strong>
-<strong>Vy = V.sin(α)</strong></p>
-<p>On en déduit donc :
-<strong>Vtr = Vy.cos(β) - Vx.sin(β) + R.ꞷ</strong></p>
+<p>\(<strong>Vx = V.cos(α)</strong>\)
+\(<strong>Vy = V.sin(α)</strong>\)</p>
+<p>On en déduit donc :</p>
+<p>\[Vtr = Vy.cos(β) - Vx.sin(β) + R.ꞷ\]</p>
 <h2 id="forme-matricielle"><a class="header" href="#forme-matricielle">Forme matricielle</a></h2>
-<p>Pour 3 roues placées respectivement aux angles β1, β2 et β3, on aura alors :</p>
-<p>test</p>
+<p>Pour 3 roues placées respectivement aux angles \(β1\), \(β2\) et \(β3\), on aura alors :</p>
 <p>\[ \begin{pmatrix}v1\\v2\\v3\end{pmatrix}=\begin{pmatrix}-sin(β1) &amp; cos(β1) &amp; R\\-sin(β2) &amp; cos(β2) &amp; R\\-sin(β3) &amp; cos(β3) &amp; R\end{pmatrix}\times\begin{pmatrix}Vx\\Vy\\ꞷ\end{pmatrix} \]</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="asservissement"><a class="header" href="#asservissement">Asservissement</a></h1>
 <p>Le principe de l'asservissement est de permettre à un moteur d'atteindre un objectif donné par &quot;l'utilisateur&quot; (par exemple, atteindre telle position ou tenir telle vitesse, avec un certain degré de précision et de &quot;rapidité&quot; )</p>
