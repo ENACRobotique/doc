@@ -15,6 +15,7 @@
 	- [VS Code & Platformio](outils_communs/vscode.md)
 	- [Kicad](outils_communs/kicad.md)
 	- [Solidworks](outils_communs/solidw.md)
+- [Base roulante](base_roulante/holonome.md)
 - [FAQ/REX : Retour D'expérience](rex/asserv.md)
 	- [Conception robots]()
 		- [Asservissement](rex/asserv.md)
