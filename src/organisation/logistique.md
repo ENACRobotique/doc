@@ -18,7 +18,7 @@ Voici une liste non exhaustives des fournisseurs que nous utilisons, cherches y 
 + Conrad
 + Dagoma
 + Amazon ( à éviter  )
-+ Aliexpressà ( à éviter )
++ Aliexpress ( à éviter )
 
 Consulte aussi notre liste de [matériel déjà référencé](https://docs.google.com/spreadsheets/d/1TeUoSIWEmzGR8E95UF1ArcKC_Q9ka0XM_hPPcPnf0rE/edit#gid=0&fvid=1951377967).
 
