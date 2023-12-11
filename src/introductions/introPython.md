@@ -10,6 +10,10 @@ Pour les Ienacs, vous aurez des cours de python dès le premier semestre qui vou
 
 Au club robot, nous utilisons le python pour réaliser de nombreux programmes, que ce soit des scripts, des interfaces graphiques ou encore la stratégie du robot. Pour cela, il peut être nécessaire de bien découper le programme, et d'être capable parfois de traiter en temps réel des données provenant d'un autre ordinateur. 
 
+
+
+#TODO
+
 Ainsi, une vue globale des programmes que nous maitenons et développons chaque année est disponible sur [tuto code - architecture globale](../code/index.md)
 
 <!-- ## TP - Télécommande robot

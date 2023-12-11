@@ -1,11 +1,17 @@
-# Introduction au C au club robot
+# La programmation embarqué 
 
-Selon votre niveau, il faut tout d'abord à apprendre à utiliser **le C en général (I)**, et lorsque c'est bon, vous pourrez passer au **C en embarqué (II)**
-[Lien direct vers le tuto de la Carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit)
-La partie I est réalisable de chez vous, la II peut être plus embêtante.
+Lorsque vous voulez programmer ( en python par exmple) vous utiliser votre ordinateur et vous y écrivez votre programme. Néanmoins vous avez bien vu que votre ordinateur est peut être un peu gros pour un petit robot et puis vous n'avez pas besoin de pouvoir lui brancher un clavier et un écran en permanence. Aussi peut être vous vous voyez mal brancher tout vos composant électroniques directement à votre ordinateur. C'est la qu'intervient la programmation embarqué!
+
+
+En embarquée vous avez besoin de relier un programme aux circuits électroniques de votre robot afin de pouvoir l'automatiser. C'est là qu'interviennent les circuit éléctoniques programmables, les **microcontrolleurs**. Ils sont généralement programmé en utilisant le language C++ ( dérivé du language C) que vous aprrendrez à utiliser au club. 
+
+À préciser que pour ceux qui ont déjà programmé en C et qui n'ont jamais fait d'embarqué qu'il faudra quand même suivre les tutoriels section I.
+
+
 ## Installation
 
-Il va falloir installer plusieurs choses :
+
+Il va falloir installer plusieurs choses sur vos ordinateurs :
 
 ### Outils de compilation (I):
 
@@ -30,22 +36,30 @@ Vous pouvez ensuite vérifier la version de gcc avec : `gcc -v`
 ### Editeur de texte :
 L'éditeur à utiliser est [visual studio code](../outils_communs/vscode.md)
 
+## I - Le C++ pour l'embarqué
 
-## I - Introduction au C en général
+Vous aurez un cour pratique sur la [Carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit) faite par le club pour découvrir le monde merveilleux de l'embarqué.
 
-Suivre le tutoriel de [Zeste de savoir](https://zestedesavoir.com/tutoriels/755/le-langage-c-1/1042_les-bases-du-langage-c/). Il contient les notions de bases et des TP pour les appliquer. Il est en **Français**.
+Il est recommandé ensuite de suivre les tutoriels de [Zeste de savoir](https://zestedesavoir.com/tutoriels/686/arduino-premiers-pas-en-informatique-embarquee/) qui vous permetra de vous plonger au coeur du sujet avec des **mises en pratique** et traitant toutes les notions utilisé en embarqué. Dans ce tutoriels c'est une carte arduino qui est utilisé. Nous en avons au club. Néanmoins pour nos robot nous utilisons des cartes ST(celle de la carte tuto!) qui se programment de la même façon, vous pourrez donc vous entrainer directement dessu. 
 
-Le tutoriel en entier devrait prendre une dizaine d'heures, n'hésitez pas à survoler certains détails et ne vous embétez pas à retenir, vous pouvez toujours retrouver le tutoriel si vous avez oublié quelque chose :p (On est pas en examen !). Vous n'êtes pas contraint de maîtriser ce cours avant d'arriver au club. Et bien évidement **demandez de l'aide si besoin** !
+
+## II - Le C plus généralement
+
+Si vous avez dejà fait du C seule la section précédente vous intéresse.
+
+Le C++ est un dérivé du language C. Pour approfondir votre maîtrise il vous faudra suivre cet autre tutoriel de [Zeste de savoir](https://zestedesavoir.com/tutoriels/755/le-langage-c-1/1042_les-bases-du-langage-c/). Il contient des notions de bases que vous aurez normalement déjà vu et d'autres plus avancées qu'il vous faudra bien connaître également (principalement la notion de **pointeur**).
+
+
+##
+Les tutoriels sont en français et devraient prendre une dizaine d'heures, n'hésitez pas à survoler certains détails et ne vous embêtez pas à retenir, vous pouvez toujours retrouver le tutoriel si vous avez oublié quelque chose :p (On est pas en examen !). Vous n'êtes pas contraint de maîtriser ces cours avant d'arriver au club. Cependant il faudra y consacrer du temps comme pour tout apprentissage. Et bien évidement **demandez de l'aide si besoin** !
 
 Par exemple, focalisez vous sur les types assez simple (int, float, char), les opérateurs mathématiques basiques, les conditions et les fonctions.
 
-Avec la pratique vous finirez par vous souvenir de ce qui est le plus utilisé dans votre quotidiens. Il n'est pas nécéssaire de faire les section III , IV et V du cours, vous apprendrez le reste au club par la pratique.
+Avec la pratique vous finirez par vous souvenir de ce qui est le plus utilisé dans votre quotidiens. 
 
 
 
-## II - Le C++ pour l'embarqué
 
-Le C c'est bien mais c'est mieux dans le robot ! Les microcontrolleurs sont proggramé en C/C++. Vous apprendrez les notions d'embarqué au club. En attendant vous pourrez aussi lire le manuel du débutant arduino disponible au club. Il explique le fonctionnement et quelques notions de bases. Couplé à vos connaissance du C++ ce sera donc un jeu d'enfant ! 
 
 <!-- Pour l'instant non porté sur le site :
     [Carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit)
