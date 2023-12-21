@@ -34,6 +34,11 @@ Vous pouvez tout de suite commencer en suivant cette [série de tutoriel sur you
 Pour le prototypage on utilise beaucoup l'impression 3D 
 Nous avons à notre disposition une [Creator Pro 2](https://www.flashforge.com/download-center/51) que tu apprendra à utiliser bien évidemment! Une fois que tu auras fait ta première pièce il te faudra utiliser le logiciel [FlashPrint](https://www.flashforge.com/download-center/63) pour rendre ton modèle 3D lisible pour l'imprimante. *( Il n'est pas nécéssaire de l'installer il est sur les postes du club ! )* Tu apprendra à tout utiliser lors des sessions de formations.
 
+
+## Tutos Onshape 
+
++ Faire une pièce paramétrée [youtube](https://www.youtube.com/watch?v=YRpnTfee34Q)
+
 <!-- En sections que l'on peut également passer : 
 Cotation avancé
 ## Choses à voir : 
