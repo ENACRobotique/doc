@@ -176,7 +176,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="asservissement"><a class="header" href="#asservissement">Asservissement</a></h1>
-<p>Le principe de l'asservissement est de permettre à un moteur d'atteindre un objectif donné par &quot;l'utilisateur&quot; (par exemple, atteindre telle position ou tenir telle vitesse, avec un certain degré de précision et de &quot;rapidité&quot; )</p>
+<p>Le principe de l'asservissement est de permettre à un moteur d'atteindre un objectif donné par "l'utilisateur" (par exemple, atteindre telle position ou tenir telle vitesse, avec un certain degré de précision et de "rapidité" )</p>
 <h2 id="la-théorie"><a class="header" href="#la-théorie">La théorie</a></h2>
 <p>La bible sur les <strong>principes généraux</strong> : <a href="https://www.pm-robotix.eu/2022/02/02/asservissement-et-pilotage-de-robot-autonome/">PM-robotix</a></p>
 <p><a href="http://www.rcva.fr/wp-content/uploads/2016/12/devoir_de_vacances.pdf">RCVA</a></p>
@@ -185,7 +185,7 @@
 <ol>
 <li>Fournir des consignes vitesse au robot, par exemple en envoyant du PWM grâce aux drivers moteurs types MD10C/D13S (<a href="https://github.com/ENACRobotique/2022_Robot_A/blob/main/src/motor.cpp#L82">Exemple du code de 2022</a>)</li>
 <li>Lire les données des <a href="https://www.generationrobots.com/blog/wp-content/uploads/2014/01/Encodeur-FR.png">encodeurs rotatifs</a>, pour savoir la vitesse des moteurs <a href="https://github.com/ENACRobotique/2022_Robot_A/blob/main/src/odom.cpp">Exemple en 2022, lecture software</a>. (<a href="https://www.generationrobots.com/blog/fr/encodeurs-robotique-mobile/">plus d'info sur les encodeurs</a>)</li>
-<li>Prévoir une &quot;interface&quot; avec l'ordinateur (en serial par exemple), c'est à dire pouvoir sur le port serial envoyer les coefficients du PID et recevoir les données de l'encodeur, pour pouvoir tracer des graphes/enrengistrer les données sur l'ordinateur </li>
+<li>Prévoir une "interface" avec l'ordinateur (en serial par exemple), c'est à dire pouvoir sur le port serial envoyer les coefficients du PID et recevoir les données de l'encodeur, pour pouvoir tracer des graphes/enrengistrer les données sur l'ordinateur</li>
 <li>Régler l'asservissement grâce à des courbes, en envoyant des consignes depuis le PC et en voyant le résultat</li>
 <li>Méthode de réglage :  <a href="https://assos.utc.fr/utcoupe/wiki/doku.php?id=informatique:asservissement">une idée de méthode de l'UTC</a></li>
 </ol>

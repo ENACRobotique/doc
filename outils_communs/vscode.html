@@ -179,15 +179,20 @@
 <h3 id="editeur-de-texte-i-et-ii"><a class="header" href="#editeur-de-texte-i-et-ii">Editeur de texte (I et II):</a></h3>
 <p>L'éditeur à utiliser est visual studio code.
 <a href="https://code.visualstudio.com/">VS code</a>. Vous serez amené à l'utiliser aussi en cour alors il sera judicieux de l'avoir sur votre machine personnelle.</p>
-<p>Pour installer un &quot;.deb&quot; sur ubuntu par exemple, vous pouvez faire :</p>
+<p>Pour installer un ".deb" sur ubuntu par exemple, vous pouvez faire :</p>
 <p><code>sudo dpkg -i fichier.deb</code></p>
 <p>Vous pouvez ensuite installer les extentions C/C++ et Python directement depuis VS code. Ça vous facilitera la lecture des différents codes ainsi que l'auto complétion.</p>
 <p><img src="../images/cpp-extension.png" alt="" /></p>
 <h3 id="outil-de-compilation-pour-lembarqué-ii"><a class="header" href="#outil-de-compilation-pour-lembarqué-ii">Outil de compilation pour l'embarqué (II):</a></h3>
 <p>Une extension de VS code qui permet de compiler vers les microcontrolleurs
 <a href="https://platformio.org/install/ide?install=vscode">platformio</a>.</p>
+<p>Il est nécessaire d'installer venv pour que platformIO fonctionne : <code>sudo apt install python3-venv</code>.</p>
+<p>Il faut aussi installer <a href="https://docs.platformio.org/en/stable/core/installation/udev-rules.html">les règles udev</a> pour que la connection aux cartes se passe bien.</p>
+<p>Installer d'abord curl: <code>sudo apt install curl</code></p>
+<p>Puis lancer la commande suivante:</p>
+<p><code>curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules | sudo tee /etc/udev/rules.d/99-platformio-udev.rules</code></p>
 <p>Vous apprendrez à l'utiliser directement au club lorsque vous aborderez le C++.</p>
-<p><a href="http://ajaugust.com/platformio-notes.html">What is Platformio ?</a> </p>
+<p><a href="http://ajaugust.com/platformio-notes.html">What is Platformio ?</a></p>
 <p><img src="../images/platformio.png" alt="" /></p>
 
                     </main>

@@ -175,7 +175,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="se-débarasser-du-périphérique-occupé-lors-du-branchement-dun-device"><a class="header" href="#se-débarasser-du-périphérique-occupé-lors-du-branchement-dun-device">Se débarasser du &quot;périphérique occupé&quot; lors du branchement d'un device</a></h1>
+                        <h1 id="se-débarasser-du-périphérique-occupé-lors-du-branchement-dun-device"><a class="header" href="#se-débarasser-du-périphérique-occupé-lors-du-branchement-dun-device">Se débarasser du "périphérique occupé" lors du branchement d'un device</a></h1>
 <p>Le responsable de ce bazar, c'est ModemManager, un service qui permet de contrôler les périphériques mobile 2G/3G/4G. <a href="https://www.freedesktop.org/wiki/Software/ModemManager/">Plus d'infos</a>.</p>
 <p>On va faire en sorte qu'il blacklist tout les péiphériques <strong>tty*</strong>.</p>
 <p>D'abord on exécute la commande <code>sudo systemctl status ModemManager</code>.<br />
@@ -194,7 +194,7 @@ Voilà un exemple de sortie :</p>
 <p>A la section <em>[Service]</em> du fichier, rajouter une ligne :</p>
 <pre><code class="language-plain">[Service]
 ...
-Environment=&quot;MM_FILTER_RULE_TTY_ACM_INTERFACE=0&quot;
+Environment="MM_FILTER_RULE_TTY_ACM_INTERFACE=0"
 </code></pre>
 <p>Enfin il faut recharger la configuration de <em>systemctl</em> et redémarrer le ModemManager:</p>
 <pre><code class="language-plain">sudo systemctl daemon-reload

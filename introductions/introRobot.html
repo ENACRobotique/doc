@@ -181,10 +181,10 @@
 <p>Ensuite, il faut réunir la liste du matériel nécessaire, lesquels sont à commander par exemple.</p>
 <p>Enfin, il faut établir la gestion du projet, c'est à dire savoir qui fait quoi et à quel moment pour ne pénaliser personne dans son travail, c'est à dire décider d'un <strong>calendrier</strong> de formation, de deadlines,...</p>
 <p>Ainsi, en ordre d'idée, il faudrait idéalement que le robot roule déjà dès fin décembre, et qu'il est capable de marquer des points en février.</p>
-<p>Exemple de timeline: 
+<p>Exemple de timeline:
 <img src="../images/timeline_projet.png" alt="" title="Exemple de timeline pour le robot sur une année" /></p>
 <h3 id="le-cahier-des-charges"><a class="header" href="#le-cahier-des-charges">Le cahier des charges</a></h3>
-<p>Pour que tout le monde soit d'accord, il est impératif d'avoir un cahier des charges. Il peut être assez court (quelques pages avec photos), mais il doit contenir l'essentiel, c'est à dire identifier à partir du réglement des &quot;fonctions&quot; à réaliser (se déplacer, récupérer X objet, afficher le score,...) afin que tous les membres aient la même idée des objectifs à atteindre. 
+<p>Pour que tout le monde soit d'accord, il est impératif d'avoir un cahier des charges. Il peut être assez court (quelques pages avec photos), mais il doit contenir l'essentiel, c'est à dire identifier à partir du réglement des "fonctions" à réaliser (se déplacer, récupérer X objet, afficher le score,...) afin que tous les membres aient la même idée des objectifs à atteindre.
 Pour chaque fonction, il faut des critères avec une valeur de performance à atteindre. Il peut bien évidemment être modifié au cours de l'année.</p>
 <p><a href="https://docs.google.com/document/d/1mrJBK6TYmAEOajHTTRQV775p3FRSDmuo/edit?usp=sharing&amp;ouid=110371115636606943160&amp;rtpof=true&amp;sd=true"><strong>Exemple de rapport avec cahier de charges</strong> pour le mini robot de formation Juin 2022</a></p>
 <h4 id="exemple-"><a class="header" href="#exemple-">Exemple :</a></h4>
@@ -198,21 +198,21 @@ Pour chaque fonction, il faut des critères avec une valeur de performance à at
 <h3 id="les-specs-du-robots"><a class="header" href="#les-specs-du-robots">Les specs du robots</a></h3>
 <p>L'idée est de recenser toutes les <strong>piéces que composera le robot</strong> (même ceux imprimés en 3D), et d'indiquer l'état d'avancement (en cours de design/de commande, en cours de test,...). Pour ceux qui sont à commander, c'est le moment de voir le prix pour avoir une idée du budget du robot.
 Ensuite, on peut faire l'inventaire de ce qui est nécessaire pour la <strong>carte électronique</strong>.
-Enfin, on peut définir comment fonctionnera le code dans les grandes lignes (quel &quot;language&quot; de communication entre la carte électronique et les ordis, quels fonctionalités sont impératives, lesquelles sont facultatives,...&quot;).</p>
-<p><a href="https://docs.google.com/document/d/1sOBxRK2LiSuNzQPDihp1MDDo0q5jfXRSP5_wCl4TWog/edit?usp=sharing">Un exemple de &quot;cahier de specs&quot; (2022)</a> </p>
+Enfin, on peut définir comment fonctionnera le code dans les grandes lignes (quel "language" de communication entre la carte électronique et les ordis, quels fonctionalités sont impératives, lesquelles sont facultatives,...").</p>
+<p><a href="https://docs.google.com/document/d/1sOBxRK2LiSuNzQPDihp1MDDo0q5jfXRSP5_wCl4TWog/edit?usp=sharing">Un exemple de "cahier de specs" (2022)</a></p>
 <h2 id="de-quoi-est-constitué-un-robot-"><a class="header" href="#de-quoi-est-constitué-un-robot-">De quoi est constitué un robot ?</a></h2>
 <h3 id="base-roulante"><a class="header" href="#base-roulante">Base roulante</a></h3>
-<p>La base roulante est tout ce qui permet au robot de &quot;rouler&quot; sur la table. Cela inclut les moteurs, les roues, les capteurs pour se localiser, l'électronique pour le déplacement et la localisation <em>(à l'ENAC généralement une carte électronique assure tout le robot)</em>, et les batteries. 
+<p>La base roulante est tout ce qui permet au robot de "rouler" sur la table. Cela inclut les moteurs, les roues, les capteurs pour se localiser, l'électronique pour le déplacement et la localisation <em>(à l'ENAC généralement une carte électronique assure tout le robot)</em>, et les batteries.
 C'est la partie essentielle du robot, à réaliser en premier. Sans base roulante fiable, on ne peut rien faire.</p>
 <h4 id="les-robots-différentiels"><a class="header" href="#les-robots-différentiels">Les robots différentiels</a></h4>
-<p>Le principe de ces robots est d'avoir 2 roues (généralement centrés sur le robot), avec généralement des patins à l'avant et à l'arrière pour que le robot ne bascule pas. On envoie des consignes de vitesse individuelles à chaque moteur ce qui permet de tourner sur soit même, d'avancer, ou de faire des trajectoires courbées : </p>
+<p>Le principe de ces robots est d'avoir 2 roues (généralement centrés sur le robot), avec généralement des patins à l'avant et à l'arrière pour que le robot ne bascule pas. On envoie des consignes de vitesse individuelles à chaque moteur ce qui permet de tourner sur soit même, d'avancer, ou de faire des trajectoires courbées :</p>
 <p><img src="../images/differential_robot_principle.png" alt="" /></p>
 <h4 id="les-robots-omnidirectionnels-"><a class="header" href="#les-robots-omnidirectionnels-">Les robots omnidirectionnels :</a></h4>
-<p>Ceux-ci ont la faculté de se déplacer dans <strong>toutes les directions</strong> grâce à la forme spéciale des roues. 
-Un exemple de gif pour un avec 4 roues : 
+<p>Ceux-ci ont la faculté de se déplacer dans <strong>toutes les directions</strong> grâce à la forme spéciale des roues.
+Un exemple de gif pour un avec 4 roues :
 <img src="../images/holonome_gif.gif" alt="" /></p>
 <p>On peut également en retrouver à 3 roues, généralement pour faire des robots triangulaires. Le seul désavantage des 3 roues est qu'il n'est pas capable de passer par dessus un obstacle, contrairement à celui à 4 roues qui pourrait.
-Pour tourner sur lui même, il suffit de faire tourner les 3 roues dans un sens, et pour se déplacer dans une des trois directions, il suffit de faire avancer 2 roues adjacentes (la troisième roue roule &quot;latéralement&quot; =&gt; Pas de frottement )
+Pour tourner sur lui même, il suffit de faire tourner les 3 roues dans un sens, et pour se déplacer dans une des trois directions, il suffit de faire avancer 2 roues adjacentes (la troisième roue roule "latéralement" =&gt; Pas de frottement )
 Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se repérer dans l'espace avec ceux-là <em>(à voir partie localisation)</em>.
 <img src="../images/omni_robot_three_wheel.png" alt="" title="exemple de robot omnidirectionnel à 3 roues" /></p>
 <h4 id="la-motorisation"><a class="header" href="#la-motorisation">La motorisation</a></h4>
@@ -223,8 +223,8 @@ Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se
 <ul>
 <li>Des roues en caoutchouc  (classique)</li>
 <li>Des roues déjà faites plus exotiques (par exemple des roues de rollers) -&gt; Peuvent endommager la table</li>
-<li>Faire les roues soit même en polyuréthane, avec l'intérieur de la roue en impression 3D. L'avantage est que l'on peut dimensionner la roue comme on a besoin, ça accroche mieux que la caoutchouc à la table, et ça ne fait (quasiment) pas de dégats sur la table en cas de dérapage. Parcontre il faut le mouler. <strong>Exemple de roues en 2022 sur le dropbox</strong> 
-<a href="https://www.youtube.com/watch?v=U-_xxI6qvlg">&quot;Tutoriel pour réaliser les roues&quot;</a></li>
+<li>Faire les roues soit même en polyuréthane, avec l'intérieur de la roue en impression 3D. L'avantage est que l'on peut dimensionner la roue comme on a besoin, ça accroche mieux que la caoutchouc à la table, et ça ne fait (quasiment) pas de dégats sur la table en cas de dérapage. Parcontre il faut le mouler. <strong>Exemple de roues en 2022 sur le dropbox</strong>
+<a href="https://www.youtube.com/watch?v=U-_xxI6qvlg">"Tutoriel pour réaliser les roues"</a></li>
 </ul>
 <h3 id="base-mécanique"><a class="header" href="#base-mécanique">Base mécanique</a></h3>
 <h4 id="forme-du-robot"><a class="header" href="#forme-du-robot">Forme du robot</a></h4>
@@ -232,7 +232,7 @@ Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se
 <ul>
 <li>Carrées/Rectangulaire
 <ul>
-<li><strong>++</strong> Pratique pour se coller à un &quot;mur&quot; </li>
+<li><strong>++</strong> Pratique pour se coller à un "mur"</li>
 <li><strong>--</strong> Peu optimal pour l'utilisation du périmètre</li>
 <li><strong>--</strong> Peut facilement rentrer en collision avec quelque chose en tournant sur lui même (difficile de tourner sur lui même près d'un mur)
 <img src="../images/square_robot.png" alt="" title="robot carré" /></li>
@@ -259,14 +259,14 @@ Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se
 </li>
 </ul>
 <h4 id="techniques-de-construction"><a class="header" href="#techniques-de-construction">Techniques de construction</a></h4>
-<p>Pour construire mécaniquement le &quot;cadre&quot; du robot, une méthode que l'on utilise souvent au club robot est de mettre une planche à la base du robot avec les roues, 4 profilés (=poutres) en métal et une planche qui fait le &quot;toit&quot;. Entre les deux, on peut mettre des planches verticalement ou horizontalement vissés aux profilés.</p>
-<p>Pour les profilés : </p>
+<p>Pour construire mécaniquement le "cadre" du robot, une méthode que l'on utilise souvent au club robot est de mettre une planche à la base du robot avec les roues, 4 profilés (=poutres) en métal et une planche qui fait le "toit". Entre les deux, on peut mettre des planches verticalement ou horizontalement vissés aux profilés.</p>
+<p>Pour les profilés :</p>
 <ul>
 <li>Profilés 20*20, M5, Ecrou en T</li>
 <li>Makerbeam
 <img src="../images/maker_beam.jpg" alt="makerbeam" /></li>
 </ul>
-<p>Pour les planches : </p>
+<p>Pour les planches :</p>
 <ul>
 <li><strong>Planches en bois</strong></li>
 <li>Verre acrylique</li>
@@ -282,14 +282,14 @@ Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se
 <tr><td>Caméra</td><td>Pour faire de la vision par ordinateur -&gt; Déterminer la position d'un objet, déterminer sa couleur, ... Mais c'est super complexe à mettre en oeuvre donc qu'en dernier recours.</td></tr>
 <tr><td>Température</td><td>Pas d'utilité pour la coupe de robot pour l'instant mais ça existe.</td></tr>
 <tr><td>Récepteur infrarouge, radio</td><td>utilisable pour la communication sans fil (entre robots)</td></tr>
-<tr><td>Interrupteur</td><td>Permet de détecter si le robot ou autre chose est en &quot;contact&quot; physique. Par exemple, on peut en mettre sur le robot à &quot;l'avant&quot; pour savoir s'il est en contact avec le mur et donc si c'est le cas, on sait que la position du robot est contre un mur et on peut &quot;recaler&quot; sa position ainsi.</td></tr>
+<tr><td>Interrupteur</td><td>Permet de détecter si le robot ou autre chose est en "contact" physique. Par exemple, on peut en mettre sur le robot à "l'avant" pour savoir s'il est en contact avec le mur et donc si c'est le cas, on sait que la position du robot est contre un mur et on peut "recaler" sa position ainsi.</td></tr>
 </tbody></table>
 </div>
 <p><img src="../images/exemple_recalage.png" alt="Exemple recalage" /></p>
 <h4 id="localisation"><a class="header" href="#localisation">Localisation</a></h4>
 <div class="table-wrapper"><table><thead><tr><th>Capteurs localisation (exemples)</th><th>usages</th></tr></thead><tbody>
-<tr><td>Encodeur optique (AMT-102V)</td><td>Surtout pour les robots différentiels. Ce sont des dispositifs qu'on met autour d'un axe (par exemple une roue) pour mesurer le nombre de &quot;tours de la roue&quot;. En connaissant le diamètre de la roue, on peut connaitre sa distance parcourue. Certains sont déjà intégrés aux moteurs, mais le problème est que si les roues &quot;dérapent&quot;, les encodeurs sur le moteur ne sont pas en mesure de le détecter. On retrouve donc dans certains robots des <a href="https://enacrobotique.github.io/doc/rex/concept_meca.html#encodeurs">roues &quot;folles&quot;</a>, qui sont juste sur un axe avec une faible résistance pour mesurer les déplacements d'un robot. <img src="../images/encodeur.jpg" alt="" /></td></tr>
-<tr><td>Capteur optique (Souris, <a href="https://shop.pimoroni.com/products/paa5100je-optical-tracking-spi-breakout?variant=39315330170963">PAA5100JE</a>)</td><td>Placé à distance constante du sol, il filme continuellement le sol et via des algorithmes il détermine le &quot;déplacement&quot; horizontal du robot en déterminant les différences entre les images filmés. La précision n'a pas encore été testé au club robot ENAC mais d'après d'autres clubs, c'est prometteur.</td></tr>
+<tr><td>Encodeur optique (AMT-102V)</td><td>Surtout pour les robots différentiels. Ce sont des dispositifs qu'on met autour d'un axe (par exemple une roue) pour mesurer le nombre de "tours de la roue". En connaissant le diamètre de la roue, on peut connaitre sa distance parcourue. Certains sont déjà intégrés aux moteurs, mais le problème est que si les roues "dérapent", les encodeurs sur le moteur ne sont pas en mesure de le détecter. On retrouve donc dans certains robots des <a href="https://enacrobotique.github.io/doc/rex/concept_meca.html#encodeurs">roues "folles"</a>, qui sont juste sur un axe avec une faible résistance pour mesurer les déplacements d'un robot. <img src="../images/encodeur.jpg" alt="" /></td></tr>
+<tr><td>Capteur optique (Souris, <a href="https://shop.pimoroni.com/products/paa5100je-optical-tracking-spi-breakout?variant=39315330170963">PAA5100JE</a>)</td><td>Placé à distance constante du sol, il filme continuellement le sol et via des algorithmes il détermine le "déplacement" horizontal du robot en déterminant les différences entre les images filmés. La précision n'a pas encore été testé au club robot ENAC mais d'après d'autres clubs, c'est prometteur.</td></tr>
 <tr><td>Lidar (2D)(Lidar LD06)</td><td>Le lidar est un capteur laser qui mesure sur un angle important (généralement 360°) les distances périodiquement(~10hz). L'usage principale est de détecter les adversaires ainsi. Un projet testé pour la coupe 2022 était de repérer des points fixes connus sur le terrain, et ainsi de trianguler la position du robot. Sinon on pourrait aussi le mettre proche du sol pour détecter les murets et certains algorithmes sont capable de déterminer les déplacements de cette manière. Pour info, ça existe aussi en 3D mais ça sert à rien pour la coupe et ça coute une blinde. <img src="../images/lidar_2d.png" alt="Lidar" /></td></tr>
 <tr><td>IMU/Centrale inertielle/Accéléromètres</td><td>Pas testé au club robot, une centrale inertielle est un instrument, capable d'intégrer les mouvements d'un mobile pour estimer son orientation, sa vitesse linéaire et sa position. L'estimation de position est relative au point de départ ou au dernier point de recalage.</td></tr>
 <tr><td>Vision par ordinateur (Camera/Code Aruco)</td><td>Les codes Aruco sont les sortes de QR code sur le terrain. Des algorithmes sont capables de déterminer avec une caméra leurs positions dans l'espace et donc si on en met un sur le robot, de déterminer la position du robot par rapport aux codes arucos du terrain. mais c'est complexe à mettre en oeuvre également.</td></tr>
@@ -297,8 +297,8 @@ Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se
 </tbody></table>
 </div>
 <h3 id="actionneurs"><a class="header" href="#actionneurs">Actionneurs</a></h3>
-<p>A la base de chaque &quot;mouvement&quot; de robot, on retrouve un moteur (mouvement de rotation). Lorsqu'on a besoin de faire certains types de mouvements, il faut faire des <a href="https://www.alloprof.qc.ca/fr/eleves/bv/sciences/les-mecanismes-de-transformation-du-mouvement-s1437">Transformations</a></p>
-<p>Pour attraper les objets, on peut réaliser des &quot;bras&quot; avec un servomoteur qui déplace le bras, et au bout on peut retrouver des :</p>
+<p>A la base de chaque "mouvement" de robot, on retrouve un moteur (mouvement de rotation). Lorsqu'on a besoin de faire certains types de mouvements, il faut faire des <a href="https://www.alloprof.qc.ca/fr/eleves/bv/sciences/les-mecanismes-de-transformation-du-mouvement-s1437">Transformations</a></p>
+<p>Pour attraper les objets, on peut réaliser des "bras" avec un servomoteur qui déplace le bras, et au bout on peut retrouver des :</p>
 <ul>
 <li>Pince</li>
 <li>Ventouse (pneumatique, électrovanne)</li>
@@ -310,24 +310,24 @@ Pensez à un clavier. Vous pouvez connecter tous les interrupteurs d'un clavier 
 <p><img src="../images/illustration_pcb.png" alt="" /></p>
 <h3 id="microcontrolleur"><a class="header" href="#microcontrolleur">Microcontrolleur</a></h3>
 <p><img src="../images/comparison_microcontroller_2.png" alt="" /></p>
-<p>Pin disponible -&gt; Permet de brancher plus de capteurs, actionneurs, et toute sorte de composants électroniques. </p>
+<p>Pin disponible -&gt; Permet de brancher plus de capteurs, actionneurs, et toute sorte de composants électroniques.</p>
 <div class="table-wrapper"><table><thead><tr><th>Microcontrolleur</th><th>Capacité de calcul/RAM/Espace</th><th>Pin disponible</th><th>Réseau</th><th>prix(hors pénurie)</th></tr></thead><tbody>
 <tr><td><strong>STM32 (français)</strong></td><td>Moyen à fort</td><td>Moyen à fort (~30-60)</td><td>Pas de réseau</td><td>Pas cher</td></tr>
-<tr><td><strong>ESP32 (chinois)</strong></td><td>fort à très &quot;fort&quot;</td><td>~20-30</td><td>Wifi, bluetooth</td><td>Pas cher</td></tr>
+<tr><td><strong>ESP32 (chinois)</strong></td><td>fort à très "fort"</td><td>~20-30</td><td>Wifi, bluetooth</td><td>Pas cher</td></tr>
 <tr><td><strong>Arduino</strong> (UK)</td><td>Faible</td><td>~10-20</td><td>Pas de réseau</td><td>Très cher (pour les capacités)</td></tr>
 <tr><td><strong>Teensy</strong> (USA)</td><td>Moyen à fort</td><td>Moyen à fort (~30-60)</td><td>Pas de réseau</td><td>Cher</td></tr>
 </tbody></table>
 </div>
-<p>Au niveau de la programmation, généralement, plus c'est simple à programmer, moins il y a de &quot;flexibilité&quot; pour faire des choses complexes. Ainsi, les <strong>arduinos</strong> peuvent être assez limités pour les robots. Simple à utiliser, mais dur lorsque le micocontrolleur doit gérer plein de choses.</p>
+<p>Au niveau de la programmation, généralement, plus c'est simple à programmer, moins il y a de "flexibilité" pour faire des choses complexes. Ainsi, les <strong>arduinos</strong> peuvent être assez limités pour les robots. Simple à utiliser, mais dur lorsque le micocontrolleur doit gérer plein de choses.</p>
 <p>Pourquoi ne pas programmer tout le robot sur le microcontrôleur mais qu'on utilise aussi des ordinateurs ?
--&gt; On est obligé d'utiliser des languages &quot;bas niveau&quot;(C, C++) et on pourrait perdre plus de temps à développer des choses avec ces languages qu'en utilisant d'autres plus simples (python,...). C'est compliqué de débugger des choses complexes, et la puissance de calcul reste limité.</p>
+-&gt; On est obligé d'utiliser des languages "bas niveau"(C, C++) et on pourrait perdre plus de temps à développer des choses avec ces languages qu'en utilisant d'autres plus simples (python,...). C'est compliqué de débugger des choses complexes, et la puissance de calcul reste limité.</p>
 <h3 id="ordinateur"><a class="header" href="#ordinateur">Ordinateur</a></h3>
 <p>Raspberry pi
 <img src="../images/raspy.jpg" alt="raspberry pi" /></p>
 <h3 id="exemple-darchitecture-globale-"><a class="header" href="#exemple-darchitecture-globale-">Exemple d'architecture globale :</a></h3>
 <p>Voici un exemple de comment relier tous ces composants :
 <img src="../images/schema_robot.png" alt="schema robot exemple" /></p>
-<p>Au sommet, on retrouve un embedded computer (-&gt; Raspberry pi), qui commande un &quot;peripheral board&quot; (-&gt; Carte elec à faire durant l'année) et reliés à d'éventuels composants &quot;gourmands&quot; en puissance de calcul(caméra, lidar,...).
+<p>Au sommet, on retrouve un embedded computer (-&gt; Raspberry pi), qui commande un "peripheral board" (-&gt; Carte elec à faire durant l'année) et reliés à d'éventuels composants "gourmands" en puissance de calcul(caméra, lidar,...).
 Le peripheral board (qui peut être décomposé en plusieurs cates) lui est connecté à tous les autres composants électroniques.</p>
 <h3 id="les-batteries"><a class="header" href="#les-batteries">Les batteries</a></h3>
 <p>On utilise cette année des batteries de perceuse (Makita, 18V), sinon des Lipo/Life de hobby king de 12/14V sont très bien.

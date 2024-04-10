@@ -182,7 +182,7 @@
 <p>La led, c'est la base. Il faut toujours avoir une LED sous la main. Alors commençons direct :</p>
 <p><img src="../images/led_base.png" alt="" title="la base" /></p>
 <ul>
-<li>Le premier &quot;composant&quot; (la flèche vers le haut) représente une source de tension continue (on ne travaille qu'en continu).</li>
+<li>Le premier "composant" (la flèche vers le haut) représente une source de tension continue (on ne travaille qu'en continu).</li>
 <li>Le 2ème est une résistance</li>
 <li>le 3ème une LED</li>
 <li>le dernier, la masse (point où potentiel vaut 0V)</li>
@@ -200,19 +200,19 @@
 <h2 id="déterminer-les-paramètres"><a class="header" href="#déterminer-les-paramètres">déterminer les paramètres</a></h2>
 <p>C'est bien tout ça, mais comment on trouve <strong>Vd</strong> et <strong>i</strong> ? La réponse se trouve dans un document appelé la <strong>datasheet</strong>.</p>
 <p>Ce document existe pour tout les composants électronique, et il faut le consulter avant d'utiliser un composant.</p>
-<p>Pour des composants &quot;standards&quot;, il n'y aura pas besoin de tout lire, on pourra se concentrer sur quelques infos précises.</p>
+<p>Pour des composants "standards", il n'y aura pas besoin de tout lire, on pourra se concentrer sur quelques infos précises.</p>
 <p>Voilà une datasheet pour une LED : <a href="https://www.vishay.com/docs/83171/tlur640.pdf">https://www.vishay.com/docs/83171/tlur640.pdf</a>.</p>
 <p>Quelques indices pour lire une datasheet :</p>
 <ul>
 <li>En haut à doite, il y a généralement le nom des composants décrits par la datasheet.</li>
 <li>Ensuite, il y a un desciption synthétique du composant. C'est rapide et facile à lire, et il y a beaucoup d'infos intéressantes, donc c'est à lire !</li>
-<li>Il y a généralement une section &quot;Absolute maximum ratings&quot;. Si vous dépassez les valeurs données ici, vous allez à coup sûr griller le composant. Il ne faut <strong>jamais</strong> atteindre ces valeurs. Cette partie sert à savoir rapidement si le composant peut convenir pour notre cas ou pas.</li>
+<li>Il y a généralement une section "Absolute maximum ratings". Si vous dépassez les valeurs données ici, vous allez à coup sûr griller le composant. Il ne faut <strong>jamais</strong> atteindre ces valeurs. Cette partie sert à savoir rapidement si le composant peut convenir pour notre cas ou pas.</li>
 <li>Le reste de la datasheet contient toutes les infos nécessaire, c'est là qu'il faudra chercher.</li>
 </ul>
-<p>Par exemple ici, dans les Absolute maximum ratings, le premier paramètre est &quot;Reverse voltage =&gt; 6V&quot;. Ça veut dire que si vous branchez la LED à l'envers sur une alimentation de 6V ou plus, la LED va griller très rapidement.
+<p>Par exemple ici, dans les Absolute maximum ratings, le premier paramètre est "Reverse voltage =&gt; 6V". Ça veut dire que si vous branchez la LED à l'envers sur une alimentation de 6V ou plus, la LED va griller très rapidement.
 Plus intéressant pour nous, <em>DC forward current 20mA</em>. On sait donc qu'il faudra fixer le courant à <strong>moins</strong> de 20mA.</p>
-<p>Pour une LED, on va chercher le courant qu'on va faire passer. C'est pas toujours très clair à trouver, mais ici, un gros indice est le fait que beacoup de &quot;test condition&quot; prennent <code>If = 10mA</code>. C'est bien inférieur à 20mA, donc on va choisir ça.</p>
-<p>Ensuite, il faut touver le <em>forward voltage</em> correspondant à ce courant. On peut le lire, assez difficilement grâce à la figure 4: &quot;<em>Forward current vs. Forward Voltage</em>&quot;. Pour If=10mA, on trouve environ <strong>Vf=1.8V</strong>.</p>
+<p>Pour une LED, on va chercher le courant qu'on va faire passer. C'est pas toujours très clair à trouver, mais ici, un gros indice est le fait que beacoup de "test condition" prennent <code>If = 10mA</code>. C'est bien inférieur à 20mA, donc on va choisir ça.</p>
+<p>Ensuite, il faut touver le <em>forward voltage</em> correspondant à ce courant. On peut le lire, assez difficilement grâce à la figure 4: "<em>Forward current vs. Forward Voltage</em>". Pour If=10mA, on trouve environ <strong>Vf=1.8V</strong>.</p>
 <p>On peut donc refaire notre calcul de résistance: <code>R=(5-1.8)/0.01</code> donc <code>R=320 ohm</code></p>
 
                     </main>

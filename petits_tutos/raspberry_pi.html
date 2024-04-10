@@ -185,8 +185,8 @@
 <p><strong>WiFi</strong> : On va faire en sorte que la raspi se connecte directement au réseau WiFi du club.</p>
 <p>Éditez le fichier <code>&lt;carte SD Raspi&gt;/etc/wpa_supplicant/wpa_supplicant.conf</code> (les droits d'admin seront sans doute nécessaires), et ajoutez le texte suivant (en remplaçant <em>lemotdepasse</em> par le mot de passe, bien entendu) :</p>
 <pre><code class="language-plain-text">network={
-    ssid=&quot;robot&quot;
-    psk=&quot;lemotdepasse&quot;
+    ssid="robot"
+    psk="lemotdepasse"
 }
 </code></pre>
 <p><strong>SSH</strong> : Pour activer le SSH sans brancher un écran et un clavier, créer un fichier <code>ssh</code> dans la partition <em>boot</em> (celle formatée en FAT). Les identifiants par défauts sont :</p>
