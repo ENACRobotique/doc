@@ -16,6 +16,16 @@ Vous pouvez ensuite installer les extentions C/C++ et Python directement depuis 
 Une extension de VS code qui permet de compiler vers les microcontrolleurs
 [platformio](https://platformio.org/install/ide?install=vscode).
 
+Il est nécessaire d'installer venv pour que platformIO fonctionne : `sudo apt install python3-venv`.
+
+Il faut aussi installer [les règles udev](https://docs.platformio.org/en/stable/core/installation/udev-rules.html) pour que la connection aux cartes se passe bien.
+
+Installer d'abord curl: `sudo apt install curl`
+
+Puis lancer la commande suivante:
+
+`curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules | sudo tee /etc/udev/rules.d/99-platformio-udev.rules`
+
 Vous apprendrez à l'utiliser directement au club lorsque vous aborderez le C++.
 
 [What is Platformio ?](http://ajaugust.com/platformio-notes.html) 
