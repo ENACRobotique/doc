@@ -16,6 +16,7 @@
 	- [VS Code & Platformio](outils_communs/vscode.md)
 	- [Kicad](outils_communs/kicad.md)
 	- [Solidworks](outils_communs/solidw.md)
+	- [SSH](outils_communs/ssh.md)
 - [Vers le robot (WIP)](to_robot/to_robot.md)
 	-[Liens en vrac](vrac.md)
 	- [Base roulante Holonome](to_robot/base_roulante/holonome.md)
