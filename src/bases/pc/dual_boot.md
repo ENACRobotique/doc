@@ -1,4 +1,4 @@
-# Installer Dual Boot Linux
+# Installer Un Dual Boot Linux
 
 Développer sous windows peut parfois être un peu compliqué, et comme d'une manière générale **linux c'est mieux**, on va apprendre comment l'installer sur ton ordi.
 
