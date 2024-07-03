@@ -12,9 +12,13 @@ Au club robot, nous utilisons le python pour réaliser de nombreux programmes, q
 
 
 
+
 #TODO
 
-Ainsi, une vue globale des programmes que nous maitenons et développons chaque année est disponible sur [tuto code - architecture globale](../code/index.md)
+Vous pourrez consulter ultérieurement :
++ Robokontrol
++ eCal
++ [tuto code - architecture globale](../../code/index.md)
 
 <!-- ## TP - Télécommande robot
 

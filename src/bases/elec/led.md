@@ -4,12 +4,12 @@
 
 La led, c'est la base. Il faut toujours avoir une LED sous la main. Alors commençons direct :
 
-![](../images/led_base.png "la base")
+![](../../images/led_base.png "la base")
 
 - Le premier "composant" (la flèche vers le haut) représente une source de tension continue (on ne travaille qu'en continu).
 - Le 2ème est une résistance
 - le 3ème une LED
-- le dernier, la masse (point où potentiel vaut 0V)
+- le dernier, la masse (point où le potentiel vaut 0V)
 
 Comme au collège, on suppose que le potentiel est constant le long d'un fil.
 
@@ -34,7 +34,7 @@ Ce document existe pour tout les composants électronique, et il faut le consult
 
 Pour des composants "standards", il n'y aura pas besoin de tout lire, on pourra se concentrer sur quelques infos précises.
 
-Voilà une datasheet pour une LED : [https://www.vishay.com/docs/83171/tlur640.pdf](https://www.vishay.com/docs/83171/tlur640.pdf).
+Voilà une datasheet pour une LED : [BIR-BM1331](../../datasheets/BIR-BM1331.PDF).
 
 Quelques indices pour lire une datasheet :
 
@@ -44,13 +44,13 @@ Quelques indices pour lire une datasheet :
 - Le reste de la datasheet contient toutes les infos nécessaire, c'est là qu'il faudra chercher.
 
 
-Par exemple ici, dans les Absolute maximum ratings, le premier paramètre est "Reverse voltage => 6V". Ça veut dire que si vous branchez la LED à l'envers sur une alimentation de 6V ou plus, la LED va griller très rapidement.
-Plus intéressant pour nous, _DC forward current 20mA_. On sait donc qu'il faudra fixer le courant à __moins__ de 20mA.
+Par exemple ici, dans les Absolute maximum ratings, le premier paramètre est "Reverse voltage => 5V". Ça veut dire que si vous branchez la LED à l'envers sur une alimentation de 5V ou plus, la LED va griller très rapidement.
+Plus intéressant pour nous, _Continuous forward current 100mA_. On sait donc qu'il faudra fixer le courant à __moins__ de 100mA.
 
-Pour une LED, on va chercher le courant qu'on va faire passer. C'est pas toujours très clair à trouver, mais ici, un gros indice est le fait que beacoup de "test condition" prennent `If = 10mA`. C'est bien inférieur à 20mA, donc on va choisir ça.
+Pour une LED, on va chercher le courant qu'on va faire passer. C'est pas toujours très clair à trouver, mais ici, un gros indice sont les "test condition" qui prennent `If = 50mA` ou `20mA`. C'est bien inférieur à 100mA, on peut donc choisir 20mA.
 
-Ensuite, il faut touver le _forward voltage_ correspondant à ce courant. On peut le lire, assez difficilement grâce à la figure 4: "_Forward current vs. Forward Voltage_". Pour If=10mA, on trouve environ __Vf=1.8V__.
+Ensuite, il faut touver le _forward voltage_ correspondant à ce courant. On peut le lire, assez difficilement grâce à la figure 3: "_Forward current vs. Forward Voltage_". Pour If=20mA, on trouve environ __Vf=1.2V__.
 
-On peut donc refaire notre calcul de résistance: `R=(5-1.8)/0.01` donc `R=320 ohm`
+On peut donc refaire notre calcul de résistance: `R=(5-1.2)/0.02` donc `R=190 Ohm`
 
 

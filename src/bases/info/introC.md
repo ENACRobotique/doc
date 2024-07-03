@@ -1,6 +1,6 @@
 # La programmation embarqué 
 
-Lorsque vous voulez programmer ( en python par exmple) vous utiliser votre ordinateur et vous y écrivez votre programme. Néanmoins vous avez bien vu que votre ordinateur est peut être un peu gros pour un petit robot et puis vous n'avez pas besoin de pouvoir lui brancher un clavier et un écran en permanence. Aussi peut être vous vous voyez mal brancher tout vos composant électroniques directement à votre ordinateur. C'est la qu'intervient la programmation embarqué!
+Lorsque vous voulez programmer ( en python par exmple) vous utiliser votre ordinateur et vous y écrivez votre programme. Néanmoins vous avez bien vu que votre ordinateur est peut être un peu encombrant pour un petit robot et puis vous n'avez pas besoin de pouvoir lui brancher un clavier et un écran en permanence. Aussi peut être vous vous voyez mal brancher tout vos composant électroniques directement à votre ordinateur. C'est la qu'intervient la programmation embarqué!
 
 
 En embarquée vous avez besoin de relier un programme aux circuits électroniques de votre robot afin de pouvoir l'automatiser. C'est là qu'interviennent les circuit éléctoniques programmables, les **microcontrolleurs**. Ils sont généralement programmé en utilisant le language C++ ( dérivé du language C) que vous aprrendrez à utiliser au club. 
@@ -13,7 +13,7 @@ En embarquée vous avez besoin de relier un programme aux circuits électronique
 
 Il va falloir installer plusieurs choses sur vos ordinateurs :
 
-### Outils de compilation (I):
+### Outils de compilation :
 
 Le C est un language compilé. Sous Linux vous utiliserez **g++** pour compiler votre code. Vous utiliserez également **GDB** pour déboguer. Ces outils ne sont pas installés par défaut sur Ubuntu, vous devez donc les installer. Heureusement, c'est facile.
 
@@ -31,10 +31,6 @@ Vous pouvez ensuite vérifier la version de gcc avec : `gcc -v`
 
 <!-- Lien mort [Zeste de Savoir](https://zestedesavoir.com/tutoriels/755/le-langage-c-1/1042_les-bases-du-langage-c/4621_rencontre-avec-le-c/) -->
 
-
-
-### Editeur de texte :
-L'éditeur à utiliser est [visual studio code](../outils_communs/vscode.md)
 
 ## I - Le C++ pour l'embarqué
 

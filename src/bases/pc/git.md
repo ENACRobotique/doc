@@ -34,13 +34,13 @@ Afin de faciliter l'utilisation de github, il est conseillé de créer une paire
 Vous pourrez maintenant cloner les dépôt github en utilisant SSH plutôt que HTTPS en cliquant sur _Use SSH_ dans la petite fenêtre pour obtenir l'adresse du dépôt.
 L'adresse du dépôt devrait ressembler à ça : _git@github.com:ENACRobotique/doc.git_
 
-![](../images/git_ssh.png "Clone avec SSH")
+![](../../images/git_ssh.png "Clone avec SSH")
 
 # Utilisation 
 
 [Lien vers le git de tuto](git@github.com:ENACRobotique/tutogit2020.git)
 
-Vous aurez un cour sur l'utilisation de base de git. Plus que de simple commande il y'a aussi tout un concept a comprendre que vous serez ammené à maitriser avec l'usage. Vous pouvez retrouver un récap des commandes de bases ici : [Git cheat sheet](./git-cheat-sheet-education.pdf)
+Vous aurez un cour sur l'utilisation de base de git. Plus que de simple commande il y'a aussi tout un concept à comprendre que vous serez ammené à maitriser avec l'usage. Vous pouvez retrouver un récap des commandes de bases ici : [Git cheat sheet](../../datasheets/git-cheat-sheet-education.pdf)
 
 # Avancé 
 [Supprimer des sous modules proprement avec git](https://www.curiouslychase.com/posts/fix-git-submodule-add-a-git-directory-is-found-locally-issue/)
