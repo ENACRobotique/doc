@@ -2,8 +2,10 @@
 
 - [Accueil](accueil.md)
 - [Organisation du club](organisation/orga.md)
+	- [Activitées](organisation/activites.md)
 	- [Être membre du club](organisation/membre.md)
-	- [Logistique](organisation/logistique.md)	
+	- [Logistique](organisation/logistique.md)
+	- [Contacts](organisation/contacts.md)	
 
 - [Intro Création robot](introductions/introRobot.md)	
 	- [Lexique](introductions/lexique.md)
@@ -14,20 +16,20 @@
 		- [Python](bases/info/introPython.md)
 		- [Progammation pour l'embarqué ](bases/info/introC.md)
 		- [Linux]()
-	- [Mécanique](bases/meca/index.md)
-		- [La CAO](bases/meca/introMeca.md)
+	- [Mécanique](bases/meca/introMeca.md)
 		- [Onshape](bases/meca/onshape.md)
-		- [Impression3D]()
-		- [Imprimante Laser]()
+		- [Impression3D](bases/meca/imprimante.md)
+		- [Découpe Laser]()
 	- [Électronique](bases/elec/index.md)
 		- [Allumer une Led](bases/elec/led.md)
+		- [Identifier un problème dans un circuit]()
 		- [Microcontrolleurs]()
 		- [Kicad](bases/elec/kicad.md)
-	- [Putain ça marche comment un pc ?]()
-		- [Les PC du club](bases/pc/pc_club.md)
+	- [Putain ça marche comment un pc ?](bases/pc/index.md)
 		- [Dual Boot](bases/pc/dual_boot.md)
 		- [Git](bases/pc/git.md)
 		- [SSH](bases/pc/ssh.md)
+		- [Bash tips](bases/pc/bash_usefull.md)
 
 - [Vers le robot (WIP)](to_robot/to_robot.md)
 	-[Liens en vrac](vrac.md)
@@ -75,7 +77,7 @@
 		- [eCAL]()
 	- [Configuration raspy 4]()
 	- [Compilateur state machine](code/state_machine.md)
-
+- [](undefined.md)
 
 
 

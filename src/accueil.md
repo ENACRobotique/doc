@@ -10,6 +10,8 @@ Ce site contient la documentation du club robot de l'ENAC. Il est en cours de co
 
 Si vous êtes **nouveau**, lisez jusqu'a la section 4 (inclus) pour des tutoriels intéressants à suivre, et posez vos questions sur le [Discord](https://discord.com/invite/7sPZFxb) !
 
+Si vous voulez **utiliser le matériel du club**, c'est possible mais attention nous ne sommes **pas** un FabLab. Venez nous voir le Jeudi après midi ou contactez nous sur [nos réseaux](organisation/contacts.md).
+
 On conseille au cours de l'année de lire les **[Retour d'Experience (REX)](rex/asserv.md) que ce soit sur la conception des robots en début d'année puis sur la coupe pour ne pas répéter les erreurs.
 
 Ensuite, si vous avez besoin de tutos spécifiques sur certains sujets ou des clés pour se lancer, il faut consulter les [petits tutos](petits_tutos/index.md)

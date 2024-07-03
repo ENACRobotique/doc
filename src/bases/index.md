@@ -6,7 +6,7 @@ Les bases de la fabrication d'un robot peuvent se simplifier en distinguant troi
 + L'informatique
 + La mécanique
 
-Ces trois pilliers doivent vivre en symbiose si on veut pouvoir fabriquer un robot. Aussi il est donc nécéssaire d'en avoir les bases et même un peu plus. Mais pas d'inquiètudes l'objectif du club justement c'est d'avoir ce 'plus' au fil de la pratique. Cette section contient plein de lien et de tutoriels pour commencer dans ces trois domaines.
+Ces trois pilliers doivent vivre en symbiose si on veut pouvoir fabriquer un robot. Aussi il est donc nécéssaire d'en avoir les bases et même un peu plus. Mais pas d'inquiètudes, l'objectif du club justement c'est d'avoir ce 'plus' au fil de la pratique. Cette section contient plein de lien et de tutoriels pour commencer dans ces trois domaines.
 
 
 # Outils Communs

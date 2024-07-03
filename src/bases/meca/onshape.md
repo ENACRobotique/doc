@@ -12,6 +12,10 @@ S'inscrire sur [Onshape](https://www.onshape.com/en/education/sign-up).
 
 ## Tutos Onshape 
 
+(Tutoriel maison avec des images c'est mieux !)
+
+Autres tutoriels : 
+
 + [Série de tutoriel sur youtube](https://www.youtube.com/playlist?list=PLxmrkna-ixrIQmsPR3MITi4Ru1bnMH4-l)
 
 + Faire une pièce paramétrée [youtube](https://www.youtube.com/watch?v=YRpnTfee34Q)

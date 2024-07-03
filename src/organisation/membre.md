@@ -1,7 +1,7 @@
 ## Etre membre du club
 
 Pour faire partie du club, il faut :
-1. Etre sur le **[Discord](https://discord.com/invite/7sPZFxb)**, c'est le point central de nos communications !
+1. Etre sur le **[Discord](https://discord.com/invite/7sPZFxb)**, c'est le point central de nos communications internes!
 
 1. Remplir ses **coordonnées** sur le google form [ici pour 2024](https://docs.google.com/forms/d/e/1FAIpQLSdatJGEQBnEPTqi0qsnMXBmfnNNL4iHKDigHQGw1pEdLLsQVQ/viewform?usp=sf_link).
 
