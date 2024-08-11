@@ -5,7 +5,8 @@
 <a href="https://www.coupederobotique.fr/" >
 <img src="../images/cdfr_logo.png" width="1500px"> </a>
 <div style="padding-left: 30px;">
-Chaque année, nous participons à la <a href="https://www.coupederobotique.fr/"> Coupe de france de robotique </a>, organisée par Planète Sciences. Cette compétition rassemble tous les ans plus d’une centaine d’équipes venus de toute la France, et même du monde pour la coupe d’Europe <a href="https://www.eurobot.org/">Eurobot</a> qui s’y déroule en même temps. L'évènement se tiens à la <a href="https://maps.app.goo.gl/Hom6DXjm2Rnr7Usx8">Roche sur Yon</a>.
+
+Chaque année, nous participons à la [Coupe de france de robotique](https://www.coupederobotique.fr/), organisée par Planète Sciences. Cette compétition rassemble tous les ans plus d’une centaine d’équipes venus de toute la France, et même du monde pour la coupe d’Europe [Eurobot](https://www.eurobot.org/) qui s’y déroule en même temps. L'évènement se tiens à la [Roche sur Yon](https://maps.app.goo.gl/Hom6DXjm2Rnr7Usx8).
 Les participants regroupent des étudiants venus d’écoles d’ingénieurs tels que nous, mais aussi d’IUT et des anciens étudiants désireux de participer à nouveau.
 </div>
 </div>
