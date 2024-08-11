@@ -15,7 +15,7 @@ Vous pouvez ensuite installer les extentions C/C++ et Python directement depuis 
 ### Outil de compilation pour l'embarqué:
 
 <div style="display: flex; align-items: flex-start;">
-<a href="https://www.coupederobotique.fr/" >
+<a href="http://ajaugust.com/platformio-notes.html" >
 <img src="../../images/platformio.png" width="800px"> </a>
 <div style="padding-left: 30px;">
 
