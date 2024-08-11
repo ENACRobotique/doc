@@ -1,6 +1,6 @@
 # L'ordinateur le centre du monde
 
-!["Mettre image d'un mec qui brise son pc au marteau"](../../images/computer_break.png )
+!["Mettre image d'un mec qui brise son pc au marteau"](../../gifs/destroy_pc.gif)
 
 Comme tu as pu le constater au centre de tout il y'a ton ordinateur. Que ce soit pour la conception, le code ou même l'interface avec les robots, tu as besoin d'un pc opérationel et encore faut-il savoir l'utiliser !
 

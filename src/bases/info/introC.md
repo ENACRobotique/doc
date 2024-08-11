@@ -34,7 +34,8 @@ Vous pouvez ensuite vérifier la version de gcc avec : `gcc -v`
 
 ## I - Le C++ pour l'embarqué
 
-Vous aurez un cour pratique sur la [Carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit) faite par le club pour découvrir le monde merveilleux de l'embarqué.
+Vous aurez un cour pratique sur la [Carte tuto](../../carte_tuto/tuto_board.md) faite par le club pour découvrir le monde merveilleux de l'embarqué.
+<!-- Lien google doc [Carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit)  -->
 
 Il est recommandé ensuite de suivre les tutoriels de [Zeste de savoir](https://zestedesavoir.com/tutoriels/686/arduino-premiers-pas-en-informatique-embarquee/) qui vous permetra de vous plonger au coeur du sujet avec des **mises en pratique** et traitant toutes les notions utilisé en embarqué. Dans ce tutoriels c'est une carte arduino qui est utilisé. Nous en avons au club. Néanmoins pour nos robot nous utilisons des cartes ST(celle de la carte tuto!) qui se programment de la même façon, vous pourrez donc vous entrainer directement dessu. 
 
