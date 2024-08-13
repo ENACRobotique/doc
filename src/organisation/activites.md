@@ -21,3 +21,8 @@ L'évènemet est aussi parfait pour rencontrer des entreprises commes ST, Exotec
 
 <img src="../images/exotec.png" >
 
+
+On peux y remporter plusieurs prix basé sur certaines performances des équipes  ( créativité, communications, organisation ...). Néanmoins il n'y a pas de prix matériel. La vraie récompense est l'aventure vécue, l'expérience, les compétences et les personnes rencontrées. 
+
+![](../images/prix.png)
+
