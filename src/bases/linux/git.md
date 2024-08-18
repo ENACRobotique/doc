@@ -1,6 +1,13 @@
 # Git
 
-Git est un gestionnaire de version qu'on utilise pour gérer le code. Il permet entre autres de facilement collaborer à plusieurs sur un même code, ou encore de revenir à une version antérieur d'un fichier.
+
+<div style="display: flex; align-items: flex-start;">
+<img src="../../images/github-1024.webp" height="150px" width="auto">
+<div style="padding-left: 30px;">
+
+Git est un gestionnaire de version qu'on utilise pour gérer le code. Il permet entre autres de facilement collaborer à plusieurs sur un même code, ou encore de revenir à une version antérieur d'un fichier. Il est très utilisé par les pro mais nous vous encourageons à l'utiliser même pour des projets personnels tellement il est pratique.
+</div>
+</div>
 
 ## Mise en place
 - se créer un compte sur [Github](https://github.com)
@@ -40,8 +47,15 @@ L'adresse du dépôt devrait ressembler à ça : _git@github.com:ENACRobotique/d
 
 [Lien vers le git de tuto](git@github.com:ENACRobotique/tutogit2020.git)
 
-Vous aurez un cour sur l'utilisation de base de git. Plus que de simple commande il y'a aussi tout un concept à comprendre que vous serez ammené à maitriser avec l'usage. Vous pouvez retrouver un récap des commandes de bases ici : [Git cheat sheet](../../datasheets/git-cheat-sheet-education.pdf)
+Vous aurez un cours sur l'utilisation de base de git. Plus que de simple commande il y'a aussi tout un concept à comprendre que vous serez ammené à maitriser avec l'usage. Vous pouvez retrouver un récap des commandes de bases ici : [Git cheat sheet](../../datasheets/git-cheat-sheet-education.pdf). 
 
-# Avancé 
-[Supprimer des sous modules proprement avec git](https://www.curiouslychase.com/posts/fix-git-submodule-add-a-git-directory-is-found-locally-issue/)
+> A savoir : Github n'est pas Git !!! Github est un serveur qui heberge des repos Git. Et Git est le logiciel qui peut d'ailleur fonctionner sans internet. Il faut plutôt le voir comme "Github utilise Git".
+
+
+
+# Tuto rapides
+
++ [Revert un commit](https://www.freecodecamp.org/news/git-revert-commit-how-to-undo-the-last-commit/)
+
++ [Supprimer des sous modules proprement avec git](https://www.curiouslychase.com/posts/fix-git-submodule-add-a-git-directory-is-found-locally-issue/)
 
