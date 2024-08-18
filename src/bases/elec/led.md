@@ -1,21 +1,28 @@
-# la LED
+# La LED - Light Emitting Diode
 
-> **TL;DR;** Prends entre 300 et 400 ohm.
+<!-- > **TL;DR;** Prends entre 300 et 400 ohm. -->
+
+
+<div style="display: flex; align-items: flex-start;">
+<img src="../../images/led_base.png" height="400px" width="auto">
+<div style="padding-left: 30px;">
 
 La led, c'est la base. Il faut toujours avoir une LED sous la main. Alors commençons direct :
-
-![](../../images/led_base.png "la base")
-
 - Le premier "composant" (la flèche vers le haut) représente une source de tension continue (on ne travaille qu'en continu).
 - Le 2ème est une résistance
 - le 3ème une LED
 - le dernier, la masse (point où le potentiel vaut 0V)
+
 
 Comme au collège, on suppose que le potentiel est constant le long d'un fil.
 
 La LED est un semi-conducteur qui ne laisse passer le courant que dans un sens, de l'anode (le haut dans ce schéma) vers la cathode (le bas).
 
 Elle a une tension de seuil en deçà de laquelle elle ne s'allume pas. __La résistance est absolument nécessaire afin de ne pas griller la LED, où le système qui l'alimente !__
+
+</div>
+</div>
+
 
 ## Calculer la résistance
 
@@ -26,7 +33,7 @@ Admettons pour l'exemple que la chute de tension au borne de la LED soit `Vd=1.6
 - on calcule d'abord la tension au borne de la résistance (loi des mailles): `Vr=Vcc-Vd` (donc ici: Vr=3.4V)
 - on calcule ensuite la résistance avec la loi d'ohm (U=RI): `R=Vr/i` (donc ici: R=3.4/0.01, R=340 ohms)
 
-## déterminer les paramètres
+## Déterminer les paramètres
 
 C'est bien tout ça, mais comment on trouve __Vd__ et __i__ ? La réponse se trouve dans un document appelé la __datasheet__.
 
