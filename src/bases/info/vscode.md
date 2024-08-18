@@ -28,9 +28,13 @@ Vous apprendrez à l'utiliser directement au club lorsque vous aborderez le C++.
 
 [What is Platformio ?](http://ajaugust.com/platformio-notes.html) 
 
+Il est nécessaire d'installer venv pour que platformIO fonctionne : `sudo apt install python3-venv`.
+
 Pour linux il faut également rajouter des règles [`udev`](https://en.wikipedia.org/wiki/Udev). 
 
-Pour le télécharger vous pouvez taper la commande automagique : 
+Installer d'abord curl: `sudo apt install curl`
+
+Ensuite vous pouvez taper la commande automagique : 
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules | sudo tee /etc/udev/rules.d/99-platformio-udev.rules
