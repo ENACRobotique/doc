@@ -9,6 +9,7 @@
 
 - [Intro Création robot](introductions/introRobot.md)	
 	- [Lexique](introductions/lexique.md)
+	- [Datasheets](datasheets/datasheets.md)
 
 - [Les bases](bases/index.md)
 	- [Programmation](bases/info/index.md)

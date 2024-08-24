@@ -6,7 +6,7 @@
 
 # Contribution
 
-Ce répertoire est ouvert à ***TOUTES*** les contributions, alors si tu vois des erreurs, des fautes ou des choses à corriger n'hésite surtout pas et fais un commit.
+Ce répertoire est ouvert à ***TOUTES*** les contributions, alors si tu vois des erreurs, des fautes ou des choses à corriger n'hésite surtout pas et fais un commit. Pour des grandes modifications travaille sur la branche `wip`.
 
 La documentation est automatiquement remise à jour à chaque commit sur la branche master.
 

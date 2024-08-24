@@ -141,7 +141,7 @@ Le potentiel (tension par rapport à la masse) de cette pin est donc indéfini, 
 C’est donc le rôle des résistances de pullup / pulldown de fixer le potentiel de la broche à une valeur connue.
 
 Prenons le cas de R11, sur BTN1 (le jumper JP1 étant connecté):
-Quand le bouton n’est pas pressé,BTN1 est connecté au 3.3V à travers de la résistance R11.Le courant d’entrée du microcontrôleur étant nul, le courant traversant cette résistance vaut donc 0. D’après U=RI, on en déduit donc que la tension aux bornes de R11 est nulle, et donc que le potentiel de BTN1 vaut 3.3V.
+Quand le bouton n’est pas pressé, BTN1 est connecté au 3.3V à travers de la résistance R11.Le courant d’entrée du microcontrôleur étant nul, le courant traversant cette résistance vaut donc 0. D’après U=RI, on en déduit donc que la tension aux bornes de R11 est nulle, et donc que le potentiel de BTN1 vaut 3.3V.
 
 Quand le bouton est pressé, si on ignore R13, BNT1 se retrouve donc directement connecté à GND. Le potentiel est donc de 0, et on lira donc un état bas.
 
@@ -177,8 +177,47 @@ Remarque:
 Les résistances R13 et R14 ne sont pas nécessaires. Il faut cependant faire très attention: imaginons que la broche BTN1 soit configurée en sortie (OUTPUT), et commandée à l’état haut. Appuyer sur le bouton va donc créer un court-circuit entre le 3.3V et la masse au sein même du microcontrôleur, ce qui risque fort de le griller.
 Si on garde R13, elle va limiter le courant à I=U/R = 3.3/100 = 33mA, ce que le microcontrôleur est capable de supporter.
 
-### Signaux analogiques(TODO)
+### Signaux analogiques
 
-+ Lecture d'un potentiomètre 
-+ Utiliser le PWM
-+ Commander un servo et le clignotement des leds
+Jusqu'à présent nous regardion uniquement des signaux logiques. Hors les physiciens parmis vous me dirons qu'il existe aussi des signaux qui vareint de façon continus ou encore dis signaux analogiques. Les &micro;C tel que la F401RE sont capable de lire des signaux analogique et d'en générer indirectement.
+
+#### Lecture d'un potentiomètre
+
+> Avant de faire cette partie regardez comment configurer le moniteur série à la page suivante !
+
+Repérez sur le schéma le potentiomètre dans le bloc BASICS. Et sur la carte tuto près des boutons que nous avons utilisé précédement.
+
+<img src="../../images/potar_tuto.png" width="auto" height="150px" >
+
+Le potentiomètre ou Potar dans le jargon repose sur le principe du [pont diviseur de tension](https://fr.wikipedia.org/wiki/Diviseur_de_tension). Tourner la molette change la valeur d'une resistance variable qui fera donc varier le potentiel à la broche `POT` lié a la nucléo.
+
+Les broches analogiques sont des Analog to Digital Converter ou en français Convertisseur Analogique Numérique ( ADC ou CAN ). Les capteur de manière générale renvoient un signal de tension continue mais les &micro;C ne peuvent traiter que des singaux numérique. L'ADC va donc discrétiser le signal entre deux valeur, ici 0 et 3.3V, souvent avec une résolution de 10 bits. C'est à dire qu'il renvoient une valeur entre 0 et 1023.
+
+Configurez le broche `POT`en `INPUT` (les adc peuvent aussi être utilisé comme gpio). Pour visualiser le signal il faut utiliser le moniteur série, rajouter dans le `setup` l'instruction `Serial.begin(115200);` pour l'initialiser.
+
+On veut lire et afficher en boucle la valeur lue par le potar. On rajoute donc les instructions suivantes dans le `loop` :
+```cpp
+  int potar_value = analogRead(POT); // Lire la valeur de la pin POT
+  Serial.println(potar_value); // écrire la valeur dans le moniteur série
+```
+Si maintenant vous tournez la valeur vous verrez la valeur varier. Pas forcément sur tout l'interval car cela dépend des valeurs limites de la résistance du potar. Pour moi par exmple je lis de 10 à 1014.
+
+#### Générer un signal analogique
+
+Comme précédement les signaux du &micro;C étant numérique on veut les rendre analogique on utilise donc un Digital to Analog Converter (DAC ou CNA). Une façon de réaliser est la PWM regardez la vidéo de [U=RI](https://www.youtube.com/watch?v=CSReyYwbGRY). 
+
+Nous allons, comme montré dans la vidéo, piloter une led de façon à la faire faire clignoter plus ou moins fort. Si vous regardez sur la carte tuto il y'a des broches sur lesquelles il est écrit PWM. Seules ces broches sont capable de générer ces signaux. Ici les broches `PC8` et `PB1` sont toutes les deux capables de faire du PWM. (Rapidement: vous pouvez trouver cette information dans la documentation [stm32f401xx](../../datasheets/stm32f401xx.pdf) page 42, il est écrit `TIMx_CHx` dans la colonne alternate function ce qui signifie que l'on peut utiliser le pwm ).
+
+Comme indiqué dans la vidéo, les valeurs que l'on peut écrire sont entre 0 et 255. Pour ce faire nous allons utiliser la fonction `map` qui sert à faire une règle de trois en une ligne sans se fatiguer. Puis nous allons écrire sur la borche avec `analogWrite`. On a changé le print pour plus de visibilité :
+
+```cpp
+  int led_value = map(potar_value, 0, 1023, 0, 255);
+  analogWrite(LED1, led_value);
+  analogWrite(LED2, led_value);
+  Serial.printf("potar = %d, led = %d \n", potar_value, led_value); // format plus lisible 
+```
+
+Vous devriez voir les deux leds briller en fonction de la valeur du potar, avec une petite surprise...
+
+
++ (TODO) Utiliser l'analyseur logique Pour visualiser le signal PWM

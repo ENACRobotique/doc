@@ -6,7 +6,7 @@
 Les microcontrôleurs  sont de petits ordinateurs intégrés dans une puce. Ils incluent un processeur, de la mémoire, et des périphériques d’entrées sorties.
 
 Il y en a dans quasiment tous les appareils électriques, du grille-pain à la voiture.
-Sur la carte tuto, il y en a deux : un STM32F4, qui est au centre de la Nucleo (la carte blanche), et un ATtiny1616, à droite de la Nucleo, sous le rond de LEDs.
+Sur la carte tuto, il y en a deux : un [STM32F4](../../datasheets/NUCLEO_grand-um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf), qui est au centre de la Nucleo (la carte blanche), et un ATtiny1616, à droite de la Nucleo, sous le rond de LEDs.
 Il y en a même un autre sur la Nucleo, en bas à gauche de la prise USB, qui va servir à programmer le STM32F4.
 
 Ils exécutent un seul programme, qui démarre dès la mise sous tension.

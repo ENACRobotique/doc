@@ -14,7 +14,7 @@ En ce qui concerne l'utilisation des micro controlleur on ne peut comprendre qu'
 
 Vous avez d'abord besoin de savoir ce que vous voulez brancher. Cela va définir les fonctions et le nombres de connexions avec le &micro;C. Si vous voulez utiliser du PWM et de l'UART. Si vous avez besoin d'alimenter en 5V et en 3.3V en même temps.
 
-La deuxième étape est de savoir quelles fonctions peuvent marcher en même temps. Il peut arriver par exemple de ne pas pouvoir utiliser les fonctions SPI et UART en même temps. Par exemple sur la [Nucleo L432KC](../../datasheets/um1956-stm32-nucleo32-boards-mb1180-stmicroelectronics.pdf) on ne peut pas utiliser l'I2C et tout les ADC en même temps.
+La deuxième étape est de savoir quelles fonctions peuvent marcher en même temps. Il peut arriver par exemple de ne pas pouvoir utiliser les fonctions SPI et UART en même temps. Par exemple sur la [Nucleo L432KC](../../datasheets/NUCLEO_petit-um1956-stm32-nucleo32-boards-mb1180-stmicroelectronics.pdf) on ne peut pas utiliser l'I2C et tout les ADC en même temps.
 
 Autre critère, le Wifi et le bluetooths sont déjà intégré sur les ESP32 mais pas sur les STM32. Cela veut dire que si vous voulez utiliser le wifi sur une stm il faudra un module externe, et donc utiliser des pins. Alors que l'ESP le fait déjà nativement et à des bibliothèques dédié sà cet effet.
 
