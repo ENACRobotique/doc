@@ -41,7 +41,8 @@
 		- [Conception Méca]()
 		- [Conception éléc](to_robot/base_roulante/carte_elec.md)
 			- [Carte 2024](to_robot/base_roulante/carte2024.md)
-		- [Commande]()
+			- [Notions pour la conception éléc](to_robot/base_roulante/notions_elec.md)
+		- [Commande](to_robot/commande/asserv.md)
 	- [Les actionneurs]()
 		- [Prototypage]()
 		- [Intégration]()
@@ -50,37 +51,21 @@
 		- [eCal et protobuff]()
 		<!-- - [ROS2](to_robot/ROS2/ros2.md) -->
 	- [Le haut niveau]()
+		- [Monter une raspi](to_robot/haut_niveau/raspberry_pi.md) 
 		- [Interfaçage](to_robot/haut_niveau/interface.md)
-		- [Prise de décisions](to_robot/haut_niveau/decision.md)
-- [Notion Avancées](notions_avancee/index.md)
-	-[Une IA pour la coupe](notions_avancee/IA.md)
-- [FAQ/REX : Retour D'expérience](rex/asserv.md)
-	- [Conception robots]()
-		- [Asservissement](rex/asserv.md)
-		- [Mécanique](rex/concept_meca.md)
-		- [Conception électronique](rex/concept_elec.md)
-		- [Programmation carte elec](rex/code_elec.md)
-		- [Programmation haut niveau](rex/code_python.md)
-	- [Organisation du club/Pendant la coupe](rex/coupe.md)
-	- [Systèmes spécifiques]()
-		- [Systéme de tir](rex/shoot.md)
-- [Petits tutos](petits_tutos/index.md)
-	- [informatique](petits_tutos/informatique.md)
-		- [Raspberry Pi](petits_tutos/raspberry_pi.md)
-		- [simulateur et IHM du robot (2022-2023)](petits_tutos/simulator.md)
-		- [Périphérique occupé au branchement d'un µC](petits_tutos/peripherique_occupe.md)
+		- [Inteligence du robot](to_robot/haut_niveau/decision.md)
 
-		- [les différents microcontrolleurs](petits_tutos/microcontrollers.md)
-		- [Notions pour la conception](elec/notions.md)
-- [Tutos code - Architecture globale](code/index.md)
-	- [aruco]()
-	- [LIDAR]()
-	- [Middleware]()
-		- [Ros2]()
-		- [eCAL]()
-	- [Configuration raspy 4]()
-	- [Compilateur state machine](code/state_machine.md)
-- [](undefined.md)
+- [FAQ/REX : Retour D'expérience]()
+	- [Système de tir](rex/shoot.md)
+	<!-- - [(TODO)Mécanique](rex/concept_meca.md)
+	- [(TODO)Programmation carte elec](rex/code_elec.md)
+	- [(TODO)Organisation du club/Pendant la coupe](rex/coupe.md) -->
+
+- [Petits tutos](petits_tutos/index.md)
+	- [Périphérique occupé au branchement d'un µC](petits_tutos/peripherique_occupe.md)
+
+<!-- - [Tutos code - Architecture globale](code/index.md) (WIP : portage dans "Vers le robot"-->
+
 
 
 
