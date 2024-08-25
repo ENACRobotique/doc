@@ -55,6 +55,7 @@ Un exemple de gif pour un avec 4 roues :
 On peut également en retrouver à 3 roues, généralement pour faire des robots triangulaires. Le seul désavantage des 3 roues est qu'il n'est pas capable de passer par dessus un obstacle, contrairement à celui à 4 roues qui pourrait.
 Pour tourner sur lui même, il suffit de faire tourner les 3 roues dans un sens, et pour se déplacer dans une des trois directions, il suffit de faire avancer 2 roues adjacentes (la troisième roue roule "latéralement" => Pas de frottement )
 Le désavantage des robots omnidirectionnels est qu'il est plus compliqué de se repérer dans l'espace avec ceux-là *(à voir partie localisation)*.
+
 ![](../images/omni_robot_three_wheel.png "exemple de robot omnidirectionnel à 3 roues")
 
 #### La motorisation
@@ -89,12 +90,14 @@ On retrouve principalement 4 formes possibles :
     ![Robot Enac 2022](../images/robot_enac_2022.png)
 -   Triangulaire
     + **++** pour les robots holonomes à 3 roues
+    + **++** On a des grands 'plats' et de la mobilité
+    ![Robot ENAC 2024](../images/omni_tri.jpg)
 
 #### Techniques de construction
 
 Pour construire mécaniquement le "cadre" du robot, une méthode que l'on utilise souvent au club robot est de mettre une planche à la base du robot avec les roues, 4 profilés (=poutres) en métal et une planche qui fait le "toit". Entre les deux, on peut mettre des planches verticalement ou horizontalement vissés aux profilés.
 
-Pour les profilés : 
+Pour les profilés :
 + Profilés 20*20, M5, Ecrou en T
 + Makerbeam
 ![makerbeam](../images/maker_beam.jpg)
@@ -175,15 +178,15 @@ Raspberry pi
 ### Exemple d'architecture globale :
 
 Voici un exemple de comment relier tous ces composants :
-![schema robot exemple](../images/schema_robot.png)
+<p><img src="../images/schema_robot.png" width=300 /></p> 
 
 Au sommet, on retrouve un embedded computer (-> Raspberry pi), qui commande un "peripheral board" (-> Carte elec à faire durant l'année) et reliés à d'éventuels composants "gourmands" en puissance de calcul(caméra, lidar,...).
 Le peripheral board (qui peut être décomposé en plusieurs cates) lui est connecté à tous les autres composants électroniques.
 
 ### Les batteries
 
-On utilise cette année des batteries de perceuse (Makita, 18V), sinon des Lipo/Life de hobby king de 12/14V sont très bien.
-En terme de consommation électrique, en ordre de grandeur onaà 2/3 A en pic pour les moteurs, et 1/2 A pour le reste.
+On utilise des batteries de perceuse (Makita, 18V), sinon des Lipo/Life de hobby king de 12/14V sont très bien, des cellules LifePo4 3.2V
+En terme de consommation électrique, en ordre de grandeur on à 2/3A en pic pour les moteurs, et 1/2A pour le reste.
 
 
 
