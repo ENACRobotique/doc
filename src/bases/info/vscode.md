@@ -43,11 +43,11 @@ Ou le faire manuellement en téléchargeant directement depuis le manuel : [udev
 
 Ensuite redémmarez `udev`:
 
-```
+```bash
 sudo service udev restart
 ```
 ou 
-```
+```bash
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```

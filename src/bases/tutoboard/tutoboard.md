@@ -80,7 +80,7 @@ Vous pouvez effacer les deux `myFunction` qui ne seront pas utiles.
 Note:
 En réalité, la fonction main du programme est codée comme ceci:
 
-```
+```cpp
 int main(){
     setup();
     for(;;) {
