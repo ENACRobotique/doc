@@ -34,6 +34,9 @@
 		- [Les bases](bases/tutoboard/bases.md)
 		- [La communications](bases/tutoboard/comm.md)
 		- [L'Attiny](bases/tutoboard/attiny.md)
+	- [Tuto Pami](bases/tutopami/index.md)
+		- [FreeRTOS](bases/tutopami/freertos.md)
+		- [Programmer un PAMI](bases/tutopami/tuto.md)
 
 - [Vers le robot (WIP)](to_robot/to_robot.md)
 	-[Liens en vrac](vrac.md)
