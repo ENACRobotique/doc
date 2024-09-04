@@ -1,9 +1,9 @@
 ## Etre membre du club
 
 Pour faire partie du club, il faut :
-1. Etre sur le **[Discord](https://discord.com/invite/7sPZFxb)**, c'est le point central de nos communications !
+1. Etre sur le **[Discord](https://discord.com/invite/7sPZFxb)**, c'est le point central de nos communications internes !
 
-1. Remplir ses **coordonnées** sur le google form [ici pour 2024](https://docs.google.com/forms/d/e/1FAIpQLSdatJGEQBnEPTqi0qsnMXBmfnNNL4iHKDigHQGw1pEdLLsQVQ/viewform?usp=sf_link).
+1. Remplir ses **coordonnées** sur le [Google form](https://docs.google.com/forms/d/e/1FAIpQLSdatJGEQBnEPTqi0qsnMXBmfnNNL4iHKDigHQGw1pEdLLsQVQ/viewform?usp=sf_link).
 
 1. Ensuite, il est impératif de **participer** à la réunion hebdomadaire du **jeudi** (ou de consulter le Compte-rendu si vous ne pouvez pas venir certaines fois).
 1. Enfin, il ne faut **pas hésiter à demander** de l'aide à tout moment, que ce soit **pour se lancer**/se faire former, ou savoir quoi faire. 
