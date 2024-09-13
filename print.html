@@ -1613,14 +1613,14 @@ LEDS_L
 <div style="break-before: page; page-break-before: always;"></div><h1 id="programmer-un-pami"><a class="header" href="#programmer-un-pami">Programmer un PAMI</a></h1>
 <p>Pour commencer à appréhender tous ca, nous avons créer un tutoriel qui te guidera pas-à-pas pour comprendre comment on programme un PAMI.</p>
 <h2 id="télécharger-le-tutoriel"><a class="header" href="#télécharger-le-tutoriel">Télécharger le tutoriel</a></h2>
-<p>Les tutoriels sont disponibles via Git. Vous avez probablement déjà utilisé Git, au moins pour consulter ce document, mais je vais vous guider pour télécharger le tutoriel.</p>
-<p>Pour cela, vous devrez procéder de la même manière que pour récupérer ce document. Commencez par cloner le dépôt PAMIS_2024 en utilisant la commande suivante :</p>
+<p>Les tutoriels sont disponibles via Git, il faut donc le télécharger avec le <a href="https://git-scm.com/downloads">lien ici</a></p>
+<p>Une fois installéé, lancer le terminal et placer vous dans le répertoire dans lequel vous souhaitez stocker le tuto puis cloner le dépôt PAMIS_2024 en utilisant la commande suivante :</p>
 <p><code>git clone https://github.com/ENACRobotique/PAMIS_2024.git</code></p>
-<p>ou avec une clée SSH :</p>
+<p>ou avec une clé SSH :</p>
 <p><code>git clone git@github.com:ENACRobotique/PAMIS_2024.git</code></p>
 <br>
 Ensuite, dans un terminal, accédez au répertoire PAMIS_2024 et basculez sur la branche tuto_pami avec la commande suivante :
-<p><code>git checkout tuto_pami</code></p>
+<p><code>git switch TUTO_PAMIS</code></p>
 <br>
 Suivez ensuite les étapes du tutoriel dans l'ordre indiqué. Si vous rencontrez des difficultés, n'hésitez pas à demander de l'aide, que ce soit au club ou sur le Discord. Tout va bien se passer !
 <h1 id="première-partie--déplacement"><a class="header" href="#première-partie--déplacement">Première partie : déplacement</a></h1>
@@ -1634,18 +1634,33 @@ Le résultat devrait ressembler à ça :</p>
 </p>
 <script>
     var video = document.getElementById("carre_10cm");
-    video.addEventListener('pause', function() {
-        video.play();
+    video.addEventListener('click', function() {
+        if(video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
     });
 </script>
-<p>Pour réussir à faire ça, le code dispose de 2 fonctions permettant respectivement d'avancer et de tourner :
-"Task a mettre"</p>
-<p>Pour comprendre comment les utiliser, je vous propose de vous servir de la fonction xTaskCreate().
-Par exemple:
-"exemple a mettre ici"</p>
-<p>⭐ Avec tous ces informations, essayez maintenant de faire faire des carrés de 10 cm à votre PAMIS !</p>
+<p>Pour réussir à faire ça, le code dispose une fonction déplacement permettant respectivement d'avancer et de tourner :
+celle ci se trouve dans le fichier deplacement.c qui se en suivant le chemin suivant PAMI_2024 -&gt; PAMI_SOFT -&gt; src -&gt; deplacement.c</p>
+<p>Je vous invite donc à modifier le programme en utilisant les 3 fonctions suivante:
+-<code>base_roulante.translate(distance);</code> qui permet de faire avancer le robot avec distance en mm
+-<code>base_roulante.rotate(angle);</code> qui permet de faire tourner le robot avec angle en radian
+-<code>sleep(durée);</code> qui permet d'attendre avec durée en milliseconde</p>
+<p>⭐ Avec tous ces informations, essayez maintenant de faire faire des carrés de 200 cm à votre PAMIS !</p>
 <p><br><br></p>
 <h1 id="deuxième-partie--évitement"><a class="header" href="#deuxième-partie--évitement">Deuxième partie : évitement</a></h1>
+<p>Pour cette partie, on va continuer à modifier notre fonction pour faire en sorte que le robot n'avance plus à la vue d'un obstacle.
+Cela ressemblera à ca :
+"video a mettre ici"</p>
+<p>pour cela, vous aller pouvoir utiliser de nouvelles variables :
+-distance_left
+-distance_middle
+-distance_right
+qui renvoie les distances perçues par nos 3 capteurs que vous voyez ci dessous :
+"photo du pami a mettre"</p>
+<p>⭐ À votre tour d'empecher votre robot de se cracher dans les murs.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="commencer-un-robot-pour-la-coupe"><a class="header" href="#commencer-un-robot-pour-la-coupe">Commencer un robot pour la coupe</a></h1>
 <p>Avant de continuer sur cette section vous devriez avoir fait tout les tutoriels ou traité de toutes les thématiques liées.</p>
 <p>Les sections suivantes contiennent le fruit de notre travail commun comportant nos reflexions personnelles ou des liens vers des tutoriels utilisé.</p>
