@@ -178,6 +178,13 @@
                         <h1 id="le-ssh"><a class="header" href="#le-ssh">Le SSH</a></h1>
 <p>Au club le robot possède un ordinateur de bord (une raspberry pi). Dès qu'on veut intéragir avec on ne va pas brancher un clavier et un écran dessu à chaque fois. Surtout que lors des test le robot bouge.
 Pour communiquer entre plusieurs machines depuis le terminal on utilise la connection ssh. Elle permet d'interagir depuis le terminal de la machine utilisé directement dans le terminal de la machine de destination.</p>
+<p>Voici les commandes les plus utilisées au club :</p>
+<p>Pour avoir un accès distant à la console d'un autre ordinateur :<br />
+<code>ssh &lt;utilisateur&gt;@&lt;nom_machine&gt;</code></p>
+<p>On peut également ajouter l'option -X pour accéder au application graphique :<br />
+<code>ssh -X &lt;utilisateur&gt;@&lt;nom_machine&gt;</code></p>
+<p>Pour copier un fichier :<br />
+<code>scp &lt;fichier&gt; &lt;utilisateur&gt;@&lt;nom_machine&gt;:&lt;DestinationDirectory&gt;</code></p>
 <p>Sources :</p>
 <ul>
 <li><a href="https://doc.ubuntu-fr.org/ssh">Doc Ubuntu</a> (recommandé)</li>
