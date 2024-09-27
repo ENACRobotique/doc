@@ -781,11 +781,43 @@ Tu peux aussi utiliser l'imprimante pour des projets personnel, mais pense à ra
 <p>Creator Pro2</p>
 <p>Ultimaker</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="découpe-laser"><a class="header" href="#découpe-laser">Découpe Laser</a></h1>
-<h2 id="préparer-un-fichier-de-découpe-avec-inkscape-et-lasercut"><a class="header" href="#préparer-un-fichier-de-découpe-avec-inkscape-et-lasercut">Préparer un fichier de découpe avec inkscape et LaserCut</a></h2>
+<h2 id="préparer-un-fichier-de-découpe-avec-inkscape"><a class="header" href="#préparer-un-fichier-de-découpe-avec-inkscape">Préparer un fichier de découpe avec inkscape</a></h2>
 <ul>
 <li>vectoriser une image ?</li>
-<li>wine + laser cut ?</li>
 </ul>
+<h2 id="préparer-un-fichier-de-découpe-avec-onshape"><a class="header" href="#préparer-un-fichier-de-découpe-avec-onshape">Préparer un fichier de découpe avec onshape</a></h2>
+<p>Prenons l'exemple de cette useless box dont on aimerait découper les différents pièces :</p>
+<p align="center">
+    <img src="bases/meca/../../images/laser/useless_box.png"  alt="image" width="500" height="auto">
+</p>
+<p>Pour pouvoir la découper, il faut passer d'un fichier 3d à 2d. Pour cela, nous utiliserons la feature Auto Layout.</p>
+<p>Voici à quoi ressemble le menu lorsque que l'on clique sur l'icône.</p>
+<p align="center">
+    <img src="bases/meca/../../images/laser/menu_auto_layout.png"  alt="image" width="200" height="auto">
+</p>
+<ul>
+<li><strong>Thickness of material</strong> correspond à la finesse du bois que l'on souhaite utilser</li>
+<li><strong>Cut sheet width &amp; Cut sheet height</strong> correspond à la longueur et à largeur de la planche de bois.</li>
+<li><strong>Spacing</strong> correspond à l'espace minimal entre 2 pièces</li>
+<li><strong>Mutlitple copies</strong> permet de mettre plusieurs fois le projet que l'on souhaite découper (pratique si on veut faire la même découpe plusieurs fois sur la même planche)</li>
+<li><strong>Assign oriented faces</strong> permet de forcer le sens de la pièce en mettant la face selection sur le dessus</li>
+<li><strong>Show cut sheet on sketches</strong> permet de voir l'esquisse de la taille de la planche</li>
+</ul>
+<p>Avec les paramètres de la photo précédente, on obtient :</p>
+<p align="center">
+    <img src="bases/meca/../../images/laser/useless_box_2D.png"  alt="image" width="500" height="auto">
+</p>
+<p>Maintenant que nous avons nos pièces à plat, on va pouvoir créer le modèle 2D. Pour cela nous allons créer un nouveau dessin avec les paramètres suivant :</p>
+<p align="center">
+    <img src="bases/meca/../../images/laser/creation_dessin.png"  alt="image" width="500" height="auto">
+</p>
+<p>Et ensuite on ajoute notre atelier de pièces en cliquant sur :<br />
+insérer une vue -&gt; inserer -&gt; document actif -&gt; atelier de pièces -&gt; notre atelier de pièce (ici Part Studio 1).<br />
+Après avoir cliqué sur notre pièce, il faut penser à changer l'orientation de la vue par "dessus" avant de la poser sur le dessin</p>
+<p align="center">
+    <img src="bases/meca/../../images/laser/menu_dessin.png"  alt="image" width="600" height="auto">
+</p>
+Il ne reste plus qu'à l'exporter au format dxf en faisant un clique droit sur l'onglet du dessin (les différents onglets sont affichés tout en bas).
 <h2 id="découpeuse-du-club"><a class="header" href="#découpeuse-du-club">Découpeuse du club</a></h2>
 <p>Le club possède une découpeuse laser depuis la rentrée 2024 nous n'avons donc encore rien documenté. Tu sera peut-être celui qui écrira cette section qui sait :) ?</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tutos-elec"><a class="header" href="#tutos-elec">Tutos elec</a></h1>
