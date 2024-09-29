@@ -16,7 +16,7 @@ Ensuite 4 secondes plus tard :
 
 ![](../../images/demesg_2.png)
 
-Le début est similaire mais cette fois pas de mystère, nous avons branché une de nos [carte tuto](../../carte_tuto/tuto_board.md) pour la programmer. Or nous cherchons ici à faire de la communications en UART avec elle mais nous ne trouvons pas sur quel port addresser la liaison. Bien sûr nous avons déjà cherché dans le `/dev` mais il y'a tellement de périphérique qu'on ne s'y retrouve plus. Heureusement il y'a cette ligne :
+Le début est similaire mais cette fois pas de mystère, nous avons branché une de nos [cartes tuto](../../carte_tuto/tuto_board.md) pour la programmer. Or nous cherchons ici à faire de la communications en UART avec elle mais nous ne trouvons pas sur quel port addresser la liaison. Bien sûr nous avons déjà cherché dans le `/dev` mais il y'a tellement de périphérique qu'on ne s'y retrouve plus. Heureusement il y'a cette ligne :
 
  `[  +0,000679] cdc_acm 1-5:1.2: ttyACM0: USB ACM device`
 
