@@ -33,23 +33,23 @@ Il est mainteant temps de démarrer la Raspberry Pi !
 
 ## Configuration, la suite
 
-On va donc démarrer la Raspberry Pi en l'alimantant soit par l'USB (solution la plus simple), soit par les broches GND et 5V (seulement si vous savez ce que vous faites !).
+On va donc démarrer la Raspberry Pi en l'alimentant soit par l'USB (solution la plus simple), soit par les broches GND et 5V (seulement si vous savez ce que vous faites !).
 Elle devrait automatiquement se connecter au réseau WiFi. Vous pouvez tenter un `ping raspberrypi`, ou chercher son adresse sur l'interface du routeur.  
 Quand vous avez trouver, s'y connecter en SSH : `ssh pi@raspberrypi`, ou `ssh pi@192.168.XXX.xxx`.
 
 `sudo raspi-config` : changer le hostname, rebooter. (autre choses ?)
 
-__UART__ : On va certainement utiliser l'UART de la raspi. Sur la Raspberry Pi 3 (et peut être aussi d'autres modèles), il faut modifier la configuration pour pouvoir l'utiliser ([source](https://www.framboise314.fr/le-port-serie-du-raspberry-pi-3-pas-simple/)).
+__UART__ : On va certainement utiliser l'UART de la raspi. Sur la Raspberry Pi 3 (et peut être aussi sur d'autres modèles), il faut modifier la configuration pour pouvoir l'utiliser ([source](https://www.framboise314.fr/le-port-serie-du-raspberry-pi-3-pas-simple/)).
 
-Ajouter cette ligne au ficher `/boot/config.txt` : `dtoverlay=pi3-disable-bt`.
+Ajoutez cette ligne au ficher `/boot/config.txt` : `dtoverlay=pi3-disable-bt`.
 
-Dans le fichier `/boot/cmdline.txt`, supprimer `console=serial0,115200`.
+Dans le fichier `/boot/cmdline.txt`, supprimez `console=serial0,115200`.
 
 Quand la raspberrypi sera démarrée, vous prendrez soin de vérifier que `serial0 -> ttyAMA0` et `serial1 -> ttyS0` en faisant un `ls -l /dev/serial*`.
 
 Il est peut-être nécessaire d'aller activer l'UART dans `sudo raspi-config`. À vérifier.
 
-Pour tester que ça marche : connecter RX et TX ensemble par un câble de breadboard, ouvez minicom `minicom -D /dev/ttyAMA0`, et taper des trucs. Si les caractères s'affichent c'est que ça marche. Si vous débranchez le fil ça ne devrait pas marcher. Pour quitter mninicom : `CTRL+A, q, ENTER`
+Pour vérifier si ça marche : connectez RX et TX ensemble par un câble de breadboard, ouvez minicom `minicom -D /dev/ttyAMA0`, et tapez des trucs. Si les caractères s'affichent c'est que ça marche. Si vous débranchez le fil ça ne devrait pas marcher. Pour quitter minicom : `CTRL+A, q, ENTER`
 
 __Quelques packets à installer__ :
 

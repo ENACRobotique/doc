@@ -11,7 +11,7 @@ Il y en a même un autre sur la Nucleo, en bas à gauche de la prise USB, qui va
 
 Ils exécutent un seul programme, qui démarre dès la mise sous tension.
 
-La tuto board est un outils d'apprentissage crée par et pour le club. Vous pouve consulter le projet sur Github: [Git de la tuto board](https://github.com/Fabien-B/tutosBoardRoboticClub/)
+La tuto board est un outil d'apprentissage crée par et pour le club. Vous pouvez consulter le projet sur Github: [Git de la tuto board](https://github.com/Fabien-B/tutosBoardRoboticClub/)
 
 <div style="display: flex; align-items: flex-start;">
 
@@ -19,7 +19,7 @@ La tuto board est un outils d'apprentissage crée par et pour le club. Vous pouv
 
 <div style="padding-left: 30px;">
 
-Le but de cette carte est de pouvoir apprendre tout les concepts de bases de l'utilisation des microcontrolleurs tout en sachant ou commencer. Le club dispense généralement un cour en format travaux pratique sur cette carte. Ce cours peut aussi être réalisé depuis chez sois car le matériel est assez compact pour être emporté ( mais la carte s'appelle reviens ) et le cours est documenté dans les section qui suivent.
+Le but de cette carte est de pouvoir apprendre tout les concepts de base de l'utilisation des microcontrôleurs tout en sachant où commencer. Le club dispense généralement un cours au format travaux pratique sur cette carte. Ce cours peut aussi être réalisé depuis chez soi car le matériel est assez compact pour être emporté (mais la carte s'appelle reviens) et le cours est documenté dans les section qui suivent.
 
 </div>
 
@@ -28,7 +28,7 @@ Le but de cette carte est de pouvoir apprendre tout les concepts de bases de l'u
 
 
 ## Les périphériques
-Les périphériques sont des circuits électroniques dédiés à certaines tâches, et sont connectés au CPU (processeur) pour interagir avec le programme.
+Les périphériques sont des circuits électroniques dédiés à certaines tâches, et sont connectés au CPU (processeur) pour intéragir avec le programme.
 
 Quelques périphériques ([Lexique](../../introductions/lexique.md)): 
 + GPIO : general purpose input output. permet de commander des broches en sorties, ou de lire des broches en entrées
@@ -55,7 +55,7 @@ https://www.arduino.cc/" >
 </div>
 
 
-Dans notre cas, on va surtout utiliser les librairies arduino, qui vont nous permettre de programmer très simplement le microcontrôleur. Vous pouvez retrouver les références du language dans la [Documentation Arduino](https://docs.arduino.cc/language-reference/).
+Dans notre cas, on va surtout utiliser les librairies arduino, qui vont nous permettre de programmer très simplement le microcontrôleur. Vous pouvez retrouver les références du langage dans la [Documentation Arduino](https://docs.arduino.cc/language-reference/).
 
 > Note:
 Attention cependant : cette librairie nous cache beaucoup de complexité, on peut donc être surpris par un comportement “bizarre” lorsqu'on utilise beaucoup de fonctions sur beaucoup de broches simultanément.
@@ -67,7 +67,7 @@ Pour ces tutos, on va utiliser VSCode avec l’extension PlatformIO, qui va nous
 [VSCode](../../bases/info/vscode.md)
 
 
-Pour commencer, créez un nouveu projet PlatformIO (icone d'alien dans le menu à gauche). Choisissez la carte correspondante à celle que vous utilisez (Nucleo F401RE par exemple), et avec le framework Arduino.
+Pour commencer, créez un nouveu projet PlatformIO (icône d'alien dans le menu à gauche). Choisissez la carte correspondante à celle que vous utilisez (Nucleo F401RE par exemple), et avec le framework Arduino.
 ![](../../images/platformio_project.png)
 
 Dans un projet arduino, il y a toujours deux fonctions qui sont créées par defaut: setup et loop.

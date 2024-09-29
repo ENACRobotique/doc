@@ -44,16 +44,16 @@ Compiler (Build), puis flasher (Upload) le microcontrôleur grâce à ces deux b
 </div>
 
 
-Un terminal devrait s'ouvrir, il faut attendre. La première fois cela peut être plus long car VS code peut vouloir installer des outils suplémentaire. Vous devriez voir le message suivant :
+Un terminal devrait s'ouvrir, il faut attendre. La première fois cela peut être plus long car VS code peut vouloir installer des outils suplémentaires. Vous devriez voir le message suivant :
 
 ```==== [SUCCESS] Took 14.34 seconds ====```
 
 La LED2 doit donc maintenant clignoter.
 
-> Note : Il est possible que vous aillez une erreur de televersement à ce moment, surtout si c'est la première fois. Consulter la section [VS Code & Platformio](../../bases/info/vscode.md) peut vous aider.
+> Note : Il est possible que vous aillez une erreur de téléversement à ce moment, surtout si c'est la première fois. Consulter la section [VS Code & Platformio](../../bases/info/vscode.md) peut vous aider.
 
 
-Changez le programme pour la faire clignoter plus vite, ou de manière asymétrique: des flash bref séparés par un temps assez long.
+Changez le programme pour la faire clignoter plus vite, ou de manière asymétrique: des flashs brefs séparés par un temps assez long.
 
 #### Améliorer son code
 
@@ -116,7 +116,7 @@ Compilez, flashez, testez.
 Changez le temps du delay pour 1000. Que se passe t’il ?
 La led met longtemps à réagir car le programme est en pause, et ne fait un tour de boucle que toutes les secondes !
 
-> À savoir : La fonction `delay` est ce qu'on appelle une fonction "bloquante". Lorsqu'elle est exécuté aucune autre instruction ne sera exécutée. Çela peut être un problème et dans ce cas on cherchera à utiliser des fonctions "non bloquante". Dans le cas présent ce n'est pas très important. On vera cela ultérieurement. 
+> À savoir : La fonction `delay` est ce qu'on appelle une fonction "bloquante". Lorsqu'elle est exécutée aucune autre instruction ne sera exécutée. Çela peut être un problème et dans ce cas on cherchera à utiliser des fonctions "non bloquantes". Dans le cas présent ce n'est pas très important. On vera cela ultérieurement. 
 
 Remettez un delay raisonnable (moins de 100ms pour que ce soit réactif), et utilisez maintenant BTN1. Que se passe t’il ?
 Pourquoi ?
@@ -179,7 +179,7 @@ Si on garde R13, elle va limiter le courant à I=U/R = 3.3/100 = 33mA, ce que le
 
 ### Signaux analogiques
 
-Jusqu'à présent nous regardion uniquement des signaux logiques. Hors les physiciens parmis vous me dirons qu'il existe aussi des signaux qui vareint de façon continus ou encore dis signaux analogiques. Les &micro;C tel que la F401RE sont capable de lire des signaux analogique et d'en générer indirectement.
+Jusqu'à présent nous regardion uniquement des signaux logiques. Hors les physiciens parmis vous me dirons qu'il existe aussi des signaux qui varient de façon contine ou encore des signaux analogiques. Les &micro;C tel que la F401RE sont capables de lire des signaux analogiques et d'en générer indirectement.
 
 #### Lecture d'un potentiomètre
 
@@ -191,7 +191,7 @@ Repérez sur le schéma le potentiomètre dans le bloc BASICS. Et sur la carte t
 
 Le potentiomètre ou Potar dans le jargon repose sur le principe du [pont diviseur de tension](https://fr.wikipedia.org/wiki/Diviseur_de_tension). Tourner la molette change la valeur d'une resistance variable qui fera donc varier le potentiel à la broche `POT` lié a la nucléo.
 
-Les broches analogiques sont des Analog to Digital Converter ou en français Convertisseur Analogique Numérique ( ADC ou CAN ). Les capteur de manière générale renvoient un signal de tension continue mais les &micro;C ne peuvent traiter que des singaux numérique. L'ADC va donc discrétiser le signal entre deux valeur, ici 0 et 3.3V, souvent avec une résolution de 10 bits. C'est à dire qu'il renvoient une valeur entre 0 et 1023.
+Les broches analogiques sont des Analog to Digital Converter ou en français Convertisseur Analogique Numérique ( ADC ou CAN ). Les capteurs de manière générale renvoient un signal de tension continue mais les &micro;C ne peuvent traiter que des signaux numériques. L'ADC va donc discrétiser le signal entre deux valeurs, ici 0 et 3.3V, souvent avec une résolution de 10 bits. C'est à dire qu'il renvoient une valeur entre 0 et 1023.
 
 Configurez le broche `POT`en `INPUT` (les adc peuvent aussi être utilisé comme gpio). Pour visualiser le signal il faut utiliser le moniteur série, rajouter dans le `setup` l'instruction `Serial.begin(115200);` pour l'initialiser.
 
@@ -200,15 +200,15 @@ On veut lire et afficher en boucle la valeur lue par le potar. On rajoute donc l
   int potar_value = analogRead(POT); // Lire la valeur de la pin POT
   Serial.println(potar_value); // écrire la valeur dans le moniteur série
 ```
-Si maintenant vous tournez la valeur vous verrez la valeur varier. Pas forcément sur tout l'interval car cela dépend des valeurs limites de la résistance du potar. Pour moi par exmple je lis de 10 à 1014.
+Si maintenant vous tournez le potar, vous verrez la valeur varier. Pas forcément sur tout l'interval car cela dépend des valeurs limites de la résistance du potar. Pour moi par exmple je lis de 10 à 1014.
 
 #### Générer un signal analogique
 
-Comme précédement les signaux du &micro;C étant numérique on veut les rendre analogique on utilise donc un Digital to Analog Converter (DAC ou CNA). Une façon de réaliser est la PWM regardez la vidéo de [U=RI](https://www.youtube.com/watch?v=CSReyYwbGRY). 
+Comme précédement les signaux du &micro;C étant numérique on veut les rendre analogique on utilise donc un Digital to Analog Converter (DAC ou CNA). Une façon de réaliser est la PWM, regardez la vidéo de [U=RI](https://www.youtube.com/watch?v=CSReyYwbGRY). 
 
-Nous allons, comme montré dans la vidéo, piloter une led de façon à la faire faire clignoter plus ou moins fort. Si vous regardez sur la carte tuto il y'a des broches sur lesquelles il est écrit PWM. Seules ces broches sont capable de générer ces signaux. Ici les broches `PC8` et `PB1` sont toutes les deux capables de faire du PWM. (Rapidement: vous pouvez trouver cette information dans la documentation [stm32f401xx](../../datasheets/stm32f401xx.pdf) page 42, il est écrit `TIMx_CHx` dans la colonne alternate function ce qui signifie que l'on peut utiliser le pwm ).
+Nous allons, comme montré dans la vidéo, piloter une led de sorte à la faire clignoter plus ou moins fort. Si vous regardez sur la carte tuto il y a des broches sur lesquelles il est écrit PWM. Seules ces broches sont capables de générer ces signaux. Ici les broches `PC8` et `PB1` sont toutes les deux capables de faire du PWM. (Rapidement: vous pouvez trouver cette information dans la documentation [stm32f401xx](../../datasheets/stm32f401xx.pdf) page 42, il est écrit `TIMx_CHx` dans la colonne alternate function ce qui signifie que l'on peut utiliser le pwm ).
 
-Comme indiqué dans la vidéo, les valeurs que l'on peut écrire sont entre 0 et 255. Pour ce faire nous allons utiliser la fonction `map` qui sert à faire une règle de trois en une ligne sans se fatiguer. Puis nous allons écrire sur la borche avec `analogWrite`. On a changé le print pour plus de visibilité :
+Comme indiqué dans la vidéo, les valeurs que l'on peut écrire sont entre 0 et 255. Pour ce faire nous allons utiliser la fonction `map` qui sert à faire une règle de trois en une ligne sans se fatiguer. Puis nous allons écrire sur la broche avec `analogWrite`. On a changé le print pour plus de visibilité :
 
 ```cpp
   int led_value = map(potar_value, 0, 1023, 0, 255);
@@ -220,4 +220,4 @@ Comme indiqué dans la vidéo, les valeurs que l'on peut écrire sont entre 0 et
 Vous devriez voir les deux leds briller en fonction de la valeur du potar, avec une petite surprise...
 
 
-+ (TODO) Utiliser l'analyseur logique Pour visualiser le signal PWM
++ (TODO) Utiliser l'analyseur logique pour visualiser le signal PWM

@@ -1,13 +1,13 @@
 # Base holonome
 
 
-Considérons une roue, les calculs seront identique pour les autres roues.
+Considérons une roue, les calculs seront identiques pour les autres roues.
 
 ## Rotation
 
 Commençons par le plus simple : la rotation du robot sur lui-même. Le robot doit simplement faire tourner ses roues à la même vitesse.
 
-Les roues sont placées à égale distance \\(R\\) du centre du robot, leur axe passant par le centre du robot.
+Les roues sont placées à égale distance \\(R\\) du centre du robot, leurs axes passant par le centre du robot.
 
 Si le robot tourne sur lui-même à une vitesse angulaire \\(ꞷ\\), la vitesse d'une roue sera donc \\(Vtr = R.ꞷ\\).
 
@@ -30,7 +30,7 @@ La roue étant en translation libre sur l'axe radial, la vitesse radiale peut ê
 
 ## Composition des vitesses, et décomposition selon les axes du robot
 
-Par la composition des vitesse, la vitesse tangentielle totale d'une roue est : \\(Vtr = V.sin(α-β) + R.ꞷ\\)
+Par la composition des vitesses, la vitesse tangentielle totale d'une roue est : \\(Vtr = V.sin(α-β) + R.ꞷ\\)
 
 On connait l'identité trigonométrique : \\(sin(α-β) = sin(α).cos(β) - cos(α).sin(β)\\)
 
@@ -57,7 +57,7 @@ Pour 3 roues placées respectivement aux angles \\(β1\\), \\(β2\\) et \\(β3\\
 
 # Cinématique inverse
 
-On a calculé les commandes à donner aux moteurs pour avoir le déplacement désiré. On voudrait maintenant déduire les déplacement du robot des déplacements de chaque moteurs.
+On a calculé les commandes à donner aux moteurs pour avoir le déplacement désiré. On voudrait maintenant déduire les déplacements du robot des déplacements de chaque moteur.
 
 On avait : \\(m=D.V\\)
 

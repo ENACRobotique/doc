@@ -1,7 +1,7 @@
-## Etre membre du club
+## Être membre du club
 
 Pour faire partie du club, il faut :
-1. Etre sur le **[Discord](https://discord.com/invite/7sPZFxb)**, c'est le point central de nos communications internes !
+1. Être sur le **[Discord](https://discord.com/invite/7sPZFxb)**, c'est le point central de nos communications internes !
 
 1. Remplir ses **coordonnées** sur le [Google form](https://docs.google.com/forms/d/e/1FAIpQLSdatJGEQBnEPTqi0qsnMXBmfnNNL4iHKDigHQGw1pEdLLsQVQ/viewform?usp=sf_link).
 
@@ -29,11 +29,11 @@ Désormais, **tout le monde travaille sur un seul même robot**, et comme le fon
 ### Les pôles
 
 Comme de nombreuses équipes, depuis 2022, le club s'organise en "pôle" : 
-+ Informatique -> Programmation du robot et des outils, de la stratégie, à haut niveau, et des microcontrolleurs, ainsi que comment communique chaque choses entre eux, du réseau,..
-+ Electronique -> Réalisation des cartes electroniques, et programmation des microcontrolleurs avec le pôle informatique.
++ Informatique -> Programmation du robot et des outils, de la stratégie, à haut niveau, et des microcontrôleurs, ainsi que comment communique chaque chose entre elle, du réseau,..
++ Electronique -> Réalisation des cartes electroniques, et programmation des microcontrôleurs avec le pôle informatique.
 + Mécanique -> Réalisation modélisation et impression 3D, découpage de planches du chassis du robot, assemblage,..
 
-Attention il ne faut pas croire que ces pôles sont indépendant , ils sont en réalité intrinsèquement liés ! Vous ferez et verrez de tout afin de comprendre la globalité des éléments en jeux,
+Attention il ne faut pas croire que ces pôles sont indépendants, ils sont en réalité intrinsèquement liés ! Vous ferez et verrez de tout afin de comprendre la globalité des éléments en jeux,
 
 Pour la programmation : 
 + Pour ceux qui ont déjà fait beaucoup d'informatique avant, on peut se plonger assez tôt sur ce qui a été fait avant et coder soit même.

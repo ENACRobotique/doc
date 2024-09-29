@@ -6,7 +6,7 @@ Les bases de la fabrication d'un robot peuvent se simplifier en distinguant troi
 + L'informatique
 + La mécanique
 
-Ces trois pilliers doivent vivre en symbiose si on veut pouvoir fabriquer un robot. Aussi il est donc nécéssaire d'en avoir les bases et même un peu plus. Mais pas d'inquiètudes, l'objectif du club justement c'est d'avoir ce 'plus' au fil de la pratique. Cette section contient plein de lien et de tutoriels pour commencer dans ces trois domaines.
+Ces trois pilliers doivent vivre en symbiose si on veut pouvoir fabriquer un robot. Aussi il est donc nécéssaire d'en avoir les bases et même un peu plus. Mais pas d'inquiétude, l'objectif du club est justement d'avoir ce "plus" au fil de la pratique. Cette section contient plein de liens et de tutoriels pour commencer dans ces trois domaines.
 
 
 # Outils Communs
@@ -19,6 +19,6 @@ On utilise actuellement [Visual Studio Code](./info/vscode.md) pour le code.
 
 Pour la modélisation 3D on utilise [Onshape](https://www.onshape.com/en/education/sign-up). 
 
-Enfin, on utilise kicad pour les cartes électroniques. [Kicad](./elec/kicad.md)
+Enfin, on utilise [Kicad](./elec/kicad.md) pour les cartes électroniques. 
 
-Les Ordinateurs du club on tout d'installé si vous voulez vous y essayer avant.
+Les Ordinateurs du club ont tout d'installés si vous voulez vous y essayer avant.

@@ -19,7 +19,7 @@ Pour commencer vous pouvez visualiser cette vidéo qui montre en 10 minutes comm
 Lorsque vous travaillez vous voudrez certainement avoir à portée de main la [Kicad Cheat Sheet](../../datasheets/kicad-cheatsheet-landscape-v8.pdf) pour augmenter votre rendement.
 
 
-## TODO : faire un tutoriel d'une carte electronique basique
+## TODO : faire un tutoriel d'une carte électronique basique
 
 <!-- 
 (vrac venant de la carte tuto):

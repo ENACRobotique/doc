@@ -1,7 +1,7 @@
 # Mécanique
 ## La mécanique au club
 
-Un robot, il faut lui donner vie ! Et pour se faire quoi de mieux que deux planches et 3 vis. Bon d'accord c'est plus complexe que ça je te le cède. Le club est un petit atelier équipé de nombreux outils qui te permettrons d'assembler toute sortes de montage et mécanisme qui constituent le robot. La plupart de nos outils ne nécéssite pas de formation spécifique. Pense néanmoins toujours à ta sécurité quand tu les utilises, si tu à un doute demande de l'aide c'est très facile de se blesser.
+Un robot, il faut lui donner vie ! Et pour se faire quoi de mieux que deux planches et 3 vis. Bon d'accord c'est plus complexe que ça je te le cède. Le club est un petit atelier équipé de nombreux outils qui te permettrons d'assembler toutes sortes de montages et mécanismes qui constituent le robot. La plupart de nos outils ne nécéssite pas de formation spécifique. Pense néanmoins toujours à ta sécurité quand tu les utilises, si tu as un doute, demande de l'aide car c'est très facile de se blesser.
 
 Nous utilisons aussi le [FabLab de l'Insa](http://fabric-insa.fr/site/) qui est très bien équipé. Notamment ils ont une [CNC](https://www.autodesk.fr/solutions/cnc-machining-software) et une [découpeuse laser](https://www.troteclaser.com/fr/apprentissage-et-assistance/faqs/comment-decouper-au-laser). L'utilisation des machines se fait facturer à la minute. Il ont aussi un catalogue de noël si vous voulez vous offrir des maquettes à titre **personnel**.
 
@@ -9,7 +9,7 @@ Nous utilisons aussi le [FabLab de l'Insa](http://fabric-insa.fr/site/) qui est 
 
 Avant de fabriquer le robot il faut le designer. On utilise principalement la **conception assistée par ordinateur** (CAO ou CAD en anglais).
 
-La CAO permet de représenter les objets en deux ou trois dimensions sur un écran.. Elle inclut des fonctions multiples comme le calcul numérique, la  modélisation, etc.
+La CAO permet de représenter les objets en deux ou trois dimensions sur un écran. Elle inclut des fonctions multiples comme le calcul numérique, la  modélisation, etc.
 
 Les logiciels de CAO doivent être en mesure de réaliser les tâches suivantes : 
 
@@ -20,7 +20,7 @@ Les logiciels de CAO doivent être en mesure de réaliser les tâches suivantes 
 + la modélisation numérique,
 + le calcul numérique, 
 
-Au club nous l'utilisons essentiellement pour le dessin des pièce et l'assemblage mécanique du robot. Nous ne faisons pas de calcul numérique.
+Au club nous l'utilisons essentiellement pour le dessin des pièces et l'assemblage mécanique du robot. Nous ne faisons pas de calcul numérique.
 
 ## Logiciels
 

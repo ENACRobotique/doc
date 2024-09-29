@@ -22,7 +22,7 @@ Ensuite on va éditer le fichier indiqué à la ligne _Loaded_ :
 
 ```sudo vi /lib/systemd/system/ModemManager.service```
 
-A la section _[Service]_ du fichier, rajouter une ligne :  
+A la section _[Service]_ du fichier, rajoutez une ligne :  
 
 ```plain
 [Service]

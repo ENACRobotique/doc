@@ -3,7 +3,7 @@
 
 ### Introduction au serial
 
-Pour communiquer entre le pc et une carte électronique, un moyen souvent utilisé est la [transmission Série](https://fr.wikipedia.org/wiki/Transmission_s%C3%A9rie) ou Serial. C’est un protocole de communication qui a l’avantage d’être simple et surtout, facilement programmable. Le principe est qu'un seul bus de donnée relie deux appareil et permet la communication en envoyant un par les les trames de données. **En gros on les relie par un fils...**
+Pour communiquer entre le pc et une carte électronique, un moyen souvent utilisé est la [transmission Série](https://fr.wikipedia.org/wiki/Transmission_s%C3%A9rie) ou Serial. C’est un protocole de communication qui a l’avantage d’être simple et surtout, facilement programmable. Le principe est qu'un seul bus de données relie deux appareils et permet la communication en envoyant un par un les trames de données. **En gros on les relie par un fil...**
 
 #### Communication avec le pc
 
@@ -55,13 +55,13 @@ Par exemple pour votre led à la page précédente nous avions fait
 Serial.printf("potar = %d, led = %d \n", potar_value, led_value);
 ```
 
-`%d` sert à signifier qu'un type `int` va venir se mettre lat,  puis on le passe en argument c'est `potar_value`. Il faut respecter l'ordre dans lequel on l'écrit. On peut utiliser `%f` pour un float et il en existe d'autres, cherchez **Format Specifiers** sur internet.
+`%d` sert à signifier qu'un type `int` va venir se mettre là,  puis on le passe en argument c'est `potar_value`. Il faut respecter l'ordre dans lequel on l'écrit. On peut utiliser `%f` pour un float et il en existe d'autres, cherchez **Format Specifiers** sur internet.
 
 
 
 ### UART
 
-L'Universal Asynchronous Receiver Transmitter ou [UART](https://fr.wikipedia.org/wiki/UART) est un composant matériel qui permet l'échange de donnée entre deux appareils utilisant le protocole série.
+L'Universal Asynchronous Receiver Transmitter ou [UART](https://fr.wikipedia.org/wiki/UART) est un composant matériel qui permet l'échange de données entre deux appareils utilisant le protocole série.
 
 <div style="display: flex; align-items: flex-start;">
 
@@ -73,14 +73,14 @@ L'UART est simple à mettre en œuvre car il ne nécessite que deux fils pour la
 </div>
 </div>
 
-La transmission est **asynchrone** c'est à dire qu'il n'y a pas de signal d'horloge pour synchroniser les messages. Au lieu de cela on utilise un bit de Start et un ou deux bits de Stop pour chaque données.
-Il y'a aussi optionellement un bit de parité utilisé pour la détéction d'erreur placé en amont des bits de stop. La vitesse de transmission est en Baud.
+La transmission est **asynchrone** c'est à dire qu'il n'y a pas de signal d'horloge pour synchroniser les messages. Au lieu de cela on utilise un bit de Start et un ou deux bits de Stop pour chaque donnée.
+Il ya aussi optionellement un bit de parité utilisé pour la détection d'erreurs placé en amont des bits de stop. La vitesse de transmission est en Baud.
 
 <img src="../../images/Constitution_trame_uart.png" height="100px" width="auto" >
 
 #### Communiquer avec le moniteur série
 
-L'UART est ce qui nous permet de communiquer entre le pc et le microcontrolleur. En fait lorsque vous utilisez le `Serial` avec la carte tuto vous faite déjà de l'UART ! Mais maintenant vous voulez aussi aller dans l'autre sens. 
+L'UART est ce qui nous permet de communiquer entre le pc et le microcontrôleur. En fait lorsque vous utilisez le `Serial` avec la carte tuto vous faîtes déjà de l'UART ! Mais maintenant vous voulez aussi aller dans l'autre sens. 
 Avant le setup et le loop ajouter `String msg;` c'est la variable qui va stocker notre message. Puis dans le loop :
 
 ```cpp
@@ -90,7 +90,7 @@ if (Serial.available()) // Vérifie s'il y a des données disponibles
     Serial.println(msg);  //Affiche le texte contenu dans msg sur le moniteur
 }
 ```
-Acceder au moniteur série et cliquer dans le terminal. Vous pouvez maintenant écrire ici. Le texte ne s'affiche pas quand vous écrivez, mais la réponse de la carte s'affichera.
+Accedez au moniteur série et cliquez dans le terminal. Vous pouvez maintenant écrire ici. Le texte ne s'affiche pas quand vous écrivez, mais la réponse de la carte s'affichera.
 
 <img src="../../images/Moniteur_serie.png" height="200px" width="auto">
 
@@ -99,7 +99,7 @@ Acceder au moniteur série et cliquer dans le terminal. Vous pouvez maintenant �
 
 #### Faire communiquer deux appareils
 
-En pratique vous voudrez surement faire communiquer plusieurs cartes. Dans notre cas très souvent on fais communiquer une raspberry pi avec une STM32. Dans ce cas il faut donc du code des deux cotés. Pour le coté raspberry vous allez utiliser votre pc et python, ça reviens exactement au même. On ne va pas entrer dans les détails coté python alors copiez collez le code ci dessou. Il faut peut être changer le `/dev/ttyACM0` par celui que vous avez. Vous pourrier avoir besoin de la bibliothèque `pyserial` faite `pip install pyserial` dans votre terminal. Et si vous n'avez pas pip, intstallez pip.
+En pratique vous voudrez surement faire communiquer plusieurs cartes. Dans notre cas, on fait très souvent communiquer une raspberry pi avec une STM32. Dans ce cas il faut donc du code des deux cotés. Pour le coté raspberry vous allez utiliser votre pc et python, ça reviens exactement au même. On ne va pas entrer dans les détails coté python alors copiez collez le code ci dessous. Il faut peut être changer le `/dev/ttyACM0` par celui que vous avez. Vous pourrier avoir besoin de la bibliothèque `pyserial` faite `pip install pyserial` dans votre terminal. Et si vous n'avez pas pip, intstallez pip.
 
 ```py
 import serial
@@ -134,7 +134,7 @@ Maintenant du coté bas niveau :
 
 Pour rendre ça un peu plus interactif on va faire clignoter les leds en fonction de ce que nous dis le haut niveau et dire au haut niveau la valeur du potar qui gère l'autre led. 
 
-Il nous faut d'abbord un **buffer** c'est à dire un espace mémoire qui va contenir la donnée entrante. Nous allons communiquer des messages au format [ASCII](https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange). Chaque carractère est codé sur 7 bits. Ici on s'attend à recevoir 2 octets (ou bytes en anglais) le premier étant un entier entre 0 et 9 le second `\n`pour indiquer la fin du message. En embarqué on est plutôt du genre à vouloir toujorus savoir la taille des données qu'on manipule. La mémoire étant limités on voudrait éviter des dépassement de mémoire ( ou Buffer Overflow ). On va donc rajouter `#define BUFFER_SIZE 2` au début de notre code. 
+Il nous faut d'abord un **buffer** c'est à dire un espace mémoire qui va contenir la donnée entrante. Nous allons communiquer des messages au format [ASCII](https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange). Chaque caractère est codé sur 7 bits. Ici on s'attend à recevoir 2 octets (ou bytes en anglais), le premier étant un entier entre 0 et 9 et le second `\n`permet d'indiquer la fin du message. En embarqué on est plutôt du genre à vouloir toujours connaître la taille des données que l'on manipule. La mémoire étant limitée on voudrait éviter des dépassements de mémoire (ou Buffer Overflow). On va donc rajouter `#define BUFFER_SIZE 2` au début de notre code. 
 
 
 On va créer des fonctions. 
@@ -159,12 +159,12 @@ int receive()
 }
 ```
 
-Attention à faire la différence entre le carractère `char` qu'est `'\n'` et la chaine de carractère `"\n"` stocké sous forme de liste de `char`. La fonction peut être placé avant ou après le loop. Si elle est placé après, le compilateur vous dira qu'elle n'existe pas. Il faut alors rajouter `int receive();` en amont. 
+Attention à faire la différence entre le caractère `char` qu'est `'\n'` et la chaine de carractère `"\n"` stocké sous forme de liste de `char`. La fonction peut être placée avant ou après le loop. Si elle est placée après, le compilateur vous dira qu'elle n'existe pas. Il faut alors rajouter `int receive();` en amont. 
 
 
 + Envoi d'un message : 
 
-La c'est facile, comme on l'a dis plus tôt il suffit de faire un `print` pour écrire sur le serial. 
+La c'est facile, comme on l'a dit plus tôt il suffit de faire un `print` pour écrire sur le serial. 
 
 ```cpp
 void send(int val)
@@ -174,7 +174,7 @@ void send(int val)
   // Serial.write((byte)val); // ne mettez pas print et write en même temps !
 }
 ```
-Dans certain cas on peut aussi vouloir envoyer des données binaire, on utilise alors `write`. Par contre il faut changer les deux dernières lignes du code python par : 
+Dans certain cas on peut aussi vouloir envoyer des données binaires, on utilise alors `write`. Par contre il faut changer les deux dernières lignes du code python par : 
 
 ```py
 msg = ser.read()
@@ -202,9 +202,9 @@ void loop() {
 }
 ```
 
-Et voilà vous pouvez téléverser. Ensuite dans votre terminal faites `python3 tuto_uart.py` pour lancer le proggramme python. Vous devriez lire la valeur du potar dans le terminal et voir l'une des led clignoter lentement sur la carte.
+Et voilà vous pouvez téléverser. Ensuite dans votre terminal faîtes `python3 tuto_uart.py` pour lancer le programme python. Vous devriez lire la valeur du potar dans le terminal et voir l'une des led clignoter lentement sur la carte.
 
-> Attention vous ne pourrez pas ouvrir le moniteur série en même temps que le code python tourne. Vous ne pouvez pas accéder deux fois au même port série. Vous risquez d'avoir des instabilité voir directement une erreur.
+> Attention vous ne pourrez pas ouvrir le moniteur série en même temps que le code python tourne. Vous ne pouvez pas accéder deux fois au même port série. Vous risquez d'avoir des instabilités voire directement une erreur.
 
 
 + (TODO) Visualiser l'UART sur l'analyseur logique.

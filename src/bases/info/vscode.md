@@ -1,8 +1,7 @@
 # VS Code
 
 ### Editeur de texte :
-L'éditeur à utiliser est visual studio code.
-[VS code](https://code.visualstudio.com/). Vous serez amené à l'utiliser aussi en cour alors il sera judicieux de l'avoir sur votre machine personnelle.
+L'éditeur à utiliser est visual studio code : [VS code](https://code.visualstudio.com/). Vous serez amenés à l'utiliser aussi en cours alors il sera judicieux de l'avoir sur votre machine personnelle.
 
 Pour installer un ".deb" sur ubuntu par exemple, vous pouvez faire :
 
@@ -19,7 +18,7 @@ Vous pouvez ensuite installer les extentions C/C++ et Python directement depuis 
 <img src="../../images/platformio.png" width="800px"> </a>
 <div style="padding-left: 30px;">
 
-Une extension de VS code qui permet de compiler vers les microcontrolleurs
+Une extension de VS code qui permet de compiler vers les microcontrôleurs est
 [platformio](https://platformio.org/install/ide?install=vscode).
 
 Vous apprendrez à l'utiliser directement au club lorsque vous aborderez le C++.
@@ -39,7 +38,7 @@ Ensuite vous pouvez taper la commande automagique :
 ```bash
 curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules | sudo tee /etc/udev/rules.d/99-platformio-udev.rules
 ```
-Ou le faire manuellement en téléchargeant directement depuis le manuel : [udev rules for Platformio](https://docs.platformio.org/en/latest/core/installation/udev-rules.html)
+Ou le faire manuellement en le téléchargeant directement depuis le manuel : [udev rules for Platformio](https://docs.platformio.org/en/latest/core/installation/udev-rules.html)
 
 Ensuite redémmarez `udev`:
 
@@ -71,10 +70,10 @@ shutdown command invoked
  *  Terminal will be reused by tasks, press any key to close it. 
 ```
 
-Cela peut être du à plusieurs choses. 
+Cela peut être dû à plusieurs choses. 
 - Première explication : 
 
-Vous avez un problème d'alimentation. Essayer un autre cable ou prise usb. 
+Vous avez un problème d'alimentation. Essayez un autre câble ou une autre prise usb. 
 
 - Deuxième explication :
 
@@ -82,4 +81,4 @@ Regardez le message d'erreur : `Error: libusb_open() failed with LIBUSB_ERROR_AC
 
 - Troisième explication (Approximative): 
 
-Un programme est déjà en cour sur le microcontroleur que vous utilisez et le bloque dans une boucle infinie. Cela l'empêche donc de récupérer le programme que l'on veut téléverser. Maintenez le bouton reset cliquez sur upload et relacher le reset au bout d'une seconde ou deux. Ça ne marchera pas forcément.
+Un programme est déjà en cour sur le microcontroleur que vous utilisez et le bloque dans une boucle infinie. Cela l'empêche donc de récupérer le programme que l'on veut téléverser. Maintenez le bouton reset, cliquez sur upload et relacher le reset au bout d'une seconde ou deux. Ça ne marchera pas forcément.

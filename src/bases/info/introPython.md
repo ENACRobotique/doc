@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Si vous n'avez jamais programmés en Python, [Zeste de savoir](https://zestedesavoir.com/tutoriels/799/apprendre-a-programmer-avec-python-3/) propose une bonne introduction des notions de base (communes à tous les languages), avec un TP pour appliquer directement. Le tuto devrait prendre ~8H à faire au total.
+Si vous n'avez jamais programmé en Python, [Zeste de savoir](https://zestedesavoir.com/tutoriels/799/apprendre-a-programmer-avec-python-3/) propose une bonne introduction des notions de base (communes à tous les langages), avec un TP pour appliquer directement. Le tuto devrait prendre ~8H à faire au total.
 
-Pour les Ienacs, vous aurez des cours de python dès le premier semestre qui vous apprenent des notions très utilisé au club. Il peut être intéréssant donc de ne pas s'y focaliser dans un premier temps et d'apprendre dans d'autre pôles.
+Pour les IENAC, vous aurez des cours de python dès le premier semestre qui vous apprenent des notions très utilisé au club. Il peut être intéréssant donc de ne pas s'y focaliser dans un premier temps et d'apprendre dans d'autre pôles.
 
 ## Le python au club robot
 

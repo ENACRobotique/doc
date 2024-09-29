@@ -8,17 +8,17 @@ Ensuite, il faut réunir la liste du matériel nécessaire, lesquels sont à com
 
 Enfin, il faut établir la gestion du projet, c'est à dire savoir qui fait quoi et à quel moment pour ne pénaliser personne dans son travail, c'est à dire décider d'un **calendrier** de formation, de deadlines,...
 
-Ainsi, en ordre d'idée, il faudrait idéalement que le robot roule déjà dès fin décembre, et qu'il est capable de marquer des points en février.
+Ainsi, en ordre d'idée, il faudrait idéalement que le robot roule déjà dès fin décembre, et qu'il soit capable de marquer des points en février.
 
 Exemple de timeline: 
 ![](../images/timeline_projet.png "Exemple de timeline pour le robot sur une année")
 
 ### Le cahier des charges
 
-Pour que tout le monde soit d'accord, il est impératif d'avoir un cahier des charges. Il peut être assez court (quelques pages avec photos), mais il doit contenir l'essentiel, c'est à dire identifier à partir du réglement des "fonctions" à réaliser (se déplacer, récupérer X objet, afficher le score,...) afin que tous les membres aient la même idée des objectifs à atteindre. 
-Pour chaque fonction, il faut des critères avec une valeur de performance à atteindre. Il peut bien évidemment être modifié au cours de l'année.
+Pour que tout le monde soit d'accord, il est impératif d'avoir un cahier des charges. Il peut être assez court (quelques pages avec photos), mais il doit contenir l'essentiel, c'est-à-dire identifier à partir du réglement des "fonctions" à réaliser (se déplacer, récupérer X objet, afficher le score,...) afin que tous les membres aient la même idée des objectifs à atteindre. 
+Pour chaque fonction, il faut des critères avec une valeur de performance à atteindre. Ils peuvent bien évidemment être modifiés au cours de l'année.
 
-[**Exemple de rapport avec cahier de charges** pour le mini robot de formation Juin 2022](https://docs.google.com/document/d/1mrJBK6TYmAEOajHTTRQV775p3FRSDmuo/edit?usp=sharing&ouid=110371115636606943160&rtpof=true&sd=true)
+[**Exemple de rapport avec cahier des charges** pour le mini robot de formation Juin 2022](https://docs.google.com/document/d/1mrJBK6TYmAEOajHTTRQV775p3FRSDmuo/edit?usp=sharing&ouid=110371115636606943160&rtpof=true&sd=true)
 
 #### Exemple : 
 | Fonction   |      Critère      |  Niveau |
@@ -29,9 +29,9 @@ Pour chaque fonction, il faut des critères avec une valeur de performance à at
 || Vitesse angulaire max | 1 rad/s|
 
 ### Les specs du robots
-L'idée est de recenser toutes les **piéces que composera le robot** (même ceux imprimés en 3D), et d'indiquer l'état d'avancement (en cours de design/de commande, en cours de test,...). Pour ceux qui sont à commander, c'est le moment de voir le prix pour avoir une idée du budget du robot.
+L'idée est de recenser toutes les **pièces qui composeront le robot** (même celles imprimées en 3D), et d'indiquer l'état d'avancement (en cours de design/de commande, en cours de test,...). Pour ceux qui sont à commander, c'est le moment de voir le prix pour avoir une idée du budget du robot.
 Ensuite, on peut faire l'inventaire de ce qui est nécessaire pour la **carte électronique**.
-Enfin, on peut définir comment fonctionnera le code dans les grandes lignes (quel "language" de communication entre la carte électronique et les ordis, quels fonctionalités sont impératives, lesquelles sont facultatives,...").
+Enfin, on peut définir comment fonctionnera le code dans les grandes lignes (quel "langage" de communication entre la carte électronique et les ordis, quelles fonctionalités sont impératives, lesquelles sont facultatives,...").
 
 [Un exemple de "cahier de specs" (2022)](https://docs.google.com/document/d/1sOBxRK2LiSuNzQPDihp1MDDo0q5jfXRSP5_wCl4TWog/edit?usp=sharing) 
 ## De quoi est constitué un robot ?
@@ -43,7 +43,7 @@ C'est la partie essentielle du robot, à réaliser en premier. Sans base roulant
 
 #### Les robots différentiels 
 
-Le principe de ces robots est d'avoir 2 roues (généralement centrés sur le robot), avec généralement des patins à l'avant et à l'arrière pour que le robot ne bascule pas. On envoie des consignes de vitesse individuelles à chaque moteur ce qui permet de tourner sur soit même, d'avancer, ou de faire des trajectoires courbées : 
+Le principe de ces robots est d'avoir 2 roues (généralement centrés sur le robot), avec généralement des patins à l'avant et à l'arrière pour que le robot ne bascule pas. On envoie des consignes de vitesse individuelles à chaque moteur ce qui permet de tourner sur soi-même, d'avancer, ou de faire des trajectoires courbées : 
 
 ![](../images/differential_robot_principle.png)
 
@@ -82,11 +82,11 @@ On retrouve principalement 4 formes possibles :
     ![](../images/square_robot.png "robot carré")
 - Cylindrique
     + **++** Pour le périmètre
-    + **--** Peu optimal par rapport à ce qu'on utilise : les actionneurs, les piéces mécaniques, etc... sont généralement rectangulaire
+    + **--** Peu optimal par rapport à ce qu'on utilise : les actionneurs, les pièces mécaniques, etc... sont généralement rectangulaire
     ![](../images/rct_toulon.png "robot RCT toulon")
 -   Hexagonal (is Bestagon)
     + **+** Pour le périmètre
-    + **+** Bon compris entre cylindre et rectangulaire pour le placement des objets à l'intérieur.
+    + **+** Bon compromis entre cylindre et rectangulaire pour le placement des objets à l'intérieur.  
     ![Robot Enac 2022](../images/robot_enac_2022.png)
 -   Triangulaire
     + **++** pour les robots holonomes à 3 roues
@@ -131,8 +131,8 @@ Encodeur optique (AMT-102V) | Surtout pour les robots différentiels. Ce sont de
 Capteur optique (Souris, [PAA5100JE](https://shop.pimoroni.com/products/paa5100je-optical-tracking-spi-breakout?variant=39315330170963)) | Placé à distance constante du sol, il filme continuellement le sol et via des algorithmes il détermine le "déplacement" horizontal du robot en déterminant les différences entre les images filmés. La précision n'a pas encore été testé au club robot ENAC mais d'après d'autres clubs, c'est prometteur.
 Lidar (2D)(Lidar LD06) | Le lidar est un capteur laser qui mesure sur un angle important (généralement 360°) les distances périodiquement(~10hz). L'usage principale est de détecter les adversaires ainsi. Un projet testé pour la coupe 2022 était de repérer des points fixes connus sur le terrain, et ainsi de trianguler la position du robot. Sinon on pourrait aussi le mettre proche du sol pour détecter les murets et certains algorithmes sont capable de déterminer les déplacements de cette manière. Pour info, ça existe aussi en 3D mais ça sert à rien pour la coupe et ça coute une blinde. ![Lidar](../images/lidar_2d.png)
 IMU/Centrale inertielle/Accéléromètres | Pas testé au club robot, une centrale inertielle est un instrument, capable d'intégrer les mouvements d'un mobile pour estimer son orientation, sa vitesse linéaire et sa position. L'estimation de position est relative au point de départ ou au dernier point de recalage.
-Vision par ordinateur (Camera/Code Aruco) | Les codes Aruco sont les sortes de QR code sur le terrain. Des algorithmes sont capables de déterminer avec une caméra leurs positions dans l'espace et donc si on en met un sur le robot, de déterminer la position du robot par rapport aux codes arucos du terrain. mais c'est complexe à mettre en oeuvre également.
-Triangulisation | Ultrason, Infrarouge Sur les balises fixes, on peut mettre des capteurs/Emetteurs ultrason/Infrarouges et sur le robot, on peut se trianguler.
+Vision par ordinateur (Camera/Code Aruco) | Les codes Aruco sont les sortes de QR code sur le terrain. Des algorithmes sont capables de déterminer avec une caméra leurs positions dans l'espace et donc si on en met un sur le robot, de déterminer la position du robot par rapport aux codes arucos du terrain. mais c'est complexe à mettre en œuvre également.
+Triangulisation | Ultrason, Infrarouge sur les balises fixes, on peut mettre des capteurs/émetteurs ultrason/infrarouges et sur le robot, on peut se trianguler.
 
 
 ### Actionneurs
@@ -142,28 +142,28 @@ A la base de chaque "mouvement" de robot, on retrouve un moteur (mouvement de ro
 Pour attraper les objets, on peut réaliser des "bras" avec un servomoteur qui déplace le bras, et au bout on peut retrouver des :
 + Pince
 + Ventouse (pneumatique, électrovanne)
-+ Pousser directement avec l'actionneur
++ Ou pousser directement avec l'actionneur
 
 ### Carte electronique
 
 Pourquoi utiliser des circuits électroniques ?
-Pensez à un clavier. Vous pouvez connecter tous les interrupteurs d'un clavier avec des fils et des diodes et toutes ces jolies choses, mais vous vous retrouvez avec un merdier. Un circuit imprimé est essentiellement un foutoir de fils qui n'est en fait qu'une carte avec un câblage en cuivre d'un millimètre d'épaisseur qui est bien agencé pour permettre des connexions rapides et cohérentes sans fils, et sur lesquels on est sur que tous les composants ont la bonne alimentation/courant électrique, et les bonnes connexions pour des protocoles plus complexes entre les composants et le microcontrolleur.
+Pensez à un clavier. Vous pouvez connecter tous les interrupteurs d'un clavier avec des fils et des diodes et toutes ces jolies choses, mais vous vous retrouvez avec un merdier. Un circuit imprimé est essentiellement un foutoir de fils qui n'est en fait qu'une carte avec un câblage en cuivre d'un millimètre d'épaisseur qui est bien agencé pour permettre des connexions rapides et cohérentes sans fils, et sur lesquelles on est sur que tout les composants ont la bonne alimentation/courant électrique, et les bonnes connexions pour des protocoles plus complexes entre les composants et le microcontrôleur.
 
 ![](../images/illustration_pcb.png)
-### Microcontrolleur
+### Microcontrôleur
 
 ![](../images/comparison_microcontroller_2.png)
 
 Pin disponible -> Permet de brancher plus de capteurs, actionneurs, et toute sorte de composants électroniques. 
 
-Microcontrolleur | Capacité de calcul/RAM/Espace | Pin disponible | Réseau | prix(hors pénurie)
+Microcontrôleur | Capacité de calcul/RAM/Espace | Pin disponible | Réseau | prix(hors pénurie)
 ---------- | ------------ | ------- |------------------ | ----
 **STM32 (français)** | Moyen à fort | Moyen à fort (~30-60) | Pas de réseau | Pas cher
 **ESP32 (chinois)** | fort à très "fort" | ~20-30 | Wifi, bluetooth | Pas cher
 **Arduino** (UK) | Faible | ~10-20 | Pas de réseau | Très cher (pour les capacités)
 **Teensy** (USA) | Moyen à fort | Moyen à fort (~30-60) | Pas de réseau | Cher
 
-Au niveau de la programmation, généralement, plus c'est simple à programmer, moins il y a de "flexibilité" pour faire des choses complexes. Ainsi, les **arduinos** peuvent être assez limités pour les robots. Simple à utiliser, mais dur lorsque le micocontrolleur doit gérer plein de choses.
+Au niveau de la programmation, généralement, plus c'est simple à programmer, moins il y a de "flexibilité" pour faire des choses complexes. Ainsi, les **arduinos** peuvent être assez limités pour les robots. Simple à utiliser, mais dur lorsque le micocontrôleur doit gérer plein de choses.
 
 Pourquoi ne pas programmer tout le robot sur le microcontrôleur mais qu'on utilise aussi des ordinateurs ?
 -> On est obligé d'utiliser des languages "bas niveau"(C, C++) et on pourrait perdre plus de temps à développer des choses avec ces languages qu'en utilisant d'autres plus simples (python,...). C'est compliqué de débugger des choses complexes, et la puissance de calcul reste limité.
@@ -181,11 +181,11 @@ Voici un exemple de comment relier tous ces composants :
 <p><img src="../images/schema_robot.png" width=300 /></p> 
 
 Au sommet, on retrouve un embedded computer (-> Raspberry pi), qui commande un "peripheral board" (-> Carte elec à faire durant l'année) et reliés à d'éventuels composants "gourmands" en puissance de calcul(caméra, lidar,...).
-Le peripheral board (qui peut être décomposé en plusieurs cates) lui est connecté à tous les autres composants électroniques.
+Le peripheral board (qui peut être décomposé en plusieurs cartes) lui est connecté à tous les autres composants électroniques.
 
 ### Les batteries
 
-On utilise des batteries de perceuse (Makita, 18V), sinon des Lipo/Life de hobby king de 12/14V sont très bien, des cellules LifePo4 3.2V
+On utilise des batteries de perceuse (Makita, 18V), sinon les Lipo/Life de hobby king de 12/14V sont très bien, des cellules LifePo4 3.2V
 En terme de consommation électrique, en ordre de grandeur on à 2/3A en pic pour les moteurs, et 1/2A pour le reste.
 
 

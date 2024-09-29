@@ -1,9 +1,9 @@
-# La programmation embarqué 
+# La programmation pour l'embarqué
 
 Lorsque vous voulez programmer ( en python par exmple) vous utiliser votre ordinateur et vous y écrivez votre programme. Néanmoins vous avez bien vu que votre ordinateur est peut être un peu encombrant pour un petit robot et puis vous n'avez pas besoin de pouvoir lui brancher un clavier et un écran en permanence. Aussi peut être vous vous voyez mal brancher tout vos composant électroniques directement à votre ordinateur. C'est la qu'intervient la programmation embarqué!
 
 
-En embarquée vous avez besoin de relier un programme aux circuits électroniques de votre robot afin de pouvoir l'automatiser. C'est là qu'interviennent les circuit éléctoniques programmables, les **microcontrolleurs**. Ils sont généralement programmé en utilisant le language C++ ( dérivé du language C) que vous aprrendrez à utiliser au club. 
+En embarquée vous avez besoin de relier un programme aux circuits électroniques de votre robot afin de pouvoir l'automatiser. C'est là qu'interviennent les circuit éléctoniques programmables, les **microcontrôleurs**. Ils sont généralement programmés en utilisant le language C++ ( dérivé du language C) que vous aprrendrez à utiliser au club. 
 
 À préciser que pour ceux qui ont déjà programmé en C et qui n'ont jamais fait d'embarqué qu'il faudra quand même suivre les tutoriels section I.
 
@@ -34,10 +34,10 @@ Vous pouvez ensuite vérifier la version de gcc avec : `gcc -v`
 
 ## I - Le C++ pour l'embarqué
 
-Vous aurez un cour pratique sur la [Carte tuto](../../carte_tuto/tuto_board.md) faite par le club pour découvrir le monde merveilleux de l'embarqué.
+Vous aurez un cours pratique sur la [Carte tuto](../../carte_tuto/tuto_board.md) faite par le club pour découvrir le monde merveilleux de l'embarqué.
 <!-- Lien google doc [Carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit)  -->
 
-Il est recommandé ensuite de suivre les tutoriels de [Zeste de savoir](https://zestedesavoir.com/tutoriels/686/arduino-premiers-pas-en-informatique-embarquee/) qui vous permetra de vous plonger au coeur du sujet avec des **mises en pratique** et traitant toutes les notions utilisé en embarqué. Dans ce tutoriels c'est une carte arduino qui est utilisé. Nous en avons au club. Néanmoins pour nos robot nous utilisons des cartes ST(celle de la carte tuto!) qui se programment de la même façon, vous pourrez donc vous entrainer directement dessu. 
+Il est recommandé ensuite de suivre les tutoriels de [Zeste de savoir](https://zestedesavoir.com/tutoriels/686/arduino-premiers-pas-en-informatique-embarquee/) qui vous permettront de vous plonger au cœur du sujet avec des **mises en pratique** et traitant toutes les notions utilisées en embarqué. Dans ce tutoriels c'est une carte arduino qui est utilisée. Nous en avons au club. Néanmoins pour nos robot nous utilisons des cartes ST(celle de la carte tuto!) qui se programment de la même façon, vous pourrez donc vous entrainer directement dessus. 
 
 
 ## II - Le C plus généralement
@@ -62,8 +62,8 @@ Avec la pratique vous finirez par vous souvenir de ce qui est le plus utilisé d
     [Carte tuto](https://docs.google.com/document/d/1-jxdJCb0QWJrYiXEooCPBYri_L7LV24AF4ST5_-yBRs/edit)
     [github associé à la carte tuto](https://github.com/Fabien-B/tutosBoardRoboticClub/) -->
 
-## III - Problématiques robots embarqué
+## III - Problématiques robots embarqués
 
-Ultérieurement, vous pouvez voir les problématique liée à l'Asservissement sur le site de [PM robotix](https://www.pm-robotix.eu/2022/02/02/asservissement-et-pilotage-de-robot-autonome/).
+Ultérieurement, vous pouvez voir les problématiques liées à l'asservissement sur le site de [PM robotix](https://www.pm-robotix.eu/2022/02/02/asservissement-et-pilotage-de-robot-autonome/).
 
 (TODO)

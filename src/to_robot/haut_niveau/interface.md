@@ -13,4 +13,4 @@
 - robot_sim_ecal (en cours de création) 
     - Bouton+slider dynamique(scripter, avec délai)
     - Afficher LIDAR 
-    - Afficher etat du robot
+    - Afficher état du robot

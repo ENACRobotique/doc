@@ -23,7 +23,7 @@
 	- [Électronique](bases/elec/index.md)
 		- [Allumer une Led](bases/elec/led.md)
 		- [Identifier un problème dans un circuit](bases/elec/sos_elec.md)
-		- [Microcontrolleurs](bases/elec/microcontrolleur.md)
+		- [Microcontrôleurs](bases/elec/microcontroleur.md)
 		- [Kicad](bases/elec/kicad.md)
 	- [Linux](bases/linux/index.md)
 		- [Dual Boot](bases/linux/dual_boot.md)
