@@ -96,7 +96,7 @@ On a appris à configurer une broche en sortie pour écrire son état, on va mai
 <img src="../../images/tuto_board_jumpers.jpg" height="150px" width="auto">
 <div style="padding-left: 30px;">
 
-On peut brancher facilement les jumpers avec des petits connecteur. À gauche le jumper JP2 déconnecté à droite le jumper JP1 connecté.
+On peut brancher facilement les jumpers avec des petits connecteurs. À gauche le jumper JP2 déconnecté à droite le jumper JP1 connecté.
 
 </div></div>
 
