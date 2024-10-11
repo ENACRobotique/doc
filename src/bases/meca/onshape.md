@@ -3,20 +3,17 @@
 
 <p><img src="../../images/onshape_logo.png" width=150 /></p>
 
-Onshape est un outils de CAO cloudé. On peut y accéder en ligne depuis nimporte quel navigateur (Il existe aussi une application mobile utile pour montrer des designs mais non pratique pour les faire). Pas besoin d'installation juste d'une bonne connexion internet.
+Onshape est un outils de CAO en ligne. On y accède depuis n'importe quel navigateur (Il existe aussi une application mobile utile pour montrer des designs mais non pratique pour les faire). Pas besoin d'installation, juste d'une bonne connexion internet.
 Elle permet de faire de la modélisation 3D, des assemblages et de la mise en plan.
-Il y'a de la gestion de version similaire à git ce qui est pratique pour faire plusieurs designs en parrallèle.
+Il y a une gestion de version similaire à git ce qui est pratique pour faire plusieurs designs en parrallèle.
 On peut définir des équipes. Le club vous ajoutera lorsque vous aurez créé votre compte.
-Elle permet d'accéder à des bibliothèques partagée de modèles mais aussi de fonction personalisé réalisé par la communauté.
+Elle permet d'accéder à des bibliothèques partagées contenant différents modèles mais aussi des fonctions personnalisées réalisées par la communauté.
 
-S'inscrire sur [Onshape](https://www.onshape.com/en/education/sign-up).
+Voici le lien pour vous inscrire à [Onshape](https://www.onshape.com/en/education/sign-up).
 
 ## Tuto Onshape 
 
-(Tutoriel maison avec des images c'est mieux !)
-
 Dans ce tutoriel, nous allons apprendre à modéliser un cube avec un trou cylindrique à l'intérieur en utilisant Onshape. Ce projet est idéal pour les débutants souhaitant se familiariser avec les outils de base de la conception 3D.
-Autres tutoriels : 
 
 ### Étape 1 : Créer un nouveau document
 
@@ -34,14 +31,14 @@ Autres tutoriels :
 <img src="../../images/Capture d’écran 2024-09-20 à 18.55.43.png" width=300  />
 </p>
 
-3. Assurez-vous que vous êtes en vue de dessus (cliquez sur l'icône de la vue en haut à droite si nécessaire).
+3. Assurez-vous d'être en vue de dessus (cliquez sur l'icône de la vue en haut à droite si nécessaire).
 4. Choisissez l'outil Rectangle dans la barre d'outils d'esquisse.
 
 <p align="center">
 <img src="../../images/Capture d’écran 2024-09-20 à 18.56.41.png" width=300/>
 </p>
 
-5. Dessinez un carré en cliquant et traînant sur le plan de travail.
+5. Dessinez un carré sur le plan de travail grâce à l'outil ci-dessous.
 <p align="center">
 <img src="../../images/Capture d’écran 2024-09-20 à 18.56.54.png" width=150 />
 </p>
@@ -51,7 +48,7 @@ Autres tutoriels :
 <img src="../../images/Capture d’écran 2024-09-20 à 18.57.57.png" width=150 />
 </p>
 
- Cliquez sur une ligne du carré et entrez 100 mm pour chaque côté afin de créer un cube de 100 mm x 100 mm.
+ Cliquez sur une ligne du carré et entrez 100 mm pour chaque côté afin de créer un carré de 100 mm x 100 mm.
 <p align="center">
 <img src="../../images/Capture d’écran 2024-09-20 à 19.21.32.png" width=300 />
 </p>
@@ -113,8 +110,9 @@ Félicitations, vous avez créé un cube avec un trou à l'intérieur !
 
 
 ## Solidworks 
-Le club n'utilise plus solidworks à partir de la rentrée 2023. Néanmoins si vous souhaitez apprendre à utiliser le logiciel il est disponible sur les postes du club. Nous ne l'utiliserons simplement pas pour la conception du robot sauf éventuellemnt dans certains cas très particuliers.
+Le club n'utilise plus solidworks depuis la rentrée 2023. Néanmoins si vous souhaitez apprendre à utiliser ce logiciel, il est disponible sur les postes du club. Nous ne l'utiliserons pas pour la conception du robot sauf éventuellement dans certains cas très particuliers.
 
 Vous pouvez obtenir une [licence étudiante gratuite](https://education.solidworks.fr/licence_student_standard_etudiant/) si vous souhaitez l'installer à titre personnel sur votre machine.
 
-Vous pourrez ensuite suivre les [tutoriels solidworks](http://sdz.tdct.org/sdz/apprenez-a-utiliser-solidworks.html#ApprenezutiliserSolidWorks) pour apprendre. Certains membres ont déjà utilisé le logiciels. N'hésitez pas à leur demander conseil.
+Si cela vous intéresse, voici un liste de [tutoriels solidworks](http://sdz.tdct.org/sdz/apprenez-a-utiliser-solidworks.html#ApprenezutiliserSolidWorks). Certains membres ont déjà utilisé le logiciel. N'hésitez pas à leur demander conseil.
+
