@@ -11,7 +11,7 @@ Les roues sont placées à égale distance \\(R\\) du centre du robot, leurs axe
 
 Si le robot tourne sur lui-même à une vitesse angulaire \\(ꞷ\\), la vitesse d'une roue sera donc \\(Vtr = R.ꞷ\\).
 
-![](../images/holonome_vitesse_angulaire.png "Rotation")
+![](holonome_vitesse_angulaire.png "Rotation")
 
 
 ## Translation
@@ -24,7 +24,7 @@ La vitesse tangentielle de la roue sera donc de \\(Vtr = V.sin(α-β)\\).
 
 La roue étant en translation libre sur l'axe radial, la vitesse radiale peut être ignorée.
 
-![](../images/holonome_vitesse.png "Translation")
+![](holonome_vitesse.png "Translation")
 
 
 
