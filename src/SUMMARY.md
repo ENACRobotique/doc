@@ -38,7 +38,7 @@
 		- [FreeRTOS](bases/tutopami/freertos.md)
 		- [Programmer un PAMI](bases/tutopami/tuto.md)
 
-- [Vers le robot (WIP)](to_robot/to_robot.md)
+- [Vers le robot](to_robot/to_robot.md)
 	-[Liens en vrac](vrac.md)
 	- [Base roulante Holonome](to_robot/base_roulante/holonome.md)
 		- [Conception Méca]()
@@ -52,11 +52,11 @@
 	- [Communications]()
 		- [Comm Haut/Bas niveau]()
 		- [eCal et protobuff]()
-		<!-- - [ROS2](to_robot/ROS2/ros2.md) -->
 	- [Le haut niveau]()
 		- [Monter une raspi](to_robot/haut_niveau/raspberry_pi.md) 
 		- [Interfaçage](to_robot/haut_niveau/interface.md)
 		- [Inteligence du robot](to_robot/haut_niveau/decision.md)
+	- [Localisation LIDAR](to_robot/localisation_lidar/loca_lidar.md)
 
 - [FAQ/REX : Retour D'expérience]()
 	- [Système de tir](rex/shoot.md)
