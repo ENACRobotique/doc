@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Base roulante Holonome - Doc ENAC Robotique</title>
+        <title>Localisation LIDAR - Doc ENAC Robotique</title>
 
 
         <!-- Custom HTML head -->
@@ -168,49 +168,73 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="base-holonome"><a class="header" href="#base-holonome">Base holonome</a></h1>
-<p>Considérons une roue, les calculs seront identiques pour les autres roues.</p>
-<h2 id="rotation"><a class="header" href="#rotation">Rotation</a></h2>
-<p>Commençons par le plus simple : la rotation du robot sur lui-même. Le robot doit simplement faire tourner ses roues à la même vitesse.</p>
-<p>Les roues sont placées à égale distance \(R\) du centre du robot, leurs axes passant par le centre du robot.</p>
-<p>Si le robot tourne sur lui-même à une vitesse angulaire \(ꞷ\), la vitesse d'une roue sera donc \(Vtr = R.ꞷ\).</p>
-<p><img src="holonome_vitesse_angulaire.png" alt="" title="Rotation" /></p>
-<h2 id="translation"><a class="header" href="#translation">Translation</a></h2>
-<p>La roue est placée à un angle \(β\) par rapport au repère du robot. Cet angle est fixé par la construction du robot.</p>
-<p>Supposons que le robot se déplace en translation pure à une vitesse \(V\) qui forme un angle \(α\) avec le repère du robot.</p>
-<p>La vitesse tangentielle de la roue sera donc de \(Vtr = V.sin(α-β)\).</p>
-<p>La roue étant en translation libre sur l'axe radial, la vitesse radiale peut être ignorée.</p>
-<p><img src="holonome_vitesse.png" alt="" title="Translation" /></p>
-<h2 id="composition-des-vitesses-et-décomposition-selon-les-axes-du-robot"><a class="header" href="#composition-des-vitesses-et-décomposition-selon-les-axes-du-robot">Composition des vitesses, et décomposition selon les axes du robot</a></h2>
-<p>Par la composition des vitesses, la vitesse tangentielle totale d'une roue est : \(Vtr = V.sin(α-β) + R.ꞷ\)</p>
-<p>On connait l'identité trigonométrique : \(sin(α-β) = sin(α).cos(β) - cos(α).sin(β)\)</p>
-<p>On peut donc écrire</p>
-<p>\[Vtr = V.sin(α).cos(β) - V.cos(α).sin(β) + R.ꞷ\]</p>
-<p>Si on décompose la vitesse \(V\) du robot selon ses axes, on a :</p>
+                        <h1 id="localisation-lidar"><a class="header" href="#localisation-lidar">Localisation LIDAR</a></h1>
+<p>Le but est de déterminer la position du robot en repérant des balises placées en bordure de la table de jeu grace à une LIDAR 2D.</p>
+<p>Le réglement de la coupe nous autorise à placer en bordure de la table de jeu 4 balises à des positions précises. Voir l'image suivante pour les positions des balises pour chaque équipe.</p>
+<p><img src="positions_balises.svg" alt="" title="Position des balises" /></p>
+<p>Ces balises se doivent d'être plus petites qu'un carré en 100x100mm, et de moins d'un mètre de hauteur.</p>
+<p><img src="detail_balises.png" alt="" title="Détail des balises" /></p>
+<p>Nous avons choisi d'utiliser des balises circulaires de 100mm de diamètre afin de maximiser nos chances de les repèrer, et qu'elles fassent la même taille quelque soit l'angle de vue.</p>
+<p>Connaissant la position des balises, dans le repère de la table, et leur positions dans le repère du robot, nous pouvons en déduire la transformation permettant de passer du repère table au repère robot. C'est à dire la position de l'orientation du robot dans le repère table.</p>
+<h2 id="pré-traitement-des-données"><a class="header" href="#pré-traitement-des-données">Pré-traitement des données</a></h2>
+<p>Identifier les balises à partir du nuage de points nécessite un pré-traitement des données :</p>
 <ul>
-<li>\(Vx = V.cos(α)\)</li>
-<li>\(Vy = V.sin(α)\)</li>
+<li>Grouper les points du lidar afin de distinguer des "objets"</li>
+<li>Filtrer ces objets afin de ne garder que ceux susceptibles d'être des balises:
+<ul>
+<li>les objets trop gros ne peuvent pas être des balises (les ballises faisant 100mm de diamètre)</li>
+<li>les objets trop loins ne peuvent pas non plus être des balises, la diagonale de la table faisant 3.6m.</li>
 </ul>
-<p>On en déduit donc :</p>
-<p>\[Vtr = Vy.cos(β) - Vx.sin(β) + R.ꞷ\]</p>
-<h2 id="forme-matricielle"><a class="header" href="#forme-matricielle">Forme matricielle</a></h2>
-<p>Pour 3 roues placées respectivement aux angles \(β1\), \(β2\) et \(β3\), on aura alors :</p>
-<p>\[ \begin{pmatrix}v1\\v2\\v3\end{pmatrix}=\begin{pmatrix}-sin(β1) &amp; cos(β1) &amp; R\\-sin(β2) &amp; cos(β2) &amp; R\\-sin(β3) &amp; cos(β3) &amp; R\end{pmatrix}\times\begin{pmatrix}Vx\\Vy\\ꞷ\end{pmatrix} \]</p>
-<h1 id="cinématique-inverse"><a class="header" href="#cinématique-inverse">Cinématique inverse</a></h1>
-<p>On a calculé les commandes à donner aux moteurs pour avoir le déplacement désiré. On voudrait maintenant déduire les déplacements du robot des déplacements de chaque moteur.</p>
-<p>On avait : \(m=D.V\)</p>
-<p>La matrice pseudo-inverse de Moore-Penrose \(D^+\) permet de résoudre ce problème. On a alors : \(V=D^+.m\)</p>
-<p>Elle peut être calculée avec numpy avec la fonction <code>numpy.linalg.pinv</code>.</p>
+</li>
+<li>Déterminer la position du centre de la balise, si l'on suppose que cet objet est une balise.</li>
+</ul>
+<p>Il faut ensuite identifier les balises parmis les objets restants.</p>
+<h3 id="position-complètement-inconnue"><a class="header" href="#position-complètement-inconnue">Position complètement inconnue</a></h3>
+<div class="warning">Ce cas n'est pas encore implémenté !</div>
+<p>Si la position du robot est complètement inconnue, on peut tester parmi tous les arrangements de 4 objets parmis tous ceux détectés si leurs positions relative peux correspondre à celles des balises.</p>
+<p>Le nombre d'arrangement pouvant être très grand, il peut être intéressant de commencer à identifier des paires de balises potentielles afin d'éliminer rapidement un grand nombre d'objets.</p>
+<p>Cette méthode peut demander beaucoup de ressources si le nombre d'objets est grand.</p>
+<h3 id="position-récente-connue"><a class="header" href="#position-récente-connue">Position récente connue</a></h3>
+<p>On peut raisonnablement supposer que le robot ne peut pas se téléporter.</p>
+<p>Si l'on connait une position récente du robot, et connaissant la position des balises, on peut calculer la position théorique des balises dans le repère robot.</p>
+<p>On peut alors chercher les balises parmis les objets les plus proches de cette position.</p>
+<p>On recherche actuellement les balises dans un rayon de 50cm autour de leur dernière position théorique.</p>
+<p>Il serait plus intéressant de rechercher les balises dans un arc de disque en coordonnées polaire.</p>
+<p><img src="zone_recherche.png" alt="" title="Zone de recherche des balises" /></p>
+<p>Cette méthode nécessite assez peu de calculs.</p>
+<h2 id="déterminer-la-position-du-robot"><a class="header" href="#déterminer-la-position-du-robot">Déterminer la position du robot</a></h2>
+<p>Une fois les basiles identifiées, on peut calculer le position de l'orientation du robot.</p>
+<p>Soit \(T = \begin{pmatrix}x\\y\end{pmatrix}\), la position du robot dans le repère table,<br />
+et \(R = \begin{pmatrix}cos(θ) &amp; sin(θ)\\-sin(θ) &amp; cos(θ)\end{pmatrix}\) la matrice de rotation entre le repère table et le repère robot;</p>
+<p>Soit \(P_i = \begin{pmatrix}xi\\yi\end{pmatrix}\) la position de la balise \(i\) dans le repère robot, et \(P_i^* = \begin{pmatrix}xi^*\\yi^*\end{pmatrix}\) sa position dans le repère table;</p>
+<p>On a pour chaque balise \(i\) : \[ P_i^* = R \times P_i + T \]</p>
+<p>On recherche la position et l'orientation du robot \((T_x, T_x, θ)\)  qui permettent de minimiser l'erreur entre la position des balises vues par le lidar, et leur position connue.</p>
+<p>Dans un cas parfait, cette erreur serait nulle, cepdendant les incertitudes des mesures lidar et les tolérances de la tables font qu'il existera toujours une erreur. On ne peut peux donc pas résoudre un système d'équations car celui-ci n'aurait aucune solutions.</p>
+<p>On cherche donc à minimiser l'erreur calculée par la méthode des moindres carrés:</p>
+<p>\[ score(T_x, T_x, θ) = \sum_{i=1}^n {\lVert R \times P_i + T - P_i^* \rVert}^2 \]</p>
+<p>On utilise pour cela la fonction <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html"><code>least_square</code></a> de <code>scipy</code>.</p>
+<p>Notons \(X = (T_x, T_x, θ)\)</p>
+<p>Arguments:</p>
+<ul>
+<li><strong><code>fun</code></strong>: Une fonction qui prennant en paramètre le vecteur \(X\) évalué, ainsi que des arguments donnés lors de l'appel à <code>least_square</code>.<br />
+La fonction retourne le vecteur des résidus, c'est à dire les éléments individuels permettant de calculer le score vu précédemment.<br />
+Il faut donc retourner un vecteur contenant les différences de position en X et Y de chauqe balises.</li>
+<li><strong><code>x0</code></strong>: La initiale de X. On peut prendre la dernière position connue du robot.</li>
+<li><del><strong><code>jac</code></strong>: La matrice des dérivées partielles.</del> (ça marche mieux sans ça, curieusement)</li>
+<li><strong><code>method</code></strong>: <code>'lm</code>.</li>
+</ul>
+<p>La fonction retroune alors un <code>OptimizeResult</code>, contenant la solution \(X = (T_x, T_x, θ)\) de l'optimisation, ainsi que le score de cette solution.</p>
+<p>Cette nouvelle position calculée du robot pourra être réutilisée à la prochaine itération comme dernière position connue du robot, et la boucle est bouclée !</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../to_robot/to_robot.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../to_robot/haut_niveau/decision.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../to_robot/base_roulante/carte_elec.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../rex/shoot.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -220,11 +244,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../to_robot/to_robot.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../to_robot/haut_niveau/decision.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../to_robot/base_roulante/carte_elec.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../rex/shoot.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

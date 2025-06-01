@@ -34,21 +34,33 @@
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-        <!-- Provide site root to javascript -->
+        <!-- Provide site root and default themes to javascript -->
         <script>
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
     </head>
     <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
     <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -62,7 +74,8 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            var theme;
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
@@ -75,8 +88,8 @@
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
@@ -112,13 +125,14 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -1994,6 +2008,63 @@ Quand vous avez trouver, s'y connecter en SSH : <code>ssh pi@raspberrypi</code>,
 <p><a href="https://github.com/cvra/goap-cpp">Un exemple intéressant</a></p>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="localisation-lidar"><a class="header" href="#localisation-lidar">Localisation LIDAR</a></h1>
+<p>Le but est de déterminer la position du robot en repérant des balises placées en bordure de la table de jeu grace à une LIDAR 2D.</p>
+<p>Le réglement de la coupe nous autorise à placer en bordure de la table de jeu 4 balises à des positions précises. Voir l'image suivante pour les positions des balises pour chaque équipe.</p>
+<p><img src="to_robot/localisation_lidar/positions_balises.svg" alt="" title="Position des balises" /></p>
+<p>Ces balises se doivent d'être plus petites qu'un carré en 100x100mm, et de moins d'un mètre de hauteur.</p>
+<p><img src="to_robot/localisation_lidar/detail_balises.png" alt="" title="Détail des balises" /></p>
+<p>Nous avons choisi d'utiliser des balises circulaires de 100mm de diamètre afin de maximiser nos chances de les repèrer, et qu'elles fassent la même taille quelque soit l'angle de vue.</p>
+<p>Connaissant la position des balises, dans le repère de la table, et leur positions dans le repère du robot, nous pouvons en déduire la transformation permettant de passer du repère table au repère robot. C'est à dire la position de l'orientation du robot dans le repère table.</p>
+<h2 id="pré-traitement-des-données"><a class="header" href="#pré-traitement-des-données">Pré-traitement des données</a></h2>
+<p>Identifier les balises à partir du nuage de points nécessite un pré-traitement des données :</p>
+<ul>
+<li>Grouper les points du lidar afin de distinguer des "objets"</li>
+<li>Filtrer ces objets afin de ne garder que ceux susceptibles d'être des balises:
+<ul>
+<li>les objets trop gros ne peuvent pas être des balises (les ballises faisant 100mm de diamètre)</li>
+<li>les objets trop loins ne peuvent pas non plus être des balises, la diagonale de la table faisant 3.6m.</li>
+</ul>
+</li>
+<li>Déterminer la position du centre de la balise, si l'on suppose que cet objet est une balise.</li>
+</ul>
+<p>Il faut ensuite identifier les balises parmis les objets restants.</p>
+<h3 id="position-complètement-inconnue"><a class="header" href="#position-complètement-inconnue">Position complètement inconnue</a></h3>
+<div class="warning">Ce cas n'est pas encore implémenté !</div>
+<p>Si la position du robot est complètement inconnue, on peut tester parmi tous les arrangements de 4 objets parmis tous ceux détectés si leurs positions relative peux correspondre à celles des balises.</p>
+<p>Le nombre d'arrangement pouvant être très grand, il peut être intéressant de commencer à identifier des paires de balises potentielles afin d'éliminer rapidement un grand nombre d'objets.</p>
+<p>Cette méthode peut demander beaucoup de ressources si le nombre d'objets est grand.</p>
+<h3 id="position-récente-connue"><a class="header" href="#position-récente-connue">Position récente connue</a></h3>
+<p>On peut raisonnablement supposer que le robot ne peut pas se téléporter.</p>
+<p>Si l'on connait une position récente du robot, et connaissant la position des balises, on peut calculer la position théorique des balises dans le repère robot.</p>
+<p>On peut alors chercher les balises parmis les objets les plus proches de cette position.</p>
+<p>On recherche actuellement les balises dans un rayon de 50cm autour de leur dernière position théorique.</p>
+<p>Il serait plus intéressant de rechercher les balises dans un arc de disque en coordonnées polaire.</p>
+<p><img src="to_robot/localisation_lidar/zone_recherche.png" alt="" title="Zone de recherche des balises" /></p>
+<p>Cette méthode nécessite assez peu de calculs.</p>
+<h2 id="déterminer-la-position-du-robot"><a class="header" href="#déterminer-la-position-du-robot">Déterminer la position du robot</a></h2>
+<p>Une fois les basiles identifiées, on peut calculer le position de l'orientation du robot.</p>
+<p>Soit \(T = \begin{pmatrix}x\\y\end{pmatrix}\), la position du robot dans le repère table,<br />
+et \(R = \begin{pmatrix}cos(θ) &amp; sin(θ)\\-sin(θ) &amp; cos(θ)\end{pmatrix}\) la matrice de rotation entre le repère table et le repère robot;</p>
+<p>Soit \(P_i = \begin{pmatrix}xi\\yi\end{pmatrix}\) la position de la balise \(i\) dans le repère robot, et \(P_i^* = \begin{pmatrix}xi^*\\yi^*\end{pmatrix}\) sa position dans le repère table;</p>
+<p>On a pour chaque balise \(i\) : \[ P_i^* = R \times P_i + T \]</p>
+<p>On recherche la position et l'orientation du robot \((T_x, T_x, θ)\)  qui permettent de minimiser l'erreur entre la position des balises vues par le lidar, et leur position connue.</p>
+<p>Dans un cas parfait, cette erreur serait nulle, cepdendant les incertitudes des mesures lidar et les tolérances de la tables font qu'il existera toujours une erreur. On ne peut peux donc pas résoudre un système d'équations car celui-ci n'aurait aucune solutions.</p>
+<p>On cherche donc à minimiser l'erreur calculée par la méthode des moindres carrés:</p>
+<p>\[ score(T_x, T_x, θ) = \sum_{i=1}^n {\lVert R \times P_i + T - P_i^* \rVert}^2 \]</p>
+<p>On utilise pour cela la fonction <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html"><code>least_square</code></a> de <code>scipy</code>.</p>
+<p>Notons \(X = (T_x, T_x, θ)\)</p>
+<p>Arguments:</p>
+<ul>
+<li><strong><code>fun</code></strong>: Une fonction qui prennant en paramètre le vecteur \(X\) évalué, ainsi que des arguments donnés lors de l'appel à <code>least_square</code>.<br />
+La fonction retourne le vecteur des résidus, c'est à dire les éléments individuels permettant de calculer le score vu précédemment.<br />
+Il faut donc retourner un vecteur contenant les différences de position en X et Y de chauqe balises.</li>
+<li><strong><code>x0</code></strong>: La initiale de X. On peut prendre la dernière position connue du robot.</li>
+<li><del><strong><code>jac</code></strong>: La matrice des dérivées partielles.</del> (ça marche mieux sans ça, curieusement)</li>
+<li><strong><code>method</code></strong>: <code>'lm</code>.</li>
+</ul>
+<p>La fonction retroune alors un <code>OptimizeResult</code>, contenant la solution \(X = (T_x, T_x, θ)\) de l'optimisation, ainsi que le score de cette solution.</p>
+<p>Cette nouvelle position calculée du robot pourra être réutilisée à la prochaine itération comme dernière position connue du robot, et la boucle est bouclée !</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lancement-dobjets-exemples-rusty---2018"><a class="header" href="#lancement-dobjets-exemples-rusty---2018">Lancement d'objets (Exemples rusty - 2018)</a></h1>
 <h2 id="inventaire-des-systèmes-existants-rusty-ducks-2018"><a class="header" href="#inventaire-des-systèmes-existants-rusty-ducks-2018">Inventaire des systèmes existants (Rusty ducks 2018)</a></h2>
 <p>On a déjà lancé des balles avec un <strong>moteur</strong> qui <strong>entraîne un galet</strong>, ça marche très bien.</p>
