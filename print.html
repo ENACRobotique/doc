@@ -2045,7 +2045,7 @@ Quand vous avez trouver, s'y connecter en SSH : <code>ssh pi@raspberrypi</code>,
 <h2 id="déterminer-la-position-du-robot"><a class="header" href="#déterminer-la-position-du-robot">Déterminer la position du robot</a></h2>
 <p>Une fois les basiles identifiées, on peut calculer le position de l'orientation du robot.</p>
 <p>Soit \(T = \begin{pmatrix}x\\y\end{pmatrix}\), la position du robot dans le repère table,<br />
-et \(R = \begin{pmatrix}cos(θ) &amp; sin(θ)\\-sin(θ) &amp; cos(θ)\end{pmatrix}\) la matrice de rotation entre le repère table et le repère robot;</p>
+et \(R = \begin{pmatrix}cos(θ) &amp; sin(θ)\\-sin(θ) &amp; cos(θ)\end{pmatrix}\) la matrice de rotation permettant de passer du repère robot au repère table;</p>
 <p>Soit \(P_i = \begin{pmatrix}xi\\yi\end{pmatrix}\) la position de la balise \(i\) dans le repère robot, et \(P_i^* = \begin{pmatrix}xi^*\\yi^*\end{pmatrix}\) sa position dans le repère table;</p>
 <p>On a pour chaque balise \(i\) : \[ P_i^* = R \times P_i + T \]</p>
 <p>On recherche la position et l'orientation du robot \((T_x, T_x, θ)\)  qui permettent de minimiser l'erreur entre la position des balises vues par le lidar, et leur position connue.</p>
