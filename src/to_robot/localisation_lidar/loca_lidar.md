@@ -59,24 +59,24 @@ Cette méthode nécessite assez peu de calculs.
 Une fois les basiles identifiées, on peut calculer le position de l'orientation du robot.
 
 Soit \\(T = \begin{pmatrix}x\\\\y\end{pmatrix}\\), la position du robot dans le repère table,  
-et \\(R = \begin{pmatrix}cos(θ) & sin(θ)\\\\-sin(θ) & cos(θ)\end{pmatrix}\\) la matrice de rotation permettant de passer du repère robot au repère table;
+et \\(R = \begin{pmatrix}cos(\theta) & sin(\theta)\\\\-sin(\theta) & cos(\theta)\end{pmatrix}\\) la matrice de rotation permettant de passer du repère robot au repère table;
 
 Soit \\(P_i = \begin{pmatrix}xi\\\\yi\end{pmatrix}\\) la position de la balise \\(i\\) dans le repère robot, et \\(P_i^* = \begin{pmatrix}xi^\*\\\\yi^\*\end{pmatrix}\\) sa position dans le repère table;
 
-On a pour chaque balise \\(i\\) : \\[ P_i^* = R \times P_i + T \\]
+On a pour chaque balise \\(i\\) : \\[ P_i^* = R . P_i + T \\]
 
-On recherche la position et l'orientation du robot \\((T_x, T_x, θ)\\)  qui permettent de minimiser l'erreur entre la position des balises vues par le lidar, et leur position connue.
+On recherche la position et l'orientation du robot \\((T_x, T_y, \theta)\\)  qui permettent de minimiser l'erreur entre la position des balises vues par le lidar, et leur position connue.
 
 Dans un cas parfait, cette erreur serait nulle, cepdendant les incertitudes des mesures lidar et les tolérances de la tables font qu'il existera toujours une erreur. On ne peut peux donc pas résoudre un système d'équations car celui-ci n'aurait aucune solutions.
 
 On cherche donc à minimiser l'erreur calculée par la méthode des moindres carrés:
 
-\\[ score(T_x, T_x, θ) = \sum_{i=1}^n {\lVert R \times P_i + T - P_i^* \rVert}^2 \\]
+\\[ score(T_x, T_y, \theta) = \sum_{i=1}^n {\lVert R . P_i + T - P_i^* \rVert}^2 \\]
 
 
 On utilise pour cela la fonction [`least_square`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html) de `scipy`.
 
-Notons \\(X = (T_x, T_x, θ)\\)
+Notons \\(X = (T_x, T_y, \theta)\\)
 
 Arguments:
 
@@ -87,7 +87,7 @@ Arguments:
 - ~~**`jac`**: La matrice des dérivées partielles.~~ (ça marche mieux sans ça, curieusement)
 - **`method`**: `'lm`. 
 
-La fonction retroune alors un `OptimizeResult`, contenant la solution \\(X = (T_x, T_x, θ)\\) de l'optimisation, ainsi que le score de cette solution.
+La fonction retroune alors un `OptimizeResult`, contenant la solution \\(X = (T_x, T_y, \theta)\\) de l'optimisation, ainsi que le score de cette solution.
 
 Cette nouvelle position calculée du robot pourra être réutilisée à la prochaine itération comme dernière position connue du robot, et la boucle est bouclée !
 
