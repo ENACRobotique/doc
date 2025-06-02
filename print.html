@@ -1785,34 +1785,36 @@ qui renvoie les distances perçues par nos 3 capteurs que vous voyez ci dessous 
 <h2 id="rotation"><a class="header" href="#rotation">Rotation</a></h2>
 <p>Commençons par le plus simple : la rotation du robot sur lui-même. Le robot doit simplement faire tourner ses roues à la même vitesse.</p>
 <p>Les roues sont placées à égale distance \(R\) du centre du robot, leurs axes passant par le centre du robot.</p>
-<p>Si le robot tourne sur lui-même à une vitesse angulaire \(ꞷ\), la vitesse d'une roue sera donc \(Vtr = R.ꞷ\).</p>
+<p>Si le robot tourne sur lui-même à une vitesse angulaire \(\omega\), la vitesse d'une roue sera donc \(Vtr = R.\omega\).</p>
 <p><img src="to_robot/base_roulante/holonome_vitesse_angulaire.png" alt="" title="Rotation" /></p>
 <h2 id="translation"><a class="header" href="#translation">Translation</a></h2>
-<p>La roue est placée à un angle \(β\) par rapport au repère du robot. Cet angle est fixé par la construction du robot.</p>
-<p>Supposons que le robot se déplace en translation pure à une vitesse \(V\) qui forme un angle \(α\) avec le repère du robot.</p>
-<p>La vitesse tangentielle de la roue sera donc de \(Vtr = V.sin(α-β)\).</p>
+<p>La roue est placée à un angle \(\beta\) par rapport au repère du robot. Cet angle est fixé par la construction du robot.</p>
+<p>Supposons que le robot se déplace en translation pure à une vitesse \(V\) qui forme un angle \(\alpha\) avec le repère du robot.</p>
+<p>La vitesse tangentielle de la roue sera donc de \(Vtr = V.sin(\alpha-\beta)\).</p>
 <p>La roue étant en translation libre sur l'axe radial, la vitesse radiale peut être ignorée.</p>
 <p><img src="to_robot/base_roulante/holonome_vitesse.png" alt="" title="Translation" /></p>
 <h2 id="composition-des-vitesses-et-décomposition-selon-les-axes-du-robot"><a class="header" href="#composition-des-vitesses-et-décomposition-selon-les-axes-du-robot">Composition des vitesses, et décomposition selon les axes du robot</a></h2>
 <p>Par la composition des vitesses, la vitesse tangentielle totale d'une roue est : \(Vtr = V.sin(α-β) + R.ꞷ\)</p>
-<p>On connait l'identité trigonométrique : \(sin(α-β) = sin(α).cos(β) - cos(α).sin(β)\)</p>
+<p>On connait l'identité trigonométrique : \(sin(\alpha-\beta) = sin(\alpha).cos(\beta) - cos(\alpha).sin(\beta)\)</p>
 <p>On peut donc écrire</p>
-<p>\[Vtr = V.sin(α).cos(β) - V.cos(α).sin(β) + R.ꞷ\]</p>
+<p>\[Vtr = V.sin(\alpha).cos(\beta) - V.cos(\alpha).sin(\beta) + R.\omega\]</p>
 <p>Si on décompose la vitesse \(V\) du robot selon ses axes, on a :</p>
 <ul>
-<li>\(Vx = V.cos(α)\)</li>
-<li>\(Vy = V.sin(α)\)</li>
+<li>\(Vx = V.cos(\alpha)\)</li>
+<li>\(Vy = V.sin(\alpha)\)</li>
 </ul>
 <p>On en déduit donc :</p>
-<p>\[Vtr = Vy.cos(β) - Vx.sin(β) + R.ꞷ\]</p>
+<p>\[Vtr = Vy.cos(\beta) - Vx.sin(\beta) + R.\omega\]</p>
 <h2 id="forme-matricielle"><a class="header" href="#forme-matricielle">Forme matricielle</a></h2>
-<p>Pour 3 roues placées respectivement aux angles \(β1\), \(β2\) et \(β3\), on aura alors :</p>
-<p>\[ \begin{pmatrix}v1\\v2\\v3\end{pmatrix}=\begin{pmatrix}-sin(β1) &amp; cos(β1) &amp; R\\-sin(β2) &amp; cos(β2) &amp; R\\-sin(β3) &amp; cos(β3) &amp; R\end{pmatrix}\times\begin{pmatrix}Vx\\Vy\\ꞷ\end{pmatrix} \]</p>
+<p>Pour 3 roues placées respectivement aux angles \(\beta1\), \(\beta2\) et \(\beta3\), on aura alors :</p>
+<p>\[ \begin{pmatrix}v1\\v2\\v3\end{pmatrix}=\begin{pmatrix}-sin(\beta1) &amp; cos(\beta1) &amp; R\\-sin(\beta2) &amp; cos(\beta2) &amp; R\\-sin(\beta3) &amp; cos(\beta3) &amp; R\end{pmatrix}\times\begin{pmatrix}Vx\\Vy\\\omega\end{pmatrix} \]</p>
 <h1 id="cinématique-inverse"><a class="header" href="#cinématique-inverse">Cinématique inverse</a></h1>
 <p>On a calculé les commandes à donner aux moteurs pour avoir le déplacement désiré. On voudrait maintenant déduire les déplacements du robot des déplacements de chaque moteur.</p>
 <p>On avait : \(m=D.V\)</p>
 <p>La matrice pseudo-inverse de Moore-Penrose \(D^+\) permet de résoudre ce problème. On a alors : \(V=D^+.m\)</p>
 <p>Elle peut être calculée avec numpy avec la fonction <code>numpy.linalg.pinv</code>.</p>
+<h2 id="sources"><a class="header" href="#sources">Sources</a></h2>
+<p><a href="https://people.idsia.ch/~alexander/2006/1/omnidrive_kiart_preprint.pdf">Holonomic Control of a robot with an omni-directional drive</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="carte-électronique-pour-la-base-roulante"><a class="header" href="#carte-électronique-pour-la-base-roulante">Carte électronique pour la base roulante</a></h1>
 <p>La base roulante ce n'est pas juste des moteurs et des roues. Il faut pouvoir les piloter. Pour cela il y a deux solutions possibles, soit utiliser des composants dédiés du commerce, soit faire ses propres contrôleurs. Sachant qu'au final il y aura forcément une partie à faire soi-même pour l'intégrer à l'ensemble de l'architecture.</p>
 <p>L'étage éléctrique de votre base roulante doit comporter à minima :</p>
@@ -2045,15 +2047,15 @@ Quand vous avez trouver, s'y connecter en SSH : <code>ssh pi@raspberrypi</code>,
 <h2 id="déterminer-la-position-du-robot"><a class="header" href="#déterminer-la-position-du-robot">Déterminer la position du robot</a></h2>
 <p>Une fois les basiles identifiées, on peut calculer le position de l'orientation du robot.</p>
 <p>Soit \(T = \begin{pmatrix}x\\y\end{pmatrix}\), la position du robot dans le repère table,<br />
-et \(R = \begin{pmatrix}cos(θ) &amp; sin(θ)\\-sin(θ) &amp; cos(θ)\end{pmatrix}\) la matrice de rotation permettant de passer du repère robot au repère table;</p>
+et \(R = \begin{pmatrix}cos(\theta) &amp; sin(\theta)\\-sin(\theta) &amp; cos(\theta)\end{pmatrix}\) la matrice de rotation permettant de passer du repère robot au repère table;</p>
 <p>Soit \(P_i = \begin{pmatrix}xi\\yi\end{pmatrix}\) la position de la balise \(i\) dans le repère robot, et \(P_i^* = \begin{pmatrix}xi^*\\yi^*\end{pmatrix}\) sa position dans le repère table;</p>
-<p>On a pour chaque balise \(i\) : \[ P_i^* = R \times P_i + T \]</p>
-<p>On recherche la position et l'orientation du robot \((T_x, T_x, θ)\)  qui permettent de minimiser l'erreur entre la position des balises vues par le lidar, et leur position connue.</p>
+<p>On a pour chaque balise \(i\) : \[ P_i^* = R . P_i + T \]</p>
+<p>On recherche la position et l'orientation du robot \((T_x, T_y, \theta)\)  qui permettent de minimiser l'erreur entre la position des balises vues par le lidar, et leur position connue.</p>
 <p>Dans un cas parfait, cette erreur serait nulle, cepdendant les incertitudes des mesures lidar et les tolérances de la tables font qu'il existera toujours une erreur. On ne peut peux donc pas résoudre un système d'équations car celui-ci n'aurait aucune solutions.</p>
 <p>On cherche donc à minimiser l'erreur calculée par la méthode des moindres carrés:</p>
-<p>\[ score(T_x, T_x, θ) = \sum_{i=1}^n {\lVert R \times P_i + T - P_i^* \rVert}^2 \]</p>
+<p>\[ score(T_x, T_y, \theta) = \sum_{i=1}^n {\lVert R . P_i + T - P_i^* \rVert}^2 \]</p>
 <p>On utilise pour cela la fonction <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html"><code>least_square</code></a> de <code>scipy</code>.</p>
-<p>Notons \(X = (T_x, T_x, θ)\)</p>
+<p>Notons \(X = (T_x, T_y, \theta)\)</p>
 <p>Arguments:</p>
 <ul>
 <li><strong><code>fun</code></strong>: Une fonction qui prennant en paramètre le vecteur \(X\) évalué, ainsi que des arguments donnés lors de l'appel à <code>least_square</code>.<br />
@@ -2063,7 +2065,7 @@ Il faut donc retourner un vecteur contenant les différences de position en X et
 <li><del><strong><code>jac</code></strong>: La matrice des dérivées partielles.</del> (ça marche mieux sans ça, curieusement)</li>
 <li><strong><code>method</code></strong>: <code>'lm</code>.</li>
 </ul>
-<p>La fonction retroune alors un <code>OptimizeResult</code>, contenant la solution \(X = (T_x, T_x, θ)\) de l'optimisation, ainsi que le score de cette solution.</p>
+<p>La fonction retroune alors un <code>OptimizeResult</code>, contenant la solution \(X = (T_x, T_y, \theta)\) de l'optimisation, ainsi que le score de cette solution.</p>
 <p>Cette nouvelle position calculée du robot pourra être réutilisée à la prochaine itération comme dernière position connue du robot, et la boucle est bouclée !</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lancement-dobjets-exemples-rusty---2018"><a class="header" href="#lancement-dobjets-exemples-rusty---2018">Lancement d'objets (Exemples rusty - 2018)</a></h1>
 <h2 id="inventaire-des-systèmes-existants-rusty-ducks-2018"><a class="header" href="#inventaire-des-systèmes-existants-rusty-ducks-2018">Inventaire des systèmes existants (Rusty ducks 2018)</a></h2>

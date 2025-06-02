@@ -173,34 +173,36 @@
 <h2 id="rotation"><a class="header" href="#rotation">Rotation</a></h2>
 <p>Commençons par le plus simple : la rotation du robot sur lui-même. Le robot doit simplement faire tourner ses roues à la même vitesse.</p>
 <p>Les roues sont placées à égale distance \(R\) du centre du robot, leurs axes passant par le centre du robot.</p>
-<p>Si le robot tourne sur lui-même à une vitesse angulaire \(ꞷ\), la vitesse d'une roue sera donc \(Vtr = R.ꞷ\).</p>
+<p>Si le robot tourne sur lui-même à une vitesse angulaire \(\omega\), la vitesse d'une roue sera donc \(Vtr = R.\omega\).</p>
 <p><img src="holonome_vitesse_angulaire.png" alt="" title="Rotation" /></p>
 <h2 id="translation"><a class="header" href="#translation">Translation</a></h2>
-<p>La roue est placée à un angle \(β\) par rapport au repère du robot. Cet angle est fixé par la construction du robot.</p>
-<p>Supposons que le robot se déplace en translation pure à une vitesse \(V\) qui forme un angle \(α\) avec le repère du robot.</p>
-<p>La vitesse tangentielle de la roue sera donc de \(Vtr = V.sin(α-β)\).</p>
+<p>La roue est placée à un angle \(\beta\) par rapport au repère du robot. Cet angle est fixé par la construction du robot.</p>
+<p>Supposons que le robot se déplace en translation pure à une vitesse \(V\) qui forme un angle \(\alpha\) avec le repère du robot.</p>
+<p>La vitesse tangentielle de la roue sera donc de \(Vtr = V.sin(\alpha-\beta)\).</p>
 <p>La roue étant en translation libre sur l'axe radial, la vitesse radiale peut être ignorée.</p>
 <p><img src="holonome_vitesse.png" alt="" title="Translation" /></p>
 <h2 id="composition-des-vitesses-et-décomposition-selon-les-axes-du-robot"><a class="header" href="#composition-des-vitesses-et-décomposition-selon-les-axes-du-robot">Composition des vitesses, et décomposition selon les axes du robot</a></h2>
 <p>Par la composition des vitesses, la vitesse tangentielle totale d'une roue est : \(Vtr = V.sin(α-β) + R.ꞷ\)</p>
-<p>On connait l'identité trigonométrique : \(sin(α-β) = sin(α).cos(β) - cos(α).sin(β)\)</p>
+<p>On connait l'identité trigonométrique : \(sin(\alpha-\beta) = sin(\alpha).cos(\beta) - cos(\alpha).sin(\beta)\)</p>
 <p>On peut donc écrire</p>
-<p>\[Vtr = V.sin(α).cos(β) - V.cos(α).sin(β) + R.ꞷ\]</p>
+<p>\[Vtr = V.sin(\alpha).cos(\beta) - V.cos(\alpha).sin(\beta) + R.\omega\]</p>
 <p>Si on décompose la vitesse \(V\) du robot selon ses axes, on a :</p>
 <ul>
-<li>\(Vx = V.cos(α)\)</li>
-<li>\(Vy = V.sin(α)\)</li>
+<li>\(Vx = V.cos(\alpha)\)</li>
+<li>\(Vy = V.sin(\alpha)\)</li>
 </ul>
 <p>On en déduit donc :</p>
-<p>\[Vtr = Vy.cos(β) - Vx.sin(β) + R.ꞷ\]</p>
+<p>\[Vtr = Vy.cos(\beta) - Vx.sin(\beta) + R.\omega\]</p>
 <h2 id="forme-matricielle"><a class="header" href="#forme-matricielle">Forme matricielle</a></h2>
-<p>Pour 3 roues placées respectivement aux angles \(β1\), \(β2\) et \(β3\), on aura alors :</p>
-<p>\[ \begin{pmatrix}v1\\v2\\v3\end{pmatrix}=\begin{pmatrix}-sin(β1) &amp; cos(β1) &amp; R\\-sin(β2) &amp; cos(β2) &amp; R\\-sin(β3) &amp; cos(β3) &amp; R\end{pmatrix}\times\begin{pmatrix}Vx\\Vy\\ꞷ\end{pmatrix} \]</p>
+<p>Pour 3 roues placées respectivement aux angles \(\beta1\), \(\beta2\) et \(\beta3\), on aura alors :</p>
+<p>\[ \begin{pmatrix}v1\\v2\\v3\end{pmatrix}=\begin{pmatrix}-sin(\beta1) &amp; cos(\beta1) &amp; R\\-sin(\beta2) &amp; cos(\beta2) &amp; R\\-sin(\beta3) &amp; cos(\beta3) &amp; R\end{pmatrix}\times\begin{pmatrix}Vx\\Vy\\\omega\end{pmatrix} \]</p>
 <h1 id="cinématique-inverse"><a class="header" href="#cinématique-inverse">Cinématique inverse</a></h1>
 <p>On a calculé les commandes à donner aux moteurs pour avoir le déplacement désiré. On voudrait maintenant déduire les déplacements du robot des déplacements de chaque moteur.</p>
 <p>On avait : \(m=D.V\)</p>
 <p>La matrice pseudo-inverse de Moore-Penrose \(D^+\) permet de résoudre ce problème. On a alors : \(V=D^+.m\)</p>
 <p>Elle peut être calculée avec numpy avec la fonction <code>numpy.linalg.pinv</code>.</p>
+<h2 id="sources"><a class="header" href="#sources">Sources</a></h2>
+<p><a href="https://people.idsia.ch/~alexander/2006/1/omnidrive_kiart_preprint.pdf">Holonomic Control of a robot with an omni-directional drive</a></p>
 
                     </main>
 
