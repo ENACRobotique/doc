@@ -74,18 +74,18 @@ On cherche donc à minimiser l'erreur calculée par la méthode des moindres car
 \\[ score(T_x, T_y, \theta) = \sum_{i=1}^n {\lVert R . P_i + T - P_i^* \rVert}^2 \\]
 
 
-On utilise pour cela la fonction [`least_square`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html) de `scipy`.
+On utilise pour cela la fonction [`least_squares`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html) de `scipy`.
 
 Notons \\(X = (T_x, T_y, \theta)\\)
 
 Arguments:
 
-- **`fun`**: Une fonction qui prennant en paramètre le vecteur \\(X\\) évalué, ainsi que des arguments donnés lors de l'appel à `least_square`.  
+- **`fun`**: Une fonction qui prennant en paramètre le vecteur \\(X\\) évalué, ainsi que des arguments donnés lors de l'appel à `least_squares`.  
   La fonction retourne le vecteur des résidus, c'est à dire les éléments individuels permettant de calculer le score vu précédemment.  
   Il faut donc retourner un vecteur contenant les différences de position en X et Y de chauqe balises.
 - **`x0`**: La initiale de X. On peut prendre la dernière position connue du robot.
 - ~~**`jac`**: La matrice des dérivées partielles.~~ (ça marche mieux sans ça, curieusement)
-- **`method`**: `'lm`. 
+- **`method`**: `'lm` pour l'algorithme de Levenberg-Marquardt. Il ne peut pas gérer les contraintes, mais fonctionne bien pour les petits problèmes tel que celui-ci (pas de contraintes, seulement 3 dimensions).
 
 La fonction retroune alors un `OptimizeResult`, contenant la solution \\(X = (T_x, T_y, \theta)\\) de l'optimisation, ainsi que le score de cette solution.
 
