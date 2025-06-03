@@ -212,16 +212,16 @@ et \(R = \begin{pmatrix}cos(\theta) &amp; sin(\theta)\\-sin(\theta) &amp; cos(\t
 <p>Dans un cas parfait, cette erreur serait nulle, cepdendant les incertitudes des mesures lidar et les tolérances de la tables font qu'il existera toujours une erreur. On ne peut peux donc pas résoudre un système d'équations car celui-ci n'aurait aucune solutions.</p>
 <p>On cherche donc à minimiser l'erreur calculée par la méthode des moindres carrés:</p>
 <p>\[ score(T_x, T_y, \theta) = \sum_{i=1}^n {\lVert R . P_i + T - P_i^* \rVert}^2 \]</p>
-<p>On utilise pour cela la fonction <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html"><code>least_square</code></a> de <code>scipy</code>.</p>
+<p>On utilise pour cela la fonction <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html"><code>least_squares</code></a> de <code>scipy</code>.</p>
 <p>Notons \(X = (T_x, T_y, \theta)\)</p>
 <p>Arguments:</p>
 <ul>
-<li><strong><code>fun</code></strong>: Une fonction qui prennant en paramètre le vecteur \(X\) évalué, ainsi que des arguments donnés lors de l'appel à <code>least_square</code>.<br />
+<li><strong><code>fun</code></strong>: Une fonction qui prennant en paramètre le vecteur \(X\) évalué, ainsi que des arguments donnés lors de l'appel à <code>least_squares</code>.<br />
 La fonction retourne le vecteur des résidus, c'est à dire les éléments individuels permettant de calculer le score vu précédemment.<br />
 Il faut donc retourner un vecteur contenant les différences de position en X et Y de chauqe balises.</li>
 <li><strong><code>x0</code></strong>: La initiale de X. On peut prendre la dernière position connue du robot.</li>
 <li><del><strong><code>jac</code></strong>: La matrice des dérivées partielles.</del> (ça marche mieux sans ça, curieusement)</li>
-<li><strong><code>method</code></strong>: <code>'lm</code>.</li>
+<li><strong><code>method</code></strong>: <code>'lm</code> pour l'algorithme de Levenberg-Marquardt. Il ne peut pas gérer les contraintes, mais fonctionne bien pour les petits problèmes tel que celui-ci (pas de contraintes, seulement 3 dimensions).</li>
 </ul>
 <p>La fonction retroune alors un <code>OptimizeResult</code>, contenant la solution \(X = (T_x, T_y, \theta)\) de l'optimisation, ainsi que le score de cette solution.</p>
 <p>Cette nouvelle position calculée du robot pourra être réutilisée à la prochaine itération comme dernière position connue du robot, et la boucle est bouclée !</p>
