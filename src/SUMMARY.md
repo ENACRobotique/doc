@@ -57,6 +57,7 @@
 		- [Interfaçage](to_robot/haut_niveau/interface.md)
 		- [Inteligence du robot](to_robot/haut_niveau/decision.md)
 	- [Localisation LIDAR](to_robot/localisation_lidar/loca_lidar.md)
+	- [Localisation UWB](to_robot/loca_uwb/loca_uwb.md)
 
 - [FAQ/REX : Retour D'expérience]()
 	- [Système de tir](rex/shoot.md)
