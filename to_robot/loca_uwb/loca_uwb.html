@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Bash tips - Doc ENAC Robotique</title>
+        <title>Localisation UWB - Doc ENAC Robotique</title>
 
 
         <!-- Custom HTML head -->
@@ -177,29 +177,82 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="commande-bash-utiles"><a class="header" href="#commande-bash-utiles">Commande Bash Utiles</a></h1>
-<p>Petite liste non exhaustive de commandes bash et de leur applications. On ne peut pas toujours tout deviner.</p>
-<p>La <strong>première chose à faire</strong> est toujours de taper <code>man [cmd]</code> où &lt;&lt;[cmd]&gt;&gt; est le nom de la commande à utiliser. La deuxième chose est d'utiliser internet.</p>
-<h3 id="dmesg"><a class="header" href="#dmesg"><code>dmesg</code></a></h3>
-<p>L'option <code>-w</code> peut être utilisée pour observer les connexions et déconnexions de périphérique en temps réel et l'option <code>-e</code> permet rendre tout ça lisible. Par exemple en tapant complètement <code>sudo dmesg -we</code>:</p>
-<p><img src="../../images/dmesg_1.png" alt="" /></p>
-<p>On peut voir qu'a 23h57 un périphérique USB à été branché. On à l'information de quel USB il s'agit Il s'agit d'un Smartphone model Redmi Note 8 Pro du constructeur Xiami. On à même le numéro de série et on est donc capable de l'identifier de façon unique. En regardant sur internet je vois qu'il s'agit d'un téléphone. En effet j'avais besoin de transférer queslques photos ! On peut voir qu'il a été débranché 11 secondes plus tard.</p>
-<p>Ensuite 4 secondes plus tard :</p>
-<p><img src="../../images/demesg_2.png" alt="" /></p>
-<p>Le début est similaire mais cette fois pas de mystère, nous avons branché une de nos <a href="../../carte_tuto/tuto_board.html">cartes tuto</a> pour la programmer. Or nous cherchons ici à faire de la communications en UART avec elle mais nous ne trouvons pas sur quel port addresser la liaison. Bien sûr nous avons déjà cherché dans le <code>/dev</code> mais il y'a tellement de périphérique qu'on ne s'y retrouve plus. Heureusement il y'a cette ligne :</p>
-<p><code>[  +0,000679] cdc_acm 1-5:1.2: ttyACM0: USB ACM device</code></p>
-<p>Qui nous indique que le périphérique est bien sur le <code>/dev</code>, plus précisément sur <code>/dev/ttyACM0</code>.</p>
-<p>Pour aller plus loin on peut utiliser <code>udevadm info -a /dev/ttyACM0</code>. On ne va pas le montrer car c'est une pluie d'informations mais qui peut néanmoins se montrer utile en fonction du besoin.</p>
+                        <h1 id="localisation-uwb-ultrawideband"><a class="header" href="#localisation-uwb-ultrawideband">Localisation UWB (UltraWideBand)</a></h1>
+<p>Le but est de déterminer la position du robot en mesurant la différence de temps d'arrivé d'un signal envoyé par le robot à des balises fixes.</p>
+<p>Le réglement de la coupe nous autorise à placer en bordure de la table de jeu 4 balises à des positions précises. Voir l'image suivante pour les positions des balises pour chaque équipe.</p>
+<p><img src="../localisation_lidar/positions_balises.svg" alt="" title="Position des balises" /></p>
+<h2 id="le-matériel"><a class="header" href="#le-matériel">Le matériel</a></h2>
+<p>Le DWM3001C de Qorvo est un module UltraWideBand avec des <a href="https://en.wikipedia.org/wiki/UWB_ranging">fonctionnalités de ranging</a> : Il peut mesurer précisément le temps d'arrivé d'un message (ordre de grandeur de 15 picosecondes).</p>
+<p>Nous allons placer un module DWM3001C dans chacune des balises fixes, ainsi que sur le robot et la balise embarqué sur le robot adverse afin de les localiser.</p>
+<p><img src="DWM3001C.jpg" alt="" /></p>
+<h2 id="principe-de-fonctionnement"><a class="header" href="#principe-de-fonctionnement">Principe de fonctionnement</a></h2>
+<ol>
+<li>Le robot envoie un message (<em>BLINK</em>).</li>
+<li>Chacune des balises enregistre le timestamp de réception du <em>BLINK</em>, et l'envoie à la balise maître.</li>
+<li>La balise maître calcule la position du robot par TDOA (Time Difference Of Arrival) : on se base sur la différence de temps d'arrivé du <em>BLINK</em> entre les balises.</li>
+</ol>
+<p>Cela implique que les balises fixes doivent être synchronisées entre elles afin de pouvoir comparer les timestamps.</p>
+<p><img src="UWB_loca.svg" alt="" /></p>
+<h2 id="synchronisation-des-balises-fixes"><a class="header" href="#synchronisation-des-balises-fixes">Synchronisation des balises fixes</a></h2>
+<p>La balise maître <strong>A</strong> envoie à intervalles régulier un message de synchronisation (<em>SYNC</em>) contenant son timestamp d'envoi.</p>
+<p><img src="UWB_sync.svg" alt="" /></p>
+<p>Soit:</p>
+<ul>
+<li>\(t_{si}^A\) : timestamp d'émission du <em>SYNC</em> <strong>i</strong> dans le repère temporel de <strong>A</strong>.</li>
+<li>\(t_{siB}^B\) : timestamp de réception du <em>SYNC</em> <strong>i</strong> par la balise <strong>B</strong>, dans le repère temporel de <strong>B</strong>.</li>
+<li>\(\alpha_B\) : dérive d'horloge de <strong>B</strong> par rapport à <strong>A</strong>.</li>
+<li>\(\beta_B\) : offset d'horloge de <strong>B</strong> par rapport à <strong>A</strong>.</li>
+<li>\(T_{AB}\) : temps de vol <em>SYNC</em> <strong>A</strong> et <strong>B</strong>.</li>
+</ul>
+<p>On a :</p>
+<p>\[
+t_{siB}^B = \alpha_B.t_{si}^A + \beta_B + T_{AB}
+\]</p>
+<p>En faisant la différence entre deux <em>SYNC</em> <strong>i</strong> et <strong>j</strong>:</p>
+<p>\[
+\alpha_B = \frac{t_{sjB}^B - t_{siB}^B}{t_{sj}^A - t_{si}^A}
+\]</p>
+<p>On déduit de la première équation :</p>
+<p>\[
+\beta_B = t_{sjB}^B - \alpha_B.t_{si}^A - T_{AB}
+\]</p>
+<p>Soit:</p>
+<ul>
+<li>\(t_{rB}^B\) : timestamp de réception du <em>BLINK</em> du robot par la balise <strong>B</strong>, dans le repère temporel de <strong>B</strong>.</li>
+<li>\(t_{rB}^A\) : timestamp de réception du <em>BLINK</em> du robot par la balise <strong>B</strong>, dans le repère temporel de <strong>A</strong>.</li>
+</ul>
+<p>On peut écrire :</p>
+<p>\[
+t_{rB}^A = \frac{t_{rB}^B - \beta_B - T_{AB}}{\alpha_B}
+\]</p>
+<p>Chaque balise peut donc exprimer le timestamp de réception du <em>BLINK</em> dans le repère temporel de <strong>A</strong>.</p>
+<h2 id="centralisation-des-timestamps"><a class="header" href="#centralisation-des-timestamps">Centralisation des timestamps</a></h2>
+<p>Après réception d'un <em>BLINK</em>, chaque balise doit envoyer le timestamp (dans le repère temporel de A). Il est important d'attribuer un slot d'émission à chaque balise afin d'éviter les collisions.</p>
+<p>Soit :
+\[
+T = \frac{D_{max}}{c} + T_{t}
+\]
+La somme du temps de vol maxi entre deux agents, et du temps de traitement d'un message.</p>
+<ul>
+<li>Le robot émet un <em>BLINK</em> à \(t = t_{sR} + T\).</li>
+<li>La balise <strong>B</strong> envoie le timestamp à \(t = t_{sR} + 2.T\)</li>
+<li>La balise <strong>C</strong> envoie le timestamp à \(t = t_{sR} + 3.T\)</li>
+<li>La balise <strong>D</strong> envoie le timestamp à \(t = t_{sR} + 4.T\)</li>
+</ul>
+<p>La résolution de la position du robot peut ensuite être effectuée par n'importe quelle balise / robot.</p>
+<h2 id="tdoa"><a class="header" href="#tdoa">TDoA</a></h2>
+<p><img src="tdoa.png" alt="" />
+<a href="https://dl.cdn-anritsu.com/en-us/test-measurement/files/Application-Notes/Application-Note/11410-01009D.pdf">https://dl.cdn-anritsu.com/en-us/test-measurement/files/Application-Notes/Application-Note/11410-01009D.pdf</a></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../bases/linux/ssh.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../to_robot/localisation_lidar/loca_lidar.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../../bases/tutoboard/tutoboard.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../rex/shoot.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -209,11 +262,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../bases/linux/ssh.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../to_robot/localisation_lidar/loca_lidar.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../../bases/tutoboard/tutoboard.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../rex/shoot.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

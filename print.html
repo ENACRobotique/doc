@@ -39,6 +39,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
@@ -95,10 +96,13 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -149,7 +153,12 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -2067,6 +2076,72 @@ Il faut donc retourner un vecteur contenant les différences de position en X et
 </ul>
 <p>La fonction retroune alors un <code>OptimizeResult</code>, contenant la solution \(X = (T_x, T_y, \theta)\) de l'optimisation, ainsi que le score de cette solution.</p>
 <p>Cette nouvelle position calculée du robot pourra être réutilisée à la prochaine itération comme dernière position connue du robot, et la boucle est bouclée !</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="localisation-uwb-ultrawideband"><a class="header" href="#localisation-uwb-ultrawideband">Localisation UWB (UltraWideBand)</a></h1>
+<p>Le but est de déterminer la position du robot en mesurant la différence de temps d'arrivé d'un signal envoyé par le robot à des balises fixes.</p>
+<p>Le réglement de la coupe nous autorise à placer en bordure de la table de jeu 4 balises à des positions précises. Voir l'image suivante pour les positions des balises pour chaque équipe.</p>
+<p><img src="to_robot/loca_uwb/../localisation_lidar/positions_balises.svg" alt="" title="Position des balises" /></p>
+<h2 id="le-matériel"><a class="header" href="#le-matériel">Le matériel</a></h2>
+<p>Le DWM3001C de Qorvo est un module UltraWideBand avec des <a href="https://en.wikipedia.org/wiki/UWB_ranging">fonctionnalités de ranging</a> : Il peut mesurer précisément le temps d'arrivé d'un message (ordre de grandeur de 15 picosecondes).</p>
+<p>Nous allons placer un module DWM3001C dans chacune des balises fixes, ainsi que sur le robot et la balise embarqué sur le robot adverse afin de les localiser.</p>
+<p><img src="to_robot/loca_uwb/DWM3001C.jpg" alt="" /></p>
+<h2 id="principe-de-fonctionnement"><a class="header" href="#principe-de-fonctionnement">Principe de fonctionnement</a></h2>
+<ol>
+<li>Le robot envoie un message (<em>BLINK</em>).</li>
+<li>Chacune des balises enregistre le timestamp de réception du <em>BLINK</em>, et l'envoie à la balise maître.</li>
+<li>La balise maître calcule la position du robot par TDOA (Time Difference Of Arrival) : on se base sur la différence de temps d'arrivé du <em>BLINK</em> entre les balises.</li>
+</ol>
+<p>Cela implique que les balises fixes doivent être synchronisées entre elles afin de pouvoir comparer les timestamps.</p>
+<p><img src="to_robot/loca_uwb/UWB_loca.svg" alt="" /></p>
+<h2 id="synchronisation-des-balises-fixes"><a class="header" href="#synchronisation-des-balises-fixes">Synchronisation des balises fixes</a></h2>
+<p>La balise maître <strong>A</strong> envoie à intervalles régulier un message de synchronisation (<em>SYNC</em>) contenant son timestamp d'envoi.</p>
+<p><img src="to_robot/loca_uwb/UWB_sync.svg" alt="" /></p>
+<p>Soit:</p>
+<ul>
+<li>\(t_{si}^A\) : timestamp d'émission du <em>SYNC</em> <strong>i</strong> dans le repère temporel de <strong>A</strong>.</li>
+<li>\(t_{siB}^B\) : timestamp de réception du <em>SYNC</em> <strong>i</strong> par la balise <strong>B</strong>, dans le repère temporel de <strong>B</strong>.</li>
+<li>\(\alpha_B\) : dérive d'horloge de <strong>B</strong> par rapport à <strong>A</strong>.</li>
+<li>\(\beta_B\) : offset d'horloge de <strong>B</strong> par rapport à <strong>A</strong>.</li>
+<li>\(T_{AB}\) : temps de vol <em>SYNC</em> <strong>A</strong> et <strong>B</strong>.</li>
+</ul>
+<p>On a :</p>
+<p>\[
+t_{siB}^B = \alpha_B.t_{si}^A + \beta_B + T_{AB}
+\]</p>
+<p>En faisant la différence entre deux <em>SYNC</em> <strong>i</strong> et <strong>j</strong>:</p>
+<p>\[
+\alpha_B = \frac{t_{sjB}^B - t_{siB}^B}{t_{sj}^A - t_{si}^A}
+\]</p>
+<p>On déduit de la première équation :</p>
+<p>\[
+\beta_B = t_{sjB}^B - \alpha_B.t_{si}^A - T_{AB}
+\]</p>
+<p>Soit:</p>
+<ul>
+<li>\(t_{rB}^B\) : timestamp de réception du <em>BLINK</em> du robot par la balise <strong>B</strong>, dans le repère temporel de <strong>B</strong>.</li>
+<li>\(t_{rB}^A\) : timestamp de réception du <em>BLINK</em> du robot par la balise <strong>B</strong>, dans le repère temporel de <strong>A</strong>.</li>
+</ul>
+<p>On peut écrire :</p>
+<p>\[
+t_{rB}^A = \frac{t_{rB}^B - \beta_B - T_{AB}}{\alpha_B}
+\]</p>
+<p>Chaque balise peut donc exprimer le timestamp de réception du <em>BLINK</em> dans le repère temporel de <strong>A</strong>.</p>
+<h2 id="centralisation-des-timestamps"><a class="header" href="#centralisation-des-timestamps">Centralisation des timestamps</a></h2>
+<p>Après réception d'un <em>BLINK</em>, chaque balise doit envoyer le timestamp (dans le repère temporel de A). Il est important d'attribuer un slot d'émission à chaque balise afin d'éviter les collisions.</p>
+<p>Soit :
+\[
+T = \frac{D_{max}}{c} + T_{t}
+\]
+La somme du temps de vol maxi entre deux agents, et du temps de traitement d'un message.</p>
+<ul>
+<li>Le robot émet un <em>BLINK</em> à \(t = t_{sR} + T\).</li>
+<li>La balise <strong>B</strong> envoie le timestamp à \(t = t_{sR} + 2.T\)</li>
+<li>La balise <strong>C</strong> envoie le timestamp à \(t = t_{sR} + 3.T\)</li>
+<li>La balise <strong>D</strong> envoie le timestamp à \(t = t_{sR} + 4.T\)</li>
+</ul>
+<p>La résolution de la position du robot peut ensuite être effectuée par n'importe quelle balise / robot.</p>
+<h2 id="tdoa"><a class="header" href="#tdoa">TDoA</a></h2>
+<p><img src="to_robot/loca_uwb/tdoa.png" alt="" />
+<a href="https://dl.cdn-anritsu.com/en-us/test-measurement/files/Application-Notes/Application-Note/11410-01009D.pdf">https://dl.cdn-anritsu.com/en-us/test-measurement/files/Application-Notes/Application-Note/11410-01009D.pdf</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lancement-dobjets-exemples-rusty---2018"><a class="header" href="#lancement-dobjets-exemples-rusty---2018">Lancement d'objets (Exemples rusty - 2018)</a></h1>
 <h2 id="inventaire-des-systèmes-existants-rusty-ducks-2018"><a class="header" href="#inventaire-des-systèmes-existants-rusty-ducks-2018">Inventaire des systèmes existants (Rusty ducks 2018)</a></h2>
 <p>On a déjà lancé des balles avec un <strong>moteur</strong> qui <strong>entraîne un galet</strong>, ça marche très bien.</p>
@@ -2181,6 +2256,7 @@ sudo systemctl restart ModemManager
             });
         });
         </script>
+
 
     </div>
     </body>
